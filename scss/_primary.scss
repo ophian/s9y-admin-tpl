@@ -1,25 +1,27 @@
 /* ==|== primary styles ===================================================== */
 // Colors
-$white: #fcfcfc;
-$black: #222;
+$page-back: #fcfcfc;
+$page-text: #222;
 // s9y CI
-$lite-blue: #ccdde7;
-$dark-blue: #3a4b6f;
-$darker-blue: #25263e;
-$orange: #d06604;
+$link-default: #3a4b6f;
+$link-hover: #d06604;
 // s9y messages
-$lite-red: #f2dede;
-$dark-red: #b94a48;
-$lite-green: #dff0d8;
-$dark-green: #468847;
-$lite-yellow: #fcf8e3;
-$dark-yellow: #c09853;
-$lite-gray: #ddd;
-$dark-gray: #aaa;
+$error-back: #f2dede;
+$error-text: #b94a48;
+$success-back: #dff0d8;
+$success-text: #468847;
+$notice-back: #fcf8e3;
+$notice-text: #c09853;
+// $lite-blue: #ccdde7;
+// $darker-blue: #25263e;
+// $lite-gray: #ddd;
+// $dark-gray: #aaa;
+
+html, body { background: $page-back;}
 
 html, button, input,
 select, textarea {
-	color: $black;
+	color: $page-text;
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -29,12 +31,12 @@ body {
 	margin: 0;
 }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: $link-default; color: $page-back; text-shadow: none; }
+::selection { background: $link-default; color: $page-text; text-shadow: none; }
 
 a {
-	&, &:visited { color: $dark-blue; }
-   	&:hover, &:focus { color: $orange; }
+	&, &:visited { color: $link-default; }
+   	&:hover, &:focus { color: $link-hover; }
 }
 
 // Layout
@@ -89,21 +91,21 @@ a {
 }
 
 .msg_error {
-	background: $lite-red;
-	border: 1px solid darken($lite-red, 10%);
-	color: $dark-red;
+	background: $error-back;
+	border: 1px solid darken($error-back, 10%);
+	color: $error-text;
 }
 
 .msg_success {
-	background: $lite-green;
-	border: 1px solid darken($lite-green, 10%);
-	color: $dark-green;
+	background: $success-back;
+	border: 1px solid darken($success-back, 10%);
+	color: $success-text;
 }
 
 .msg_notice {
-	background: $lite-yellow;
-	border: 1px solid darken($lite-yellow, 10%);
-	color: $dark-yellow;
+	background: $notice-back;
+	border: 1px solid darken($notice-back, 10%);
+	color: $notice-text;
 }
 
 .plainList,
