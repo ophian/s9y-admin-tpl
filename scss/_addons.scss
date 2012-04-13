@@ -58,5 +58,14 @@ pre code { font-size: 1em; }
 p {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
+	-ms-hypens: auto;
 	hyphens: auto;
+
+	code, samp,
+	kbd {
+	    -webkit-hyphens: none;
+	    -moz-hyphens: none;
+	    -ms-hypens: none;
+	    hyphens: none;
+	}
 }
