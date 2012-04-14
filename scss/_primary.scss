@@ -9,7 +9,7 @@ select, textarea {
 
 body {
 	font-size: 1em;
-	line-height: 1.6;
+	line-height: 1.5;
 	margin: 0;
 }
 
@@ -98,14 +98,6 @@ a {
 
 #banner h1,
 #banner a { float: left; }
-
-#banner a { margin: px-to-em(40px) 0 0 px-to-em(32px); }
-
-#user_menu h2 {
-	font-size: px-to-em(16px);
-	line-height: px-to-em(24px,16px);
-	margin: px-to-em(24px,16px) 0 0;
-}
 
 label {
 	font-weight: bold;

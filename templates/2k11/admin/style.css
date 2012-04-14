@@ -218,13 +218,6 @@ td {
   vertical-align: top;
 }
 
-.chromeframe {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: black;
-  padding: 0.2em 0;
-}
-
 /* ==|== non-semantic helper classes ======================================== */
 .visuallyhidden {
   border: 0;
@@ -365,7 +358,6 @@ blockquote:lang(de) p:last-child:after {
 
 blockquote + cite {
   display: block;
-  margin: 0 0 1.5em 40px;
 }
 blockquote + cite:before {
   content: "– ";
@@ -383,60 +375,37 @@ li ul, li ol {
   margin: 0;
 }
 
-pre code {
-  font-size: 1em;
-}
-
 p {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hypens: auto;
   hyphens: auto;
 }
-
-body {
-  font-size: 1em;
-  line-height: 1.625em;
+p code, p samp,
+p kbd {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hypens: none;
+  hyphens: none;
 }
 
 pre, code, kbd, samp {
   font-size: 0.875em;
 }
 
+pre code {
+  font-size: 1em;
+}
+
 pre {
   margin: 1.85714286em 0;
 }
 
-h1 {
-  font-size: 3em;
-  line-height: 1.08333333em;
-  margin: 0.54166667em 0;
-}
-
-h2 {
-  font-size: 2em;
-  line-height: 1.625em;
-  margin: 0.8125em 0;
-}
-
-h3 {
-  font-size: 1.5em;
-  line-height: 1.08333333em;
-  margin: 1.08333333em 0;
-}
-
-h4 {
-  font-size: 1.25em;
-  line-height: 1.3em;
-  margin: 1.3em 0;
-}
-
-h5, h6 {
-  font-size: 1em;
-}
-
-h5, h6,
+h1, h2, h3,
+h4, h5, h6,
 p, ul, ol, dl,
 table, figure {
+  font-size: 1em;
   margin: 1.625em 0;
 }
 
@@ -706,6 +675,10 @@ optgroup {
 }
 
 /* ==|== primary styles ===================================================== */
+html, body {
+  background: #fcfcfc;
+}
+
 html, button, input,
 select, textarea {
   color: #222222;
@@ -719,14 +692,14 @@ body {
 }
 
 ::-moz-selection {
-  background: #fe57a1;
-  color: #fff;
+  background: #3a4b6f;
+  color: #fcfcfc;
   text-shadow: none;
 }
 
 ::selection {
-  background: #fe57a1;
-  color: #fff;
+  background: #3a4b6f;
+  color: #222222;
   text-shadow: none;
 }
 
@@ -820,16 +793,6 @@ a:hover, a:focus {
   float: left;
 }
 
-#banner a {
-  margin: 2.5em 0 0 2em;
-}
-
-#user_menu h2 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 1.5em 0 0;
-}
-
 label {
   font-weight: bold;
 }
@@ -889,36 +852,10 @@ label > span, input[type=checkbox] + label, input[type=radio] + label, .form_che
     font-size: 0.875em;
     line-height: 1.64285714em;
   }
-
-  h1 {
-    font-size: 2.28571429em;
-    line-height: 1.4375em;
-    margin: 0.71875em 0;
-  }
-
-  h2 {
-    font-size: 1.71428571em;
-    line-height: 1.91666667em;
-    margin: 0.95833333em 0;
-  }
-
-  h3 {
-    font-size: 1.42857143em;
-    line-height: 1.15em;
-    margin: 1.15em 0;
-  }
 }
 @media only screen and (min-width:1400px) {
   body {
     font-size: 1.125em;
-    line-height: 1.61111111em;
-  }
-
-  h1 {
-    line-height: 1.07407407em;
-  }
-
-  h2 {
     line-height: 1.61111111em;
   }
 }
