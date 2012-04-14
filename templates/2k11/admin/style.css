@@ -398,7 +398,7 @@ pre code {
 }
 
 pre {
-  margin: 1.85714286em 0;
+  margin: 1.71428571em 0;
 }
 
 h1, h2, h3,
@@ -406,11 +406,11 @@ h4, h5, h6,
 p, ul, ol, dl,
 table, figure {
   font-size: 1em;
-  margin: 1.625em 0;
+  margin: 1.5em 0;
 }
 
 blockquote {
-  margin: 1.625em 2.5em;
+  margin: 1.5em 2.5em;
 }
 
 .input_full_wrap {
@@ -791,6 +791,14 @@ a:hover, a:focus {
 #banner h1,
 #banner a {
   float: left;
+}
+
+#banner a {
+  margin: 1.5em 0 0 2em;
+}
+
+#user_menu h2 {
+  margin: 1.5em 0 0;
 }
 
 label {

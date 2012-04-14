@@ -36,14 +36,14 @@ pre, code, kbd, samp { font-size: px-to-em(14px); }
 // nested code
 pre code { font-size: 1em; }
 
-pre { margin: px-to-em(26px, 14px) 0; }
+pre { margin: px-to-em(24px, 14px) 0; }
 
 h1, h2, h3,
 h4, h5, h6,
 p, ul, ol, dl,
 table, figure {
 	font-size: 1em;
-	margin: px-to-em(26px) 0;
+	margin: px-to-em(24px) 0;
 }
 
-blockquote { margin: px-to-em(26px) px-to-em(40px); }
+blockquote { margin: px-to-em(24px) px-to-em(40px); }

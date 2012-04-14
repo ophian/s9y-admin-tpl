@@ -99,6 +99,10 @@ a {
 #banner h1,
 #banner a { float: left; }
 
+#banner a { margin: px-to-em(24px) 0 0 px-to-em(32px); }
+
+#user_menu h2 { margin: px-to-em(24px) 0 0;}
+
 label {
 	font-weight: bold;
 
