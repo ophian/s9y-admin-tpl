@@ -1,3 +1,23 @@
+// Colors
+$page-back: #fcfcfc;
+$page-text: #222;
+// s9y CI
+$link-default: #3a4b6f;
+$link-hover: #d06604;
+// s9y messages
+$error-back: #f2dede;
+$error-text: #b94a48;
+$success-back: #dff0d8;
+$success-text: #468847;
+$notice-back: #fcf8e3;
+$notice-text: #c09853;
+// Yet unused, but suitable
+//
+// $lite-blue: #ccdde7;
+// $darker-blue: #25263e;
+// $lite-gray: #ddd;
+// $dark-gray: #aaa;
+
 // Pixels to em
 @function px-to-em($px, $context: 16px) {
 	@return ($px / $context) * 1em;
