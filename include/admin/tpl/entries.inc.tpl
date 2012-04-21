@@ -68,7 +68,7 @@
                     <option value="{$per_page_nr}" {(isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr) ? 'selected="selected"' : '')} {$per_page_nr}</option>
                 {/foreach}
                 </select>
-            </option>
+            </div>
         </fieldset>
         <input type="submit" name="go" value="{$CONST.GO}">
     </form>

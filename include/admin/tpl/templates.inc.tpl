@@ -10,7 +10,7 @@
     <h3>{$CONST.STYLE_OPTIONS} ({$cur_template})</h3>
 {if $has_config}
     {if $adminAction == "configure"}
-    <span class="msg_success">{$CONST:DONE}: {$save_time}</span>
+    <span class="msg_success">{$CONST.DONE}: {$save_time}</span>
     {/if}
     <form method="post" action="serendipity_admin.php">
         <input type="hidden" name="serendipity[adminModule]" value="templates">
