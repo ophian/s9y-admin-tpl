@@ -27,7 +27,8 @@
         <span class="msg_success">{$CONST.SERENDIPITY_UPGRADER_NOW_UPGRADED|sprintf:$s9y_version}</span>
     {/if}
     {if $return_here}
-        {$CONST.SERENDIPITY_UPGRADER_RETURN_HERE|sprintf:'<a href="{$serendipityHTTPPath}">':'</a>'}
+        {$print_UPGRADER_RETURN_HERE}
+        {* could also be used as:   {$CONST.SERENDIPITY_UPGRADER_RETURN_HERE|sprintf:"<a href='$serendipityHTTPPath'>":'</a>'} *}
     {/if}
 {else}
     <h2>{$CONST.SERENDIPITY_UPGRADER_WELCOME}</h2>
@@ -38,7 +39,7 @@
     <h3>{$CONST.FIRST_WE_TAKE_A_LOOK}</h3>
 
     <div class="diagnose">
-        <span class="msg_notice">{$result_diagnose}.</span>
+        <span class="msg_notice transparent">{$result_diagnose}.</span>
 
     {if $checksums}
         <h4>{$CONST.INTEGRITY}</h4>
