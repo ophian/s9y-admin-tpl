@@ -96,7 +96,7 @@
                 <dd>{$task.desc|nl2br}</dd>
             {/foreach}
             </dl>
-        {if}
+        {/if}
         {if ($taskCount == 0)}
             <p>{$CONST.SERENDIPITY_UPGRADER_NO_VERSION_SPECIFIC}</p>
         {/if}
