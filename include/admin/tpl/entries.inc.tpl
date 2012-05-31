@@ -85,18 +85,19 @@
         </ul>
     </nav>
     {/if}
-
+{*
+Smarty 3 has a new auto literal option which is enabled by default.
+When the { is followed by a space it's not interpreted as smarty delimiter but literal.
+*}
     <script>
-    {literal}
-    function invertSelection() {
+    function invertSelection() { 
         var f = document.formMultiDelete;
-        for (var i = 0; i < f.elements.length; i++) {
-            if (f.elements[i].type == 'checkbox') {
+        for (var i = 0; i < f.elements.length; i++) { 
+            if (f.elements[i].type == 'checkbox') { 
                 f.elements[i].checked = !(f.elements[i].checked);
-            }
-        }
-    }
-    {/literal}
+            } 
+        } 
+    } 
     </script>
 
     <form id="formMultiDelete" action="?" method="post" name="formMultiDelete">
