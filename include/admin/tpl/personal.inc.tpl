@@ -1,7 +1,7 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
 
-{if $adminAction == "save"}
+{if $adminAction == 'save'}
     {if $not_authorized}
     <span class="msg_error">{$CONST.CREATE_NOT_AUTHORIZED_USERLEVEL}</span>
     {elseif $empty_username}

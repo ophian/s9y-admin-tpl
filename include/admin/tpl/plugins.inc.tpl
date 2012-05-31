@@ -1,6 +1,7 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
 {* Note: Can't really access this since it's being "overwritten" by pluginmanager *}
+{* Ian: Should not be any more, since smartification of functions_plugins_admin.inc.php ?? *}
 
 {if $plugin_to_conf}
     {if is_array($save_errors)}
@@ -41,8 +42,8 @@
         </div>
         {$config}
     </form>
-{elseif $adminAction == "addnew"}
-    <h3>{if $type == "event"}{$CONST.EVENT_PLUGINS}{else}{$CONST.SIDEBAR_PLUGINS}{/if} <span class="plugins_available">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:"count({$pluginstack})"}</span></h3>
+{elseif $adminAction == 'addnew'}
+    <h3>{if $type == 'event'}{$CONST.EVENT_PLUGINS}{else}{$CONST.SIDEBAR_PLUGINS}{/if} <span class="plugins_available">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:"count({$pluginstack})"}</span></h3>
     {foreach $errorstack as $e_idx => $e_name}
     <span class="msg_error">{$CONST.ERROR}: {$e_name}</span>
     {/foreach}

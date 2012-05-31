@@ -61,12 +61,12 @@
     {/if}
 {/if}
 {if $show_form}
-    <form{if $adminAction == "edit"} id="editform"{/if} action="?serendipity[adminModule]=users#editform" method="post">
+    <form{if $adminAction == 'edit'} id="editform"{/if} action="?serendipity[adminModule]=users#editform" method="post">
         {$formToken}
-        {if $adminAction == "edit"}{if $create_permission}<input type="hidden" name="serendipity[user]" value="{$from.authorid}">{/if}{/if}
-        <h3>{if $adminAction == "edit"}{if $no_create_permission}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{else}{if $create_permission}{$CONST.EDIT}{else}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{/if}{/if}{else}{$CONST.CREATE}{/if}</h3>
+        {if $adminAction == 'edit'}{if $create_permission}<input type="hidden" name="serendipity[user]" value="{$from.authorid}">{/if}{/if}
+        <h3>{if $adminAction == 'edit'}{if $no_create_permission}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{else}{if $create_permission}{$CONST.EDIT}{else}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{/if}{/if}{else}{$CONST.CREATE}{/if}</h3>
         {$config}
-    {if $adminAction == "edit"}
+    {if $adminAction == 'edit'}
         <input type="submit" name="SAVE_EDIT" value="{$CONST.SAVE}">
     {else}
         <input type="submit" name="SAVE_NEW" value="{$CONST.CREATE_NEW_USER}">
