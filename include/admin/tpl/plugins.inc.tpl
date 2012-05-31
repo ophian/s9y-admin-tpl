@@ -15,7 +15,7 @@
         </ul>
     </div>
     {elseif $saveconf}
-    <span class="msg_success">{$CONST.DONE}: {{$CONST.SETTINGS_SAVED_AT}|sprintf:"{$timestamp}"}</span>
+    <span class="msg_success">{$CONST.DONE}: {$CONST.SETTINGS_SAVED_AT|sprintf:"$timestamp"}</span>
     {/if}
     <form method="post" name="serendipityPluginConfigure">
         {$formToken}
