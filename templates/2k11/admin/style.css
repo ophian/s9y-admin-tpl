@@ -782,6 +782,25 @@ a:hover, a:focus {
   color: #c09853;
 }
 
+.img_error {
+  width: 22px;
+  height: 22px;
+  border: 0px;
+  padding-right: 4px;
+  vertical-align: middle;
+}
+.transparent {
+  background: none repeat scroll 0 0 transparent;
+}
+
+.button_block {
+  display: block;
+}
+
+.button_block input {
+  margin: 0 10px;
+}
+
 .plainList,
 .actions {
   list-style: none;

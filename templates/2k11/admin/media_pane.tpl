@@ -145,6 +145,27 @@
 {if $media.nr_files < 1}
     <div align="center">- {$CONST.NO_IMAGES_FOUND} -</div>
 {else}
+{*
+Smarty 3 has a new auto literal option which is enabled by default.
+When the { is followed by a space it's not interpreted as smarty delimiter but literal.
+*}
+    <script type="text/javascript">
+    function invertSelection() { 
+        var f = document.formMultiDelete;
+        for (var i = 0; i < f.elements.length; i++) { 
+            if (f.elements[i].type == 'checkbox') { 
+                f.elements[i].checked = !(f.elements[i].checked);
+            } 
+        } 
+    } 
+    </script>
+
+    <form action="?" method="post" name="formMultiDelete" id="formMultiDelete">
+        {$media.token}
+        <input type="hidden" name="serendipity[action]" value="admin" />
+        <input type="hidden" name="serendipity[adminModule]" value="media" />
+        <input type="hidden" name="serendipity[adminAction]" value="multidelete" />
+
 <table border="0" width="100%">
     <tr>
         <td colspan="{$media.lineBreak}">
@@ -188,4 +209,11 @@
         </td>
     </tr>
 </table>
+
+<div class="button_block" align="center">
+    <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()" class="serendipityPrettyButton input_button" />
+    <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_ENTRIES}" class="serendipityPrettyButton input_button" />
+</div>
+
+</form>
 {/if}

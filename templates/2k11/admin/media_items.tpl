@@ -17,6 +17,7 @@
                     {if $file.is_image AND NOT $file.hotlink}<a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCW&amp;serendipity[fid]={$file.id}"><img  class="serendipityImageButton" title="{$CONST.IMAGE_ROTATE_RIGHT}" alt="{$CONST.IMAGE_ROTATE_RIGHT}" src="{$media.rotatecwIMG}" border="0" /></a><br />{/if}
                     <a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=properties&amp;serendipity[fid]={$file.id}"><img class="serendipityImageButton" title="{$CONST.MEDIA_PROP}" alt="{$CONST.MEDIA_PROP}"    src="{$media.configureIMG}" border="0" /></a><br />
                     <a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=delete&amp;serendipity[fid]={$file.id}"><img class="serendipityImageButton" title="{$CONST.MEDIA_DELETE}"   alt="{$CONST.MEDIA_DELETE}"  src="{$media.deleteIMG}"    border="0" /></a><br />
+                    <input type="checkbox" value="{$file.id}" name="serendipity[multiDelete][]" id="multidelete_image{$file.id}">
                 {/if}
                 </td>
                 <td colspan="2">
