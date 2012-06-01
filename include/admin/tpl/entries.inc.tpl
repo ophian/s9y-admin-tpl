@@ -13,12 +13,9 @@
                 <select id="filter_author" name="serendipity[filter][author]">
                     <option value="">-</option>
                 {if is_array($users)}
-                {* BUG: Doesn't display authors' realnames *}
                     {foreach $users AS $user}
-                    {if isset($user.artcount) && $user.artcount < 1}
-                    {continue}
+                    {if isset($user.artcount) && $user.artcount < 1} {continue} {/if}
                     <option value="{$user.authorid}" {(isset($get.filter.author) && ($get.filter.author == $user.authorid)) ? 'selected="selected"' : ''}>{$user.realname|escape}</option>
-                    {/if}
                     {/foreach}
                 {/if}
                 </select>
@@ -63,9 +60,8 @@
             <div class="form_select">
                 <label for="sort_perpage">{$CONST.ENTRIES_PER_PAGE}</label>
                 <select id="sort_perpage" name="serendipity[sort][perPage]">
-                {* BUG: Doesn't display page numbers *}
                 {foreach $per_page AS $per_page_nr}
-                    <option value="{$per_page_nr}" {(isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr) ? 'selected="selected"' : '')} {$per_page_nr}</option>
+                    <option value="{$per_page_nr}" {((isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr)) ? 'selected="selected"' : '')}> {$per_page_nr}</option>
                 {/foreach}
                 </select>
             </div>
