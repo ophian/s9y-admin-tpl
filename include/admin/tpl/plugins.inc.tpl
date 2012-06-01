@@ -64,12 +64,8 @@
     </form>
     {foreach $pluggroups AS $pluggroup => $groupstack}
     {if empty($pluggroup)}
-        {if !empty($only_group)}
-        {continue}
-        {/if}
-    {elseif ! empty($only_group) && $pluggroup != $only_group}
-        {continue}
-    {else}
+        {if !empty($only_group)}{continue}{/if}
+    {elseif !empty($only_group) && $pluggroup != $only_group}{continue}{else}
         <h4>{$groupnames.{$available_group}}</h4>
     {/if}
         <ul>

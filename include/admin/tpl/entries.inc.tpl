@@ -14,7 +14,7 @@
                     <option value="">-</option>
                 {if is_array($users)}
                     {foreach $users AS $user}
-                    {if isset($user.artcount) && $user.artcount < 1} {continue} {/if}
+                    {if isset($user.artcount) && $user.artcount < 1}{continue}{/if}
                     <option value="{$user.authorid}" {(isset($get.filter.author) && ($get.filter.author == $user.authorid)) ? 'selected="selected"' : ''}>{$user.realname|escape}</option>
                     {/foreach}
                 {/if}
