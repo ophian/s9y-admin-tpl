@@ -10,7 +10,7 @@
     <span class="msg_success">{$CONST.MODIFIED_GROUP|sprintf:"{$name|escape:"html"}"}</span>
 {/if}
 
-{if $delete == false}
+{if !$delete}
     <h2>{$CONST.GROUP}</h2>
 
     <ul id="serendipity_groups" class="plainList">
@@ -21,7 +21,7 @@
             <a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>
-    {if ! $new}
+    {if !$new}
     <form action="?serendipity[adminModule]=groups" method="post">
         <input type="submit" name="NEW" value="{$CONST.CREATE_NEW_GROUP}">
     </form>
@@ -67,7 +67,7 @@
                     {$section="{$perm@key}"}
                 {/if}
             {/if}
-            {if $perm.permission == false}
+            {if !$perm.permission}
                 <div>
                     <span class="perm_name">{$indent} {$perm.permission_name|escape:"html"}</span>
                     <span class="perm_status">{if isset($from.{$perm@key}) && $from.{$perm@key} == "true"}YES{else}NO{/if}</span>
