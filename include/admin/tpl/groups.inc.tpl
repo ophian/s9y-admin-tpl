@@ -17,7 +17,7 @@
     {foreach $groups as $group}
         <li><span>{$group.name|escape:"html"}</span>
             <a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a>
-            {* BUG: Doesn't skip to the deletion process *}
+            {* BUG: Doesn't skip to the deletion process - What does that mean??? *}
             <a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>
@@ -68,7 +68,7 @@
             {if !$perm.permission}
                 <div>
                     <span class="perm_name">{$indent} {$perm.permission_name|escape:"html"}</span>
-                    <span class="perm_status">{if isset($from.{$perm@key}) && $from.{$perm@key} == "true"}YES{else}NO{/if}</span>
+                    <span class="perm_status">{(isset($from.{$perm@key}) && $from.{$perm@key} == "true") ? $CONST.YES : $CONST.NO}</span>
                 </div>
             {else}
                 <div class="form_check">
