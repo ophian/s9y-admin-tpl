@@ -54,8 +54,8 @@
         <input type="hidden" name="serendipity[type]" value="{$type|escape:"html"}">
         <label for="only_group">{$CONST.FILTERS}</label>
         <select id="only_group" name="serendipity[only_group]">
-        {foreach available_groups as $available_group}
-            <option value="{$available_group}"{if $only_group == $available_group} selected="selected"{/if}>{$groupnames.{$available_group}}</option>
+        {foreach $groupnames as $available_group => $available_name}
+            <option value="{$available_group}"{if $only_group == $available_group} selected="selected"{/if}>{$available_name}</option>
         {/foreach}
             <option value="ALL"{if $only_group == ALL} selected="selected"{/if}>{$CONST.ALL_CATEGORIES}</option>
             <option value="UPGRADE"{if $only_group == UPGRADE} selected="selected"{/if}>{$CONST.WORD_NEW}</option>
@@ -66,7 +66,7 @@
     {if empty($pluggroup)}
         {if !empty($only_group)}{continue}{/if}
     {elseif !empty($only_group) && $pluggroup != $only_group}{continue}{else}
-        <h4>{$groupnames.{$available_group}}</h4>
+        <h4>{foreach $groupnames as $available_group => $available_name}{if $pluggroup == $available_group}{$available_name}{/if}{/foreach}</h4>
     {/if}
         <ul>
         {foreach $groupstack as $plug}
