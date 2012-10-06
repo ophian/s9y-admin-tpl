@@ -170,7 +170,7 @@
     <ul>
     {foreach $folders as $folder}
         <li class="level_{$folder.depth}">{$folder.name}
-            <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">$CONST.EDIT}</a>
+            <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.EDIT}</a>
             <a class="link_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDelete&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>
