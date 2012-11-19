@@ -187,7 +187,7 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
                         DragDrop.makeListContainer(lst, '{$config_item}_group');
                         lst.onDragOut = function() { 
                             sort_{$config_item}_Sequence();
-                        {rdelim};
+                        }; 
                     } 
                     addLoadEvent(init_{$config_item}_Sequence);
                 </script>
