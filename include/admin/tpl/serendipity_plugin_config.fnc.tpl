@@ -66,11 +66,11 @@
     {serendipity_hookPlugin hook="backend_wysiwyg_nuggets" eventData=$ev hookAll=true}
     {if ($ev['skip_nuggets'] === false)}
     <script type="text/javascript">
-    function Spawnnugget() {
+    function Spawnnugget() { 
         {foreach $htmlnugget AS $htmlnuggetid}
         Spawnnuggets('{$htmlnuggetid}');
         {/foreach}
-    }
+    } 
     </script>
     {/if}
 {/if}

@@ -8,7 +8,7 @@ Smarty 3 has a new auto literal option which is enabled by default.
 When the { is followed by a space it's not interpreted as smarty delimiter but literal.
 *}
     <script type="text/javascript">
-        function templatePluginMoverInit() {
+        function templatePluginMoverInit() { 
 
         {foreach $sidebars AS $sidebar}
 
@@ -20,7 +20,7 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
 
         {/foreach}
 
-        }
+        } 
         addLoadEvent(templatePluginMoverInit);
     </script>
 

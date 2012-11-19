@@ -160,7 +160,7 @@ Smarty 3 has a new auto literal option which is enabled by default.
 When the { is followed by a space it's not interpreted as smarty delimiter but literal.
 *}
                 <script type="text/javascript">
-                    function sort_{$config_item}_Sequence() {
+                    function sort_{$config_item}_Sequence() { 
                         //var seq = DragDrop.serData('{$config_item}_group', null);
                         var seq = DragDrop.serData(null, '+citem+');
                         var start = seq.indexOf("(");
@@ -168,27 +168,27 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
                         seq = seq.slice((start + 1), end);
                         checkable_seq = seq.split(",");
                         out_seq = '';
-                        for (i in checkable_seq) {
+                        for (i in checkable_seq) { 
                             if (document.getElementById('activate_' + checkable_seq[i]) && !document.getElementById('activate_' + checkable_seq[i]).checked) {
                                 continue;
-                            } else {
-                                if (out_seq != '') {
+                            } else { 
+                                if (out_seq != '') { 
                                     out_seq += ',';
-                                }
+                                } 
                             out_seq += checkable_seq[i];
-                            }
-                        }
+                            } 
+                        } 
                         var order = document.getElementById("{$config_item}_value");
                         order.value = out_seq;
-                    }
+                    } 
 
-                    function init_{$config_item}_Sequence() {
+                    function init_{$config_item}_Sequence() { 
                         var lst = document.getElementById("{$config_item}");
                         DragDrop.makeListContainer(lst, '{$config_item}_group');
-                        lst.onDragOut = function() {
+                        lst.onDragOut = function() { 
                             sort_{$config_item}_Sequence();
-                        };
-                    }
+                        {rdelim};
+                    } 
                     addLoadEvent(init_{$config_item}_Sequence);
                 </script>
             </td>
