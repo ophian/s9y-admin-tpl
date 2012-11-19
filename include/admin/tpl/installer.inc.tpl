@@ -18,7 +18,7 @@
         <div id="diagnose">
             <h4>{$CONST.INTEGRITY}</h4>
 
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_CHECKSUMS AS $cksum}
                 <li>{$cksum}</li>
             {/foreach}
@@ -150,35 +150,35 @@
             <h4>{$CONST.PERMISSIONS}</h4>
 
             <h5>{$basedir}</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_WRITABLE AS $fwrite}
                 <li>{$fwrite}</li>
             {/foreach}
             </ul>
 
             <h5>{$basedir} {$CONST.PATH_SMARTY_COMPILE}</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_COMPILE AS $compile}
                 <li>{$compile}</li>
             {/foreach}
             </ul>
 
             <h5>{$basedir}archives/</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_ARCHIVES AS $archives}
                 <li>{$archives}</li>
             {/foreach}
             </ul>
 
             <h5>{$basedir}plugins/</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_PLUGINS AS $plugins}
                 <li>{$plugins}</li>
             {/foreach}
             </ul>
         {if $is_dir_uploads}
             <h5>{$basedir}uploads/</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_UPLOADS AS $uploads}
                 <li>{$uploads}</li>
             {/foreach}
@@ -186,7 +186,7 @@
         {/if}
         {if $is_imb_executable}
             <h5>Execute Imagemagick binary</h5>
-            <ul>
+            <ul class="plainList">
             {foreach $installerResultDiagnose_IMB AS $im_binary}
                 <li>{$im_binary}</li>
             {/foreach}
@@ -236,7 +236,7 @@
         <span class="msg_success">{$CONST.DONE}</span>
     {else}
         <h4>{$CONST.FAILED}</h4>
-        <ul>
+        <ul class="plainList">
         {foreach $errors_sif AS $error_f}
             <li><span class="msg_error">{$error_f}</span></li>
         {/foreach}
