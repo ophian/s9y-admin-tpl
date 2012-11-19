@@ -35,16 +35,27 @@
         <span class="msg_success">{$print_RESIZE_DONE}</span>
     {/if}
 {/if}
-{if $case_DoDelete}
-    <span class="msg_notice">{$showML_DD}</span>
-{/if}
 {if $case_delete}
-    <span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILE|sprintf:"$file"}</span>
-    <form method="get" id="delete_image">
+    <p><span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILE|sprintf:"$file"}</span></p>
+    <form id="delete_image" method="get">
         <div class="form_buttons">
             <a href="{$newLoc}">{$CONST.DUMP_IT}</a>
             <a href="{$abortLoc}">{$CONST.ABORT_NOW}</a>
         </div>
+    </form>
+{/if}
+{if $switched_output}
+    <form id="delete_image" method="get">
+    {if ( $is_delete || $is_multidelete )}
+        <p><span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILES}</span></p>
+        {foreach $rip_image AS $ripimg}
+        <span class="msg_dialog_ripentry">{$ripimg}</span><br />
+        {/foreach}
+        <ul class="dialog_delrip">
+            <li><a class="link_abort" href="{$smarty.server.HTTP_REFERER|escape}">{$CONST.NOT_REALLY}</a></li>
+            <li><a class="link_confirm" href="{$newLoc}">{$CONST.DUMP_IT}</a></li>
+        </ul>
+    {/if}
     </form>
 {/if}
 {if $case_rename}
@@ -159,7 +170,7 @@
     <ul>
     {foreach $folders as $folder}
         <li class="level_{$folder.depth}">{$folder.name}
-            <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">$CONST.EDIT}</a>
+            <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.EDIT}</a>
             <a class="link_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDelete&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>

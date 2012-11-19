@@ -10,18 +10,18 @@
     <span class="msg_success">{$CONST.MODIFIED_GROUP|sprintf:"{$name|escape:"html"}"}</span>
 {/if}
 
-{if $delete == false}
+{if !$delete}
     <h2>{$CONST.GROUP}</h2>
 
     <ul id="serendipity_groups" class="plainList">
     {foreach $groups as $group}
         <li><span>{$group.name|escape:"html"}</span>
             <a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a>
-            {* BUG: Doesn't skip to the deletion process *}
+            {* BUG: Doesn't skip to the deletion process - What does that mean??? *}
             <a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>
-    {if ! $new}
+    {if !$new}
     <form action="?serendipity[adminModule]=groups" method="post">
         <input type="submit" name="NEW" value="{$CONST.CREATE_NEW_GROUP}">
     </form>
@@ -53,10 +53,8 @@
         </div>
         {foreach $perms as $perm}
         {* TODO: major rewrite *}
-            {if {{$perm@key}|truncate:"2":""} == "f_"}
-                {continue}
-            {/if}
-            {if ! isset($section)}
+            {if {{$perm@key}|truncate:"2":""} == 'f_'}{continue}{/if}
+            {if !isset($section)}
                 {$section=$perm@key}
             {/if}
             {if $section != {$perm@key} && {{$perm@key}|truncate:"{$section|count_characters}":""} == $section}
@@ -67,10 +65,10 @@
                     {$section="{$perm@key}"}
                 {/if}
             {/if}
-            {if $perm.permission == false}
+            {if !$perm.permission}
                 <div>
                     <span class="perm_name">{$indent} {$perm.permission_name|escape:"html"}</span>
-                    <span class="perm_status">{if isset($from.{$perm@key}) && $from.{$perm@key} == "true"}YES{else}NO{/if}</span>
+                    <span class="perm_status">{(isset($from.{$perm@key}) && $from.{$perm@key} == "true") ? $CONST.YES : $CONST.NO}</span>
                 </div>
             {else}
                 <div class="form_check">

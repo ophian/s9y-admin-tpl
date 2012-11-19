@@ -13,12 +13,9 @@
                 <select id="filter_author" name="serendipity[filter][author]">
                     <option value="">-</option>
                 {if is_array($users)}
-                {* BUG: Doesn't display authors' realnames *}
                     {foreach $users AS $user}
-                    {if isset($user.artcount) && $user.artcount < 1}
-                    {continue}
+                    {if isset($user.artcount) && $user.artcount < 1}{continue}{/if}
                     <option value="{$user.authorid}" {(isset($get.filter.author) && ($get.filter.author == $user.authorid)) ? 'selected="selected"' : ''}>{$user.realname|escape}</option>
-                    {/if}
                     {/foreach}
                 {/if}
                 </select>
@@ -63,9 +60,8 @@
             <div class="form_select">
                 <label for="sort_perpage">{$CONST.ENTRIES_PER_PAGE}</label>
                 <select id="sort_perpage" name="serendipity[sort][perPage]">
-                {* BUG: Doesn't display page numbers *}
                 {foreach $per_page AS $per_page_nr}
-                    <option value="{$per_page_nr}" {(isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr) ? 'selected="selected"' : '')} {$per_page_nr}</option>
+                    <option value="{$per_page_nr}" {((isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr)) ? 'selected="selected"' : '')}> {$per_page_nr}</option>
                 {/foreach}
                 </select>
             </div>
@@ -86,18 +82,7 @@
     </nav>
     {/if}
 
-    <script>
-    {literal}
-    function invertSelection() {
-        var f = document.formMultiDelete;
-        for (var i = 0; i < f.elements.length; i++) {
-            if (f.elements[i].type == 'checkbox') {
-                f.elements[i].checked = !(f.elements[i].checked);
-            }
-        }
-    }
-    {/literal}
-    </script>
+    <script type="text/javascript" language="JavaScript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
     <form id="formMultiDelete" action="?" method="post" name="formMultiDelete">
         {$formtoken}
@@ -113,10 +98,10 @@
                 {if (!$showFutureEntries) && ($entry.timestamp >= $serverOffsetHour)}
                     <span class="status_future">{$CONST.ENTRY_PUBLISHED_FUTURE}</span>
                 {/if}
-                {if $entry.properties.ep_is_sticky == true}
+                {if $entry.ep_is_sticky}
                     <span class="status_sticky">{$CONST.STICKY_POSTINGS}</span>
                 {/if}
-                {if $entry.isdraft == true}
+                {if $entry.isdraft}
                     <span class="status_draft">{$CONST.DRAFT}</span>
                 {/if}
                     <span class="status_timestamp">
@@ -124,21 +109,17 @@
                     </span>
                 </div>
                 <span class="entry_meta">{$CONST.POSTED_BY} {$entry.author|escape}
-                    {if count($entry.categories)} {$CONST.IN}
-                    {foreach $entry.categories as $cat}
-                        {assign var="caturl" value="serendipity_categoryURL($cat)"}
-                        {$cats = ['<a href="{$caturl}">{$cat.category_name|escape)}</a>']}
-                    {/foreach}
-                    {foreach $cats AS $implode_cat}
-                        {$implode_cat}{if (count($cats) > 1) && !$implode_cat@last}, {/if}
-                    {/foreach}
-                    {/if}
+                {if count($entry.cats)} {$CONST.IN}
+                  {foreach $entry.cats AS $cat}
+                    {$cat}{if (count($entry.cats) > 1) && !$cat@last}, {/if}
+                  {/foreach}
+                {/if}
                 </span>
                 <ul class="actions">
-                {if ($entry.isdraft == true) || (!$showFutureEntries && ($entry.timestamp >= $serverOffsetHour))}
-                    <li><a class="link_view" href="?serendipity[noBanner]=true&amp;serendipity[noSidebar]=true&amp;serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=preview&amp;serendipity[id]={$entry.id}&amp;{$urltoken}" title="{$CONST.PREVIEW} #{$entry.id}">{$CONST.PREVIEW}</a></li>
+                {if $entry.preview || (!$showFutureEntries && ($entry.timestamp >= $serverOffsetHour))}
+                    <li><a class="link_view" href="{$entry.preview_link}" title="{$CONST.PREVIEW} #{$entry.id}">{$CONST.PREVIEW}</a></li>
                 {else}
-                    <li><a class="link_view" href="{serendipity_archiveURL($entry.id, $entry.title, "serendipityHTTPPath", true, ['timestamp' => $entry.timestamp])}" title="{$CONST.VIEW} #{$entry.id}">{$CONST.VIEW}</a></li>
+                    <li><a class="link_view" href="{$entry.archive_link}" title="{$CONST.VIEW} #{$entry.id}">{$CONST.VIEW}</a></li>
                 {/if}
                     <li><a class="link_edit" href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]={$entry.id}" title="{$CONST.EDIT} #{$entry.id}">{$CONST.EDIT}</a></li>
                     <li><a class="link_delete" href="?{$urltoken}&amp;serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=delete&amp;serendipity[id]={$entry.id}" title="{$CONST.DELETE} #{$entry.id}">{$CONST.DELETE}</a></li>
@@ -168,7 +149,7 @@
     </form>
 {/if}
 {* BUG: This seems to be triggered if only one entry is present and said entry should be deleted? *}
-{if (($switched_output !== true && empty($entries)) || (!$drawList && empty($entries))) && ($get.adminAction != 'new' &&  $get.adminAction != 'edit')}
+{if ( ( (!$switched_output && empty($entries)) || (!$drawList && empty($entries)) ) && ( $get.adminAction != 'new' ||  $get.adminAction != 'edit' ) && !$is_iframepreview )}
     <span class="msg_notice">{$CONST.NO_ENTRIES_TO_PRINT}</span>
 {/if}
 

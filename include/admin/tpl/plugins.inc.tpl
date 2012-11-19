@@ -1,6 +1,7 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
 {* Note: Can't really access this since it's being "overwritten" by pluginmanager *}
+{* Ian: Should not be any more, since smartification of functions_plugins_admin.inc.php ?? *}
 
 {if $plugin_to_conf}
     {if is_array($save_errors)}
@@ -14,7 +15,7 @@
         </ul>
     </div>
     {elseif $saveconf}
-    <span class="msg_success">{$CONST.DONE}: {{$CONST.SETTINGS_SAVED_AT}|sprintf:"{$timestamp}"}</span>
+    <span class="msg_success">{$CONST.DONE}: {$CONST.SETTINGS_SAVED_AT|sprintf:"$timestamp"}</span>
     {/if}
     <form method="post" name="serendipityPluginConfigure">
         {$formToken}
@@ -41,8 +42,8 @@
         </div>
         {$config}
     </form>
-{elseif $adminAction == "addnew"}
-    <h3>{if $type == "event"}{$CONST.EVENT_PLUGINS}{else}{$CONST.SIDEBAR_PLUGINS}{/if} <span class="plugins_available">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:"count({$pluginstack})"}</span></h3>
+{elseif $adminAction == 'addnew'}
+    <h3>{if $type == 'event'}{$CONST.EVENT_PLUGINS}{else}{$CONST.SIDEBAR_PLUGINS}{/if} <span class="plugins_available">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:"count({$pluginstack})"}</span></h3>
     {foreach $errorstack as $e_idx => $e_name}
     <span class="msg_error">{$CONST.ERROR}: {$e_name}</span>
     {/foreach}
@@ -53,8 +54,8 @@
         <input type="hidden" name="serendipity[type]" value="{$type|escape:"html"}">
         <label for="only_group">{$CONST.FILTERS}</label>
         <select id="only_group" name="serendipity[only_group]">
-        {foreach available_groups as $available_group}
-            <option value="{$available_group}"{if $only_group == $available_group} selected="selected"{/if}>{$groupnames.{$available_group}}</option>
+        {foreach $groupnames as $available_group => $available_name}
+            <option value="{$available_group}"{if $only_group == $available_group} selected="selected"{/if}>{$available_name}</option>
         {/foreach}
             <option value="ALL"{if $only_group == ALL} selected="selected"{/if}>{$CONST.ALL_CATEGORIES}</option>
             <option value="UPGRADE"{if $only_group == UPGRADE} selected="selected"{/if}>{$CONST.WORD_NEW}</option>
@@ -63,13 +64,9 @@
     </form>
     {foreach $pluggroups AS $pluggroup => $groupstack}
     {if empty($pluggroup)}
-        {if !empty($only_group)}
-        {continue}
-        {/if}
-    {elseif ! empty($only_group) && $pluggroup != $only_group}
-        {continue}
-    {else}
-        <h4>{$groupnames.{$available_group}}</h4>
+        {if !empty($only_group)}{continue}{/if}
+    {elseif !empty($only_group) && $pluggroup != $only_group}{continue}{else}
+        <h4>{foreach $groupnames as $available_group => $available_name}{if $pluggroup == $available_group}{$available_name}{/if}{/foreach}</h4>
     {/if}
         <ul>
         {foreach $groupstack as $plug}

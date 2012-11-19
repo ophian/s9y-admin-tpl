@@ -1,18 +1,4 @@
-<script type="text/javascript" language="javascript">
-        function showFilters()  {ldelim}
-            s = document.getElementById('moreFilter').style;
-            if (s.display == 'none') {ldelim}
-                s.display = 'block';
-            {rdelim} else {ldelim}
-                s.display = 'none';
-            {rdelim}
-        {rdelim}
-
-        function AddKeyword(keyword)  {ldelim}
-            s = document.getElementById('keyword_input').value;
-            document.getElementById('keyword_input').value = (s != '' ? s + ';' : '') + keyword;
-        {rdelim}
-</script>
+<script type="text/javascript" language="JavaScript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
 <form style="display: inline; margin: 0px; padding: 0px;" method="get" action="?">
     {$media.token}
@@ -145,6 +131,13 @@
 {if $media.nr_files < 1}
     <div align="center">- {$CONST.NO_IMAGES_FOUND} -</div>
 {else}
+{if $smarty.get.serendipity.adminModule == 'media'}
+<form action="?" method="post" name="formMultiDelete" id="formMultiDelete">
+    {$media.token}
+    <input type="hidden" name="serendipity[action]" value="admin" />
+    <input type="hidden" name="serendipity[adminModule]" value="media" />
+    <input type="hidden" name="serendipity[adminAction]" value="multidelete" />
+{/if}
 <table border="0" width="100%">
     <tr>
         <td colspan="{$media.lineBreak}">
@@ -188,4 +181,14 @@
         </td>
     </tr>
 </table>
+
+{if $smarty.get.serendipity.adminModule == 'media'}
+<div class="button_block" align="center">
+    <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()" class="serendipityPrettyButton input_button" />
+    <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_ENTRIES}" class="serendipityPrettyButton input_button" />
+</div>
+
+</form>
+{/if}
+
 {/if}

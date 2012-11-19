@@ -1,7 +1,7 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
 
-{if $adminAction == "install"}
+{if $adminAction == 'install'}
     <span class="msg_success">{$install_template|string_format:"{$CONST.TEMPLATE_SET}"}</span>
 {/if}
 {if $deprecated}
@@ -9,7 +9,7 @@
 {/if}
     <h3>{$CONST.STYLE_OPTIONS} ({$cur_template})</h3>
 {if $has_config}
-    {if $adminAction == "configure"}
+    {if $adminAction == 'configure'}
     <span class="msg_success">{$CONST.DONE}: {$save_time}</span>
     {/if}
     <form method="post" action="serendipity_admin.php">
@@ -25,7 +25,7 @@
 
     <ul class="plainList">
     {foreach $templates as $template=>$info}
-        {if $info.info.engine == "yes"}{continue}{/if}
+        {if $info.info.engine == 'yes'}{continue}{/if}
         {if !empty($template)}
         <li><h3>{$info.info.name}</h3>
             {if $info.fullsize_preview || $info.preview}
@@ -45,7 +45,7 @@
             </dl>
             <div class="template_status">
             {if $template != $cur_template}
-                {if ! $info.unmetRequirements}
+                {if !$info.unmetRequirements}
                 <a href="?serendipity[adminModule]=templates&amp;serendipity[adminAction]=install&amp;serendipity[theme]={$template}{$info.info.customURI}">{$CONST.SET_AS_TEMPLATE}</a>
                 {else}
                 <span class="unmet_requirements">{$info.unmetRequirements}></span>
