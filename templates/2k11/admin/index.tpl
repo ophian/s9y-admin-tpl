@@ -61,17 +61,17 @@
                     <legend>{$CONST.PLEASE_ENTER_CREDENTIALS}</legend>
                     <div class="form_field">
                         <label for="login_uid">{$CONST.USERNAME}</label>
-                        <input id="login_uid" type="text" name="serendipity[user]">
+                        <input id="login_uid" name="serendipity[user]" type="text">
                     </div>
                     <div class="form_field">
                         <label for="login_pwd">{$CONST.PASSWORD}</label>
-                        <input id="login_pwd" type="password" name="serendipity[pass]">
+                        <input id="login_pwd" name="serendipity[pass]" type="password">
                     </div>
                     <div class="form_check">
-                        <input id="login_auto" type="checkbox" name="serendipity[auto]"><label for="login_auto">{$CONST.AUTOMATIC_LOGIN}</label>
+                        <input id="login_auto" name="serendipity[auto]" type="checkbox"><label for="login_auto">{$CONST.AUTOMATIC_LOGIN}</label>
                     </div>
                 </fieldset>
-                <input id="login_send" type="submit" name="submit" value="{$CONST.LOGIN}">
+                <input id="login_send" name="submit" type="submit" value="{$CONST.LOGIN}">
                 {$admin_vars.out.table}
             </form>
             {$admin_vars.out.footer}

@@ -8,13 +8,13 @@
     {$entry_vars.hidden}
     <div class="form_field">
         <label for="entryTitle">{$CONST.TITLE}:</label>
-        <input id="entryTitle" type="text" name="serendipity[title]" value="{$entry_vars.entry.title|@escape}">
+        <input id="entryTitle" name="serendipity[title]" type="text" value="{$entry_vars.entry.title|@escape}">
     </div>
 {if $entry_vars.allowDateManipulation}
     <div class="form_field">
         <label for="">{$CONST.DATE}:</label>
-        <input type="hidden" name="serendipity[chk_timestamp]" value="{$entry_vars.timestamp}">
-        <input id="serendipityNewTimestamp" type="text" name="serendipity[new_timestamp]" value="{$entry_vars.timestamp|@formatTime:DATE_FORMAT_2:true:false:true}">
+        <input name="serendipity[chk_timestamp]" type="hidden" value="{$entry_vars.timestamp}">
+        <input id="serendipityNewTimestamp" name="serendipity[new_timestamp]" type="text" value="{$entry_vars.timestamp|@formatTime:DATE_FORMAT_2:true:false:true}">
         <a id="reset_timestamp" href="#" onclick="document.getElementById('serendipityNewTimestamp').value = '{$entry_vars.reset_timestamp|@formatTime:DATE_FORMAT_2:true:false:true}'; return false;" title="{$CONST.RESET_DATE_DESC}">{$CONST.RESET_DATE}</a>
     </div>
 {/if}
@@ -65,18 +65,18 @@
         </div>
     {/if}
         {serendipity_hookPlugin hook="backend_entry_toolbar_body" data=$entry_data.entry hookAll="true"}
-        <textarea id="serendipity[body]" name="serendipity[body]" cols="80" rows="20">{$entry_vars.entry.body|@escape}</textarea>
+        <textarea id="serendipity[body]" name="serendipity[body]" rows="20">{$entry_vars.entry.body|@escape}</textarea>
     </div>
 
     <div class="form_field">
         <div class="form_check">
-            <input id="checkbox_allow_comments" type="checkbox" name="serendipity[allow_comments]" value="true"{if $entry_vars.allow_comments} checked="checked"{/if}><label for="checkbox_allow_comments">{$CONST.COMMENTS_ENABLE}</label>
+            <input id="checkbox_allow_comments" name="serendipity[allow_comments]" type="checkbox" value="true"{if $entry_vars.allow_comments} checked="checked"{/if}><label for="checkbox_allow_comments">{$CONST.COMMENTS_ENABLE}</label>
         </div>
         <div class="form_check">
-            <input id="checkbox_moderate_comments" type="checkbox" name="serendipity[moderate_comments]" value="true"{if $entry_vars.moderate_comments} checked="checked"{/if}><label for="checkbox_moderate_comments">{$CONST.COMMENTS_MODERATE}</label>
+            <input id="checkbox_moderate_comments" name="serendipity[moderate_comments]" type="checkbox" value="true"{if $entry_vars.moderate_comments} checked="checked"{/if}><label for="checkbox_moderate_comments">{$CONST.COMMENTS_MODERATE}</label>
         </div>
-        <input accesskey="p" type="submit" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
-        <input accesskey="s" type="submit"  value="{$CONST.SAVE}"onclick="return checkSave();">
+        <input type="submit" accesskey="p" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
+        <input type="submit" accesskey="s" value="{$CONST.SAVE}"onclick="return checkSave();">
     </div>
 
     <div class="form_area">
@@ -84,14 +84,14 @@
     {if NOT $entry_vars.wysiwyg}
         <div id="tools_extended">
         {if $entry_vars.wysiwyg_advanced}
-            {if $iso2br}<input type="button" name="insX" value="NoBR" accesskey="x" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<nl>','</nl>')">{/if}
-            <input type="button" name="insI" value="I" accesskey="i" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<em>','</em>')">
-            <input type="button" name="insB" value="B" accesskey="b" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<strong>','</strong>')">
-            <input type="button" name="insU" value="U" accesskey="u" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<u>','</u>')">
-            <input type="button" name="insQ" value="{$CONST.QUOTE}" accesskey="q" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<blockquote>','</blockquote>')">
-            <input type="button" name="insJ" value="img" accesskey="j" onclick="wrapInsImage(document.forms['serendipityEntry']['serendipity[extended]'])">
-            <input type="button" name="insImage" value="{$CONST.MEDIA}" onclick="window.open('serendipity_admin_image_selector.php?serendipity[textarea]=extended', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
-            <input type="button" name="insURL" value="URL" accesskey="l" onclick="wrapSelectionWithLink(document.forms['serendipityEntry']['serendipity[extended]'])">
+            {if $iso2br}<input name="insX" type="button" value="NoBR" accesskey="x" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<nl>','</nl>')">{/if}
+            <input name="insI" type="button" accesskey="i" value="I" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<em>','</em>')">
+            <input name="insB" type="button" accesskey="b" value="B" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<strong>','</strong>')">
+            <input name="insU" type="button" accesskey="u" value="U" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<u>','</u>')">
+            <input name="insQ" type="button" accesskey="q" value="{$CONST.QUOTE}" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[extended]'],'<blockquote>','</blockquote>')">
+            <input name="insJ" type="button" accesskey="j" value="img" onclick="wrapInsImage(document.forms['serendipityEntry']['serendipity[extended]'])">
+            <input name="insImage" type="button" value="{$CONST.MEDIA}" onclick="window.open('serendipity_admin_image_selector.php?serendipity[textarea]=extended', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
+            <input name="insURL" type="button" accesskey="l" value="URL" onclick="wrapSelectionWithLink(document.forms['serendipityEntry']['serendipity[extended]'])">
         {else}
             {if $iso2br}<input type="button" value="NoBR" onclick="serendipity_insBasic(document.forms['serendipityEntry']['serendipity[extended]'], 'x')">{/if}
             <input type="button" value="B" onclick="serendipity_insBasic(document.forms['serendipityEntry']['serendipity[extended]'], 'b')">
@@ -104,7 +104,7 @@
         </div>
     {/if}
         {serendipity_hookPlugin hook="backend_entry_toolbar_extended" data=$entry_data.entry hookAll="true"}
-        <textarea id="serendipity[extended]" name="serendipity[extended]" cols="80" rows="20">{$entry_vars.entry.extended|@escape}</textarea>
+        <textarea id="serendipity[extended]" name="serendipity[extended]" rows="20">{$entry_vars.entry.extended|@escape}</textarea>
     </div>
 
     <fieldset>
