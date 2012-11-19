@@ -205,15 +205,15 @@
         </div>
 {elseif $s9yGETstep == '2a'}
         <form action="?" method="post">
-            <input type="hidden" name="serendipity[step]" value="{$s9yGETstep}">
-            <input type="hidden" name="serendipity[getstep]" value="3">
+            <input name="serendipity[step]" type="hidden" value="{$s9yGETstep}">
+            <input name="serendipity[getstep]" type="hidden" value="3">
             {if $ob_serendipity_printConfigTemplate}{$ob_serendipity_printConfigTemplate}{/if}
             <input name="submit" type="submit" value="{$CONST.COMPLETE_INSTALLATION}">
         </form>
 {elseif $s9yGETstep == '2b'}
         <form action="?" method="post">
-            <input type="hidden" name="serendipity[step]" value="{$s9yGETstep}">
-            <input type="hidden" name="serendipity[getstep]" value="3">
+            <input name="serendipity[step]" type="hidden" value="{$s9yGETstep}">
+            <input name="serendipity[getstep]" type="hidden" value="3">
             {if $ob_serendipity_printConfigTemplate}{$ob_serendipity_printConfigTemplate}{/if}
             <input name="submit" type="submit" value="{$CONST.COMPLETE_INSTALLATION}">
         </form>

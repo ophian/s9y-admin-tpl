@@ -3,9 +3,9 @@
 
 {if $drawList}
     <form action="?" method="get">
-        <input type="hidden" name="serendipity[action]" value="admin">
-        <input type="hidden" name="serendipity[adminModule]" value="entries">
-        <input type="hidden" name="serendipity[adminAction]" value="editSelect">
+        <input name="serendipity[action]" type="hidden" value="admin">
+        <input name="serendipity[adminModule]" type="hidden" value="entries">
+        <input name="serendipity[adminAction]" type="hidden" value="editSelect">
         <fieldset>
             <legend>{$CONST.FILTERS} ({$CONST.FIND_ENTRIES})</legend>
             <div class="form_select">
@@ -37,7 +37,7 @@
             </div>
             <div class="form_field">
                 <label for="filter_content">{$CONST.CONTENT}</label>
-                <input id="filter_content" type="text" name="serendipity[filter][body]" value="{(isset($get.filter.body)) ? "{$get.filter.body|escape}" : ''}">
+                <input id="filter_content" name="serendipity[filter][body]" type="text" value="{(isset($get.filter.body)) ? "{$get.filter.body|escape}" : ''}">
             </div>
         </fieldset>
         <fieldset>
@@ -66,7 +66,7 @@
                 </select>
             </div>
         </fieldset>
-        <input type="submit" name="go" value="{$CONST.GO}">
+        <input name="go" type="submit" value="{$CONST.GO}">
     </form>
     {if $is_entries}
     {if $offSet > 0}||$count > $perPage}
@@ -82,18 +82,18 @@
     </nav>
     {/if}
 
-    <script type="text/javascript" language="JavaScript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
+    <script type="text/javascript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
     <form id="formMultiDelete" action="?" method="post" name="formMultiDelete">
         {$formtoken}
-        <input type="hidden" name="serendipity[action]" value="admin">
-        <input type="hidden" name="serendipity[adminModule]" value="entries">
-        <input type="hidden" name="serendipity[adminAction]" value="multidelete">
+        <input name="serendipity[action]" type="hidden" value="admin">
+        <input name="serendipity[adminModule]" type="hidden" value="entries">
+        <input name="serendipity[adminAction]" type="hidden" value="multidelete">
         <ul class="plainList">
         {foreach $entries as $entry}
             {if ($entry@index > $perPage)}{continue}{/if}
             <li><h3><a href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]={$entry.id}" title="#{$entry.id}">{$entry.title|escape|truncate:50:"&hellip;"}</a></h3>
-                <input id="multidelete_entry{$entry.id}" type="checkbox" name="serendipity[multiDelete][]" value="{$entry.id}"><label for="multidelete_entry{$entry.id}" class="visuallyhidden">TODO_LANG #{$entry_id}</label>
+                <input id="multidelete_entry{$entry.id}" name="serendipity[multiDelete][]" type="checkbox" value="{$entry.id}"><label for="multidelete_entry{$entry.id}" class="visuallyhidden">TODO_LANG #{$entry_id}</label>
                 <div class="entry_status">
                 {if (!$showFutureEntries) && ($entry.timestamp >= $serverOffsetHour)}
                     <span class="status_future">{$CONST.ENTRY_PUBLISHED_FUTURE}</span>
@@ -131,21 +131,21 @@
 
         {* TODO: Clone pagination using JS *}
         <div id="multidelete_tools">
-            <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
-            <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_ENTRIES}">
+            <input name="toggle" type="button" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
+            <input name="toggle" type="submit" value="{$CONST.DELETE_SELECTED_ENTRIES}">
         </div>
     </form>
 
     <form action="?" method="get">
-        <input type="hidden" name="serendipity[action]" value="admin">
-        <input type="hidden" name="serendipity[adminModule]" value="entries">
-        <input type="hidden" name="serendipity[adminAction]" value="editSelect">
+        <input name="serendipity[action]" type="hidden" value="admin">
+        <input name="serendipity[adminModule]" type="hidden" value="entries">
+        <input name="serendipity[adminAction]" type="hidden" value="editSelect">
         <fieldset id="entry_skip" class="clearfix">
             <legend>{$CONST.EDIT_ENTRY} #</legend>
-            <input id="skipto_entry" type="text" size="3" name="serendipity[id]">
+            <input id="skipto_entry" name="serendipity[id]" type="text" size="3">
             <label for="skipto_entry" class="visuallyhidden">TODO_LANG</label>
         </fieldset>
-        <input type="submit" name="serendipity[editSubmit]" value="{$CONST.GO}">
+        <input name="serendipity[editSubmit]" type="submit" value="{$CONST.GO}">
     </form>
 {/if}
 {* BUG: This seems to be triggered if only one entry is present and said entry should be deleted? *}

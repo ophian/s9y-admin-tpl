@@ -64,33 +64,33 @@ function highlightComment(id, checkvalue) {
 
     <form action="" method="GET">
         {$formtoken}
-        <input type="hidden" name="serendipity[adminModule]" value="comments">
-        <input type="hidden" name="serendipity[page]" value="{$page}">
+        <input name="serendipity[adminModule]" type="hidden" value="comments">
+        <input name="serendipity[page]" type="hidden" value="{$page}">
         <fieldset>
             <legend>{$CONST.FILTERS} ({$CONST.FIND_COMMENTS})</legend>
             <div class="form_field">
                 <label for="filter_author">{$CONST.AUTHOR}:</label>
-                <input id="filter_author" type="text" name="serendipity[filter][author]" value="{$get.filter.author|escape}">
+                <input id="filter_author" name="serendipity[filter][author]" type="text" value="{$get.filter.author|escape}">
             </div>
             <div class="form_field">
                 <label for="filter_email">{$CONST.EMAIL}:</label>
-                <input id="filter_email" type="text" name="serendipity[filter][email]" value="{$get.filter.email|escape}">
+                <input id="filter_email" name="serendipity[filter][email]" type="text" value="{$get.filter.email|escape}">
             </div>
             <div class="form_field">
                 <label for="filter_url">{$CONST.URL}:</label>
-                <input id="filter_url" type="text" name="serendipity[filter][url]" value="{$get.filter.url|escape}">
+                <input id="filter_url" name="serendipity[filter][url]" type="text" value="{$get.filter.url|escape}">
             </div>
             <div class="form_field">
                 <label for="filter_ip">IP:</label>
-                <input id="filter_ip" type="text" name="serendipity[filter][ip]" value="{$get.filter.ip|escape}">
+                <input id="filter_ip" name="serendipity[filter][ip]" type="text" value="{$get.filter.ip|escape}">
             </div>
             <div class="form_field">
                 <label for="filter_body">{$CONST.CONTENT}:</label>
-                <input id="filter_body" type="text" name="serendipity[filter][body]" value="{$get.filter.body|escape}">
+                <input id="filter_body" name="serendipity[filter][body]" type="text" value="{$get.filter.body|escape}">
             </div>
             <div class="form_field">
                 <label for="filter_referer">{$CONST.REFERER}:</label>
-                <input id="filter_referer" type="text" name="serendipity[filter][referer]" value="{$get.filter.referer|escape}">
+                <input id="filter_referer" name="serendipity[filter][referer]" type="text" value="{$get.filter.referer|escape}">
             </div>
             <div class="form_select">
                 <label for="filter_perpage">{$CONST.COMMENTS}:</label>
@@ -119,7 +119,7 @@ function highlightComment(id, checkvalue) {
                 </select>
             </div>
         </fieldset>
-        <input type="submit" name="submit" value="{$CONST.GO}">
+        <input name="submit" type="submit" value="{$CONST.GO}">
         {serendipity_hookPlugin hookAll=true hook="backend_comments_top" addData=$sql}
     </form>
 {if !is_array($sql)}
@@ -128,7 +128,7 @@ function highlightComment(id, checkvalue) {
 {else}
     <form id="formMultiDelete" action="" method="POST" name="formMultiDelete">
         {$formtoken}
-        <input type="hidden" name="serendipity[formAction]" value="multiDelete">
+        <input name="serendipity[formAction]" type="hidden" value="multiDelete">
         <nav class="pagination">
             <h2>{$CONST.PAGE_BROWSE_COMMENTS|sprintf:$page:$pages:$totalComments}</h2>
             {if ($page != 1 && $page <= $pages)||$page != $pages}
@@ -190,9 +190,9 @@ function highlightComment(id, checkvalue) {
         </ul>
     {/if}
         <div class="multidelete_actions">
-            <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
-            <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_COMMENTS}" onclick="return confirm('{$CONST.COMMENTS_DELETE_CONFIRM}')" tabindex="{($i+1)}">
-            <input type="submit" name="serendipity[togglemoderate]" value="{$CONST.MODERATE_SELECTED_COMMENTS}">
+            <input name="toggle" type="button" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
+            <input name="toggle" type="submit" value="{$CONST.DELETE_SELECTED_COMMENTS}" onclick="return confirm('{$CONST.COMMENTS_DELETE_CONFIRM}')" tabindex="{($i+1)}">
+            <input name="serendipity[togglemoderate]" type="submit" value="{$CONST.MODERATE_SELECTED_COMMENTS}">
         </div>
         {* TODO: Clone pagination using JS *}
     </form>

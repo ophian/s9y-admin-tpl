@@ -38,7 +38,7 @@
                 </select>
             </div>
 
-            <input type="submit" name="REMOVE" value="{$CONST.GO}">
+            <input name="REMOVE" type="submit" value="{$CONST.GO}">
         </form>
     {/if}
 {/if}
@@ -51,18 +51,18 @@
             {$formToken}
             <div class="form_field">
                 <label for="category_name">{$CONST.NAME}</label>
-                <input id="category_name" type="text" name="serendipity[cat][name]" value="{$this_cat.category_name|default:""|escape:"html"}">
+                <input id="category_name" name="serendipity[cat][name]" type="text" value="{$this_cat.category_name|default:""|escape:"html"}">
             </div>
 
             <div class="form_field">
                 <label for="category_description">{$CONST.DESCRIPTION}</label>
-                <input id="category_description" type="text" name="serendipity[cat][description]" value="{$this_cat.category_description|default:""|escape:"html"}">
+                <input id="category_description" name="serendipity[cat][description]" type="text" value="{$this_cat.category_description|default:""|escape:"html"}">
             </div>
 
             <div class="form_field">
                 <label for="category_icon">{$CONST.IMAGE}</label>
-                <input id="category_icon" type="text" name="serendipity[cat][icon]" value="{$this_cat.category_icon|default:""|escape:"html"}" onchange="document.getElementById('imagepreview').src = this.value; document.getElementById('imagepreview').style.display = '';">
-                <script type="text/javascript" language="JavaScript">
+                <input id="category_icon" name="serendipity[cat][icon]" type="text" value="{$this_cat.category_icon|default:""|escape:"html"}" onchange="document.getElementById('imagepreview').src = this.value; document.getElementById('imagepreview').style.display = '';">
+                <script type="text/javascript">
                     var category_icon = document.getElementById('category_icon');
                     var imgBtn        = document.createElement('div');
                     imgBtn.id         = "insert_image";
@@ -73,8 +73,8 @@
             </div>
 
             <figure id="preview">
-                <img id="imagepreview" src="{$this_cat.category_icon|default:""|escape:"html"}" alt="">
                 <figcaption>{$CONST.PREVIEW}</figcaption>
+                <img id="imagepreview" src="{$this_cat.category_icon|default:""|escape:"html"}" alt="">
             </figure>
 
             <div class="form_multiselect">
@@ -111,10 +111,10 @@
             <div class="form_field">
                 <h3>{$CONST.CATEGORY_HIDE_SUB}</h3>
                 <p>{$CONST.CATEGORY_HIDE_SUB_DESC}</p>
-                <input id="hide_sub_yes" type="radio" name="serendipity[cat][hide_sub]" value="1"{if $this_cat.hide_sub== 1} checked="checked"{/if}><label for="hide_sub_yes">{$CONST.YES}</label>
-                <input id="hide_sub_no" type="radio" name="serendipity[cat][hide_sub]" value="0"{if $this_cat.hide_sub == 0} checked="checked"{/if}><label for="hide_sub_no">{$CONST.NO}</label>
+                <input id="hide_sub_yes" name="serendipity[cat][hide_sub]" type="radio" value="1"{if $this_cat.hide_sub== 1} checked="checked"{/if}><label for="hide_sub_yes">{$CONST.YES}</label>
+                <input id="hide_sub_no" name="serendipity[cat][hide_sub]" type="radio" value="0"{if $this_cat.hide_sub == 0} checked="checked"{/if}><label for="hide_sub_no">{$CONST.NO}</label>
             </div>
-            <input type="submit" name="SAVE" value="{$save}">
+            <input name="SAVE" type="submit" value="{$save}">
         </form>
         <script src="serendipity_editor.js"></script>
 {/if}

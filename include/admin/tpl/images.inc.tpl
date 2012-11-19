@@ -11,15 +11,15 @@
     <form method="POST" action="serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=doSync">
         <fieldset>
             <legend>{$CONST.SYNC_OPTION_LEGEND}</legend>
-            <input type="radio" name="serendipity[deleteThumbs]" value="no" checked="checked" id="keepthumbs" />
-            <label for="keepthumbs">{$CONST.SYNC_OPTION_KEEPTHUMBS}</label><br />
-            <input type="radio" name="serendipity[deleteThumbs]" value="check" id="sizecheckthumbs" />
-            <label for="sizecheckthumbs">{$CONST.SYNC_OPTION_SIZECHECKTHUMBS}</label><br />
-            <input type="radio" name="serendipity[deleteThumbs]" value="yes" />
-            <label for="deletethumbs">{$CONST.SYNC_OPTION_DELETETHUMBS}</label><br />
+            <input id="keepthumbs" name="serendipity[deleteThumbs]" type="radio" value="no" checked="checked">
+            <label for="keepthumbs">{$CONST.SYNC_OPTION_KEEPTHUMBS}</label>
+            <input id="sizecheckthumbs" name="serendipity[deleteThumbs]" type="radio" value="check">
+            <label for="sizecheckthumbs">{$CONST.SYNC_OPTION_SIZECHECKTHUMBS}</label>
+            <input id="deletethumbs" name="serendipity[deleteThumbs]" type="radio" value="yes">
+            <label for="deletethumbs">{$CONST.SYNC_OPTION_DELETETHUMBS}</label>
         </fieldset>
         <div class="form_buttons">
-            <input type="submit" name="doSync" value="{$CONST.CREATE_THUMBS}">
+            <input name="doSync" type="submit" value="{$CONST.CREATE_THUMBS}">
             <a href="serendipity_admin.php">{$CONST.ABORT_NOW}</a>
         </div>
     </form>
@@ -36,7 +36,7 @@
     {/if}
 {/if}
 {if $case_delete}
-    <p><span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILE|sprintf:"$file"}</span></p>
+    <span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILE|sprintf:"$file"}</span>
     <form id="delete_image" method="get">
         <div class="form_buttons">
             <a href="{$newLoc}">{$CONST.DUMP_IT}</a>
@@ -47,7 +47,7 @@
 {if $switched_output}
     <form id="delete_image" method="get">
     {if ( $is_delete || $is_multidelete )}
-        <p><span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILES}</span></p>
+        <span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILES}</span>
         {foreach $rip_image AS $ripimg}
         <span class="msg_dialog_ripentry">{$ripimg}</span><br />
         {/foreach}
@@ -60,7 +60,7 @@
 {/if}
 {if $case_rename}
     {if $go_back}
-    <input type="button" onclick="history.go(-1);" value="{$CONST.BACK}">
+    <input type="button" value="{$CONST.BACK}" onclick="history.go(-1);">
     {else}
     <script>location.href="?serendipity[adminModule]=images&serendipity[adminAction]=default";</script>
     <noscript><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=default">{$CONST.DONE}</a></noscript>
@@ -95,14 +95,14 @@
 
     <form id="image_directory_edit_form" method="POST" action="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$dir|escape:'html'}">
         {$formtoken}
-        <input type="hidden" name="serendipity[oldDir]" value="{$use_dir}">
+        <input name="serendipity[oldDir]" type="hidden" value="{$use_dir}">
         <div class="form_field">
             <label for="diredit_new">{$CONST.NAME}</label>
-            <input id="diredit_new" type="text" name="serendipity[newDir]" value="{$use_dir}">
+            <input id="diredit_new" name="serendipity[newDir]" type="text" value="{$use_dir}">
         </div>
         <div class="form_select">
             <label for="read_authors">{$CONST.PERM_READ}</label>
-            <select size="6" id="read_authors" multiple="multiple" name="serendipity[read_authors][]">
+            <select id="read_authors" name="serendipity[read_authors][]" multiple="multiple" size="6">
                 <option value="0"{if $rgroups} selected="selected"{/if}>{$CONST.ALL_AUTHORS}</option>
             {foreach $groups AS $group}
                 <option value="{$group.confkey}"{if isset($read_groups.{$group.confkey})} selected="selected"{/if}>{$group.confvalue|escape:'html'}</option>
@@ -111,7 +111,7 @@
         </div>
         <div class="form_select">
             <label for="write_authors">{$CONST.PERM_WRITE}</label>
-            <select size="6" id="write_authors" multiple="multiple" name="serendipity[write_authors][]">
+            <select id="write_authors" name="serendipity[write_authors][]" multiple="multiple" size="6">
                 <option value="0"{if $wgroups} selected="selected"{/if}>{$CONST.ALL_AUTHORS}</option>
             {foreach $groups AS $group}
                 <option value="{$group.confkey}"{if isset($write_groups.{$group.confkey})} selected="selected"{/if}>{$group.confvalue|escape:'html'}</option>
@@ -119,9 +119,9 @@
             </select>
         </div>
         <div class="form_check">
-            <input id="setchild" value="true" type="checkbox" name="serendipity[update_children]"{if !empty($smarty.post.update_children) == 'on'} checked="checked"{/if}><label for="setchild">{$CONST.PERM_SET_CHILD}</label>
+            <input id="setchild" name="serendipity[update_children]" type="checkbox" value="true"{if !empty($smarty.post.update_children) == 'on'} checked="checked"{/if}><label for="setchild">{$CONST.PERM_SET_CHILD}</label>
         </div>
-        <input type="submit" name="serendipity[save]" value="{$CONST.SAVE}">
+        <input name="serendipity[save]" type="submit" value="{$CONST.SAVE}">
     </form>
 {/if}
 {if $case_directoryDelete}
@@ -131,10 +131,10 @@
         {$formtoken}
         <div class="form_check">
             <label for="diredit_delete">{$CONST.NAME}: {$basename_dir} - {$CONST.FORCE_DELETE}</label>
-            <input id="diredit_delete" type="checkbox" name="serendipity[nuke]" value="true">
+            <input id="diredit_delete" name="serendipity[nuke]" type="checkbox" value="true">
         </div>
         <p>{$CONST.CONFIRM_DELETE_DIRECTORY|sprintf:$dir|escape:'html'}</p>
-        <input name="SAVE" value="{$CONST.DELETE_DIRECTORY}" type="submit">
+        <input name="SAVE" type="submit" value="{$CONST.DELETE_DIRECTORY}">
     </form>
 {/if}
 {if $case_directoryDoCreate}
@@ -148,7 +148,7 @@
         {$formtoken}
         <div class="form_field">
             <label for="dircreate_name">{$CONST.NAME}</label>
-            <input id="dircreate_name" type="text" name="serendipity[name]" value="">
+            <input id="dircreate_name" name="serendipity[name]" type="text" value="">
         </div>
         <div class="form_select">
             <label for="dircreate_parent">{$CONST.PARENT_DIRECTORY}</label>
@@ -160,7 +160,7 @@
             </select>
         </div>
         {serendipity_hookPlugin hookAll=true hook="backend_directory_createoptions" addData=$folders}
-        <input name="SAVE" value="{$CONST.CREATE_DIRECTORY}" type="submit">
+        <input name="SAVE" type="submit" value="{$CONST.CREATE_DIRECTORY}">
     </form>
 {/if}
 {if $case_directorySelect}
@@ -233,25 +233,25 @@
 
     <form name="serendipityScaleForm" action="?" method="GET">
         {$formtoken}
-        <input type="hidden" name="serendipity[adminModule]" value="images">
-        <input type="hidden" name="serendipity[adminAction]" value="scale">
-        <input type="hidden" name="serendipity[fid]" value="{$get.fid}">
+        <input name="serendipity[adminModule]" type="hidden" value="images">
+        <input name="serendipity[adminAction]" type="hidden" value="scale">
+        <input name="serendipity[fid]" type="hidden" value="{$get.fid}">
         <fieldset>
             <legend>{$CONST.NEWSIZE}</legend>
             <div class="form_field">
                 <label for="resize_width">TODO_LANG</label>
-                <input id="resize_width" type="text" name="serendipity[width]" onchange="rescale('width' , value);" value="{$img_width}">
+                <input id="resize_width" name="serendipity[width]" type="text" onchange="rescale('width' , value);" value="{$img_width}">
             </div>
             <div class="form_field">
                 <label for="resize_height">TODO_LANG</label>
-                <input id="resize_height" type="text" name="serendipity[height]" onchange="rescale('height', value);" value="{$img_height}">
+                <input id="resize_height" name="serendipity[height]" type="text" onchange="rescale('height', value);" value="{$img_height}">
             </div>
         </fieldset>
         <div class="form_check">
-            <input id="resize_keepprops" type="checkbox" name="auto" checked="checked">
+            <input id="resize_keepprops" name="auto" type="checkbox" checked="checked">
             <label for="resize_keepprops">{$CONST.KEEP_PROPORTIONS}</label>
         </div>
-        <input type="button" name="scale" value="{$CONST.IMAGE_RESIZE}" onclick="if (confirm('{$CONST.REALLY_SCALE_IMAGE}')) document.serendipityScaleForm.submit();">
+        <input name="scale" type="button" value="{$CONST.IMAGE_RESIZE}" onclick="if (confirm('{$CONST.REALLY_SCALE_IMAGE}')) document.serendipityScaleForm.submit();">
     </form>
     <img src="{$file}" name="serendipityScaleImg" style="width: {$img_width}px; height: {$img_height}px;" alt="">
 {/if}

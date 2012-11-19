@@ -56,31 +56,31 @@
     </ul>
     {if $new}
     <form action="?serendipity[adminModule]=users" method="post">
-        <input type="submit" name="NEW" value="{$CONST.CREATE_NEW_USER}">
+        <input name="NEW" type="submit" value="{$CONST.CREATE_NEW_USER}">
     </form>
     {/if}
 {/if}
 {if $show_form}
     <form{if $adminAction == 'edit'} id="editform"{/if} action="?serendipity[adminModule]=users#editform" method="post">
         {$formToken}
-        {if $adminAction == 'edit'}{if $create_permission}<input type="hidden" name="serendipity[user]" value="{$from.authorid}">{/if}{/if}
+        {if $adminAction == 'edit'}{if $create_permission}<input name="serendipity[user]" type="hidden" value="{$from.authorid}">{/if}{/if}
         <h3>{if $adminAction == 'edit'}{if $no_create_permission}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{else}{if $create_permission}{$CONST.EDIT}{else}{$CONST.CREATE_NOT_AUTHORIZED}: {$CONST.EDIT}{/if}{/if}{else}{$CONST.CREATE}{/if}</h3>
         {$config}
     {if $adminAction == 'edit'}
-        <input type="submit" name="SAVE_EDIT" value="{$CONST.SAVE}">
+        <input name="SAVE_EDIT" type="submit" value="{$CONST.SAVE}">
     {else}
-        <input type="submit" name="SAVE_NEW" value="{$CONST.CREATE_NEW_USER}">
+        <input name="SAVE_NEW" type="submit" value="{$CONST.CREATE_NEW_USER}">
     {/if}
     </form>
 {else}
     {if $delete}
     <form action="?serendipity[adminModule]=users" method="post">
         {$formToken}
-        <input type="hidden" name="serendipity[user]" value="{$userid}">
+        <input name="serendipity[user]" type="hidden" value="{$userid}">
         <fieldset class="users_delete_action">
             <legend>{$CONST.DELETE_USER|sprintf:"{$userid}":"{$realname|escape:"html"}"}</legend>
-            <input type="submit" name="DELETE_YES" value="{$CONST.DUMP_IT}">
-            <input type="submit" name="NO" value="{$CONST.NOT_REALLY}">
+            <input name="DELETE_YES" type="submit" value="{$CONST.DUMP_IT}">
+            <input name="NO" type="submit" value="{$CONST.NOT_REALLY}">
         </fieldset>
     </form>
     {/if}

@@ -13,8 +13,8 @@
     <span class="msg_success">{$CONST.DONE}: {$save_time}</span>
     {/if}
     <form method="post" action="serendipity_admin.php">
-        <input type="hidden" name="serendipity[adminModule]" value="templates">
-        <input type="hidden" name="serendipity[adminAction]" value="configure">
+        <input name="serendipity[adminModule]" type="hidden" value="templates">
+        <input name="serendipity[adminAction]" type="hidden" value="configure">
         {$form_token}
         {$configuration}
     </form>

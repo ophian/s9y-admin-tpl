@@ -105,7 +105,7 @@
                 <div id="{$config_item}_preview" style="background-image: url({$value}); width: {$preview_width}; height: {$preview_height}; background-repeat: no-repeat;">&nbsp;</div>
             </td>
             <td>
-                <input id="serendipity[{$postKey}][{$config_item}]" class="input_textbox" name="serendipity[{$postKey}][{$config_item}]" type="text" value="{$value}" onchange="change_preview('{$config_item}')">
+                <input id="serendipity[{$postKey}][{$config_item}]" class="input_textbox" type="text" name="serendipity[{$postKey}][{$config_item}]" value="{$value}" onchange="change_preview('{$config_item}')">
                 <a href="#" onclick="choose_media('serendipity[{$postKey}][{$config_item}]')">{$CONST.MEDIA_LIBRARY}</a>
             </td>
         </tr>
@@ -122,7 +122,7 @@
                 <input id="{$config_item}_value" name="serendipity[{$postKey}][{$config_item}]" type="hidden" value="{$value}">
                 <noscript>
                     <!-- Replace standard submit button when using up/down submits -->
-                    <input type="hidden" name="SAVECONF" value="Save">
+                    <input name="SAVECONF" type="hidden" value="Save">
                 </noscript>
                 <ol id="{$config_item}" class="sequence_container pluginmanager_container">
                 {foreach $order_id as $orid}

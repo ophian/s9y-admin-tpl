@@ -15,5 +15,5 @@
 <form action="?serendipity[adminModule]=personal&amp;serendipity[adminAction]=save" method="post">
     {$formToken}
     {$config}
-    <input type="submit" name="SAVE" value="{$CONST.SAVE}">
+    <input name="SAVE" type="submit" value="{$CONST.SAVE}">
 </form>

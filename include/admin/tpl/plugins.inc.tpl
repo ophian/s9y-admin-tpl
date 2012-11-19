@@ -49,9 +49,9 @@
     {/foreach}
     <form action="serendipity_admin.php" method="get">
         {$formToken}
-        <input type="hidden" name="serendipity[adminModule]" value="plugins">
-        <input type="hidden" name="serendipity[adminAction]" value="addnew">
-        <input type="hidden" name="serendipity[type]" value="{$type|escape:"html"}">
+        <input name="serendipity[adminModule]" type="hidden" value="plugins">
+        <input name="serendipity[adminAction]" type="hidden" value="addnew">
+        <input name="serendipity[type]" type="hidden" value="{$type|escape:"html"}">
         <label for="only_group">{$CONST.FILTERS}</label>
         <select id="only_group" name="serendipity[only_group]">
         {foreach $groupnames as $available_group => $available_name}

@@ -36,7 +36,7 @@
     <h3>{$CONST.IMPORT_SELECT}:</h3>
 
     <form action="" method="GET">
-        <input type="hidden" name="serendipity[adminModule]" value="import">
+        <input name="serendipity[adminModule]" type="hidden" value="import">
         {$formToken}
         <div class="form_select">
             <label for="import_from">{$CONST.IMPORT_WEBLOG_APP}:</label>

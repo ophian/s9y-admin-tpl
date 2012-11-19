@@ -23,7 +23,7 @@
     </ul>
     {if !$new}
     <form action="?serendipity[adminModule]=groups" method="post">
-        <input type="submit" name="NEW" value="{$CONST.CREATE_NEW_GROUP}">
+        <input name="NEW" type="submit" value="{$CONST.CREATE_NEW_GROUP}">
     </form>
     {/if}
 {/if}
@@ -33,14 +33,14 @@
         {$formToken}
     {if $edit}
         <h2>{$CONST.EDIT}</h2>
-        <input type="hidden" name="serendipity[group]" value="{$from.id}">
+        <input name="serendipity[group]" type="hidden" value="{$from.id}">
     {else}
         <h2>{$CONST.CREATE}</h2>
     {/if}
         <div class="form_field">
             <label for="group_name">{$CONST.NAME}</label>
             {* BUG: Doesn't correctly pull the group name *}
-            <input id="group_name" type="text" name="serendipity[name]" value="{$from.name|escape:"html"}">
+            <input id="group_name" name="serendipity[name]" type="text" value="{$from.name|escape:"html"}">
         </div>
 
         <div class="form_select">
@@ -73,7 +73,7 @@
             {else}
                 <div class="form_check">
                     {$indent} <label for="{{$perm@key}|escape:"html"}">{$perm.permission_name|escape:"html"}</label>
-                    <input id="{{$perm@key}|escape:"html"}" type="checkbox" name="serendipity[{{$perm@key}|escape:"html"}]" value="true"{if isset({$from.{$perm@key}}) && {$from.{$perm@key}} == "true"} checked="checked"{/if}>
+                    <input id="{{$perm@key}|escape:"html"}" name="serendipity[{{$perm@key}|escape:"html"}]" type="checkbox" value="true"{if isset({$from.{$perm@key}}) && {$from.{$perm@key}} == "true"} checked="checked"{/if}>
                 </div>
             {/if}
         {/foreach}
@@ -99,20 +99,20 @@
             <span class="msg_notice">{$CONST.PERMISSION_FORBIDDEN_ENABLE_DESC}</span>
         {/if}
         {if $edit}
-            <input type="submit" name="SAVE_EDIT" value="{$CONST.SAVE}"> {$CONST.WORD_OR} <input type="submit" name="SAVE_NEW" value="{$CONST.CREATE_NEW_GROUP}">
+            <input name="SAVE_EDIT" type="submit" value="{$CONST.SAVE}"> {$CONST.WORD_OR} <input name="SAVE_NEW" type="submit" value="{$CONST.CREATE_NEW_GROUP}">
         {else}
-            <input type="submit" name="SAVE_NEW" value="{$CONST.CREATE_NEW_GROUP}">
+            <input name="SAVE_NEW" type="submit" value="{$CONST.CREATE_NEW_GROUP}">
         {/if}
     </form>
 {else}
     {if $delete}
     <form action="?serendipity[adminModule]=groups" method="post">
         {$formToken}
-        <input type="hidden" name="serendipity[group]" value="{$group_id|escape:"html"}">
+        <input name="serendipity[group]" type="hidden" value="{$group_id|escape:"html"}">
         <h2>{$CONST.DELETE_GROUP|sprintf:"{$group_id}":"{$group.name|escape:"html"}"}</h2>
         <div id="groups_delete_action">
-            <input type="submit" name="DELETE_YES" value="{$CONST.DUMP_IT}">
-            <input type="submit" name="NO" value="{$CONST.NOT_REALLY}">
+            <input name="DELETE_YES" type="submit" value="{$CONST.DUMP_IT}">
+            <input name="NO" type="submit" value="{$CONST.NOT_REALLY}">
         </div>
     </form>
     {/if}
