@@ -32,7 +32,7 @@
             <td width="250">
             {foreach $radio_button AS $r}
                 {if $r['counter'] == 1}
-                <div class="clearfix">
+                <div class="form_radio">
                 {/if}
                     <input id="serendipity_plugin_{$r['id']}" class="direction_{$lang_direction} input_radio" name="serendipity[{$postKey}][{$config_item}]" type="radio" value="{$r['value']}" {(!empty($r['checked'])) ? 'checked="checked"' : ''} title="{$r['index']|escape}" />
                     <label for="serendipity_plugin_{$r['id']}">{$r['index']}{* escapement is already done *}</label>
