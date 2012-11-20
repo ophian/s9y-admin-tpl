@@ -552,6 +552,8 @@ optgroup {
 /* Backend-specific form stuff */
 label { font-weight: bold; }
 
+.form_multiselect label,
+.plugin_count,
 label > span { display: block; }
 
 label > span,
@@ -565,8 +567,6 @@ input[type=radio] + label,
     *display: inline;
     *zoom: 1;
 }
-
-.form_multiselect label { display: block; }
 
 /* Styles common to all resolutions */
 body { font-size: 0.875em; }

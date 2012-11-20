@@ -1,4 +1,4 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: No *}
 
 {* functions_plugins_admin.inc.php::function_show_plugins() including output of functions_plugins_admin.inc.php::function ownership() *}
@@ -35,49 +35,47 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
         <input id="eventorder" name="serendipity[pluginorder]" type="hidden" value="">
     {/if}
         {$serendipity_setFormToken}
-        <table class="pluginmanager" border="0" cellpadding="5" cellspacing="3" width="100%">
-            <tr>
-            {foreach $placement as $plugin_placement}
-                <td class="pluginmanager_side pluginmanager_{($event_only) ? 'event' : 'sidebar'}">
-                    <div class="heading">{$plugin_placement['ptitle']}</div>
-                    <ol id="{$plugin_placement['pid']}_col" class="pluginmanager_container">
-                    {foreach $plugin_placement['plugin_data'] as $plugin_data}
-                        <li class="pluginmanager_item_{cycle values="even,uneven"}" id="{$plugin_data['css_key']}">
-                            <div id="g{$plugin_data['css_key']}" class="pluginmanager_grablet">
-                                <a href="#" id="grab{$plugin_data['css_key']}"></a>
-                            </div>
-                        {if $plugin_data['is_plugin_editable']}
-                            <input class="input_checkbox" name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
-                        {/if}
-                        {if $plugin_data['can_configure']}
-                            <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}"><img src="{serendipity_getFile file='admin/img/configure.png'}" alt="[C]"></a>
-                        {/if}
-                            <span class="pluginmanager_title">
+        <div class="clearfix pluginmanager">
+        {foreach $placement as $plugin_placement}
+            <div class="pluginmanager_side pluginmanager_{($event_only) ? 'event' : 'sidebar'}">
+                <h5>{$plugin_placement['ptitle']}</h5>
+
+                <ol id="{$plugin_placement['pid']}_col" class="pluginmanager_container plainList">
+                {foreach $plugin_placement['plugin_data'] as $plugin_data}
+                    <li id="{$plugin_data['css_key']}" class="pluginmanager_item_{cycle values="even,uneven"}">
+                        <div id="g{$plugin_data['css_key']}" class="pluginmanager_grablet">
+                            <a href="#" id="grab{$plugin_data['css_key']}"></a>
+                        </div>
+                    {if $plugin_data['is_plugin_editable']}
+                        <input name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
+                    {/if}
+                    {if $plugin_data['can_configure']}
+                        <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">[C]</a>
+                    {/if}
+                        <h6>
                         {if $plugin_data['can_configure']}
                             <a title="{$plugin_data['name']}" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">{$plugin_data['title']}</a>
                         {else}
                             {$plugin_data['title']}
                         {/if}
-                            </span>
-                            <div class="pluginmanager_description">{$plugin_data['desc']}</div>
-                            <div class="pluginmanager_ownership">
-                                {$plugin_data['ownership']}
-                            </div>
-                            {($eyecandy) ? '<noscript>' : ''}
-                            <div class="pluginmanager_place">{$plugin_data['place']}</div>
-                            <div class="pluginmanager_move">{$plugin_data['moveup']} {$plugin_data['movedown']}</div>
-                            {($eyecandy) ? '</noscript>' : ''}
-                        </li>
-                    {/foreach}
-                    </ol>
-                </td>
-            {/foreach}
-            </tr>
-            <tr>
-                <td colspan="3" align="right">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:$total}</td>
-            </tr>
-        </table>
-        <div>
+                        </h6>
+
+                        <ul class="pluginmanager_plugininfo plainList">
+                            <li class="pluginmanager_description">{$plugin_data['desc']}</li>
+                            <li class="pluginmanager_ownership">{$plugin_data['ownership']}</li>
+                        {($eyecandy) ? '<noscript>' : ''}
+                            <li class="pluginmanager_place">{$plugin_data['place']}</li>
+                            <li class="pluginmanager_move">{$plugin_data['moveup']} {$plugin_data['movedown']}</li>
+                        {($eyecandy) ? '</noscript>' : ''}
+                        </ul>
+                    </li>
+                {/foreach}
+                </ol>
+            </div>
+        {/foreach}
+            <span class="plugin_count">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:$total}</span>
+        </div>
+        <div class="form_buttons">
             <input name="REMOVE" type="submit" title="{$CONST.DELETE}" value="{$CONST.REMOVE_TICKED_PLUGINS}">
             <input name="SAVE" type="submit" title="{$CONST.SAVE_CHANGES_TO_LAYOUT}" value="{$CONST.SAVE}">
         </div>
