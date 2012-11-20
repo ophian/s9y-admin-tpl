@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 {* functions_plugins_admin.inc.php::function_show_plugins() including output of functions_plugins_admin.inc.php::function ownership() *}
 
 {if !$eyecandy}

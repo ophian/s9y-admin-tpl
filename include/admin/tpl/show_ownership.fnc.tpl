@@ -1,3 +1,6 @@
+{* HTML5: Yes *}
+{* jQuery: NN *}
+
 {* functions_plugins_admin.inc.php::function ownership() *}
 
 {if $show_ownership}

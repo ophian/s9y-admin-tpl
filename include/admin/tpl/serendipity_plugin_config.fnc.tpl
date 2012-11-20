@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 {* serendipity_plugins_admin.inc.php::serendipity_plugin_config() *}
 
 <script type="text/javascript">
