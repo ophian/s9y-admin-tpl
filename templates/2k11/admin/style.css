@@ -691,8 +691,11 @@ p, table {
 
 .sub_perm { margin-left: 1em; }
 
+/* Plugin manager – might go into pluginmanager.css in the end */
+#configuration_footer { height: 100px; }
 
-/* Mysterious stuff YL isn't sure about yet */
+
+/* Mysterious stuff I'm not sure about yet */
 .img_error {
     width: 22px;
     height: 22px;
@@ -707,6 +710,7 @@ p, table {
 
 .button_block input { margin: 0 10px; }
 /* End mysterious stuff */
+
 
 /* Media Queries for Responsive Design. */
 @media only screen and (min-width: 481px) { }
