@@ -550,7 +550,8 @@ optgroup {
 }
 
 /* Backend-specific form stuff */
-label { font-weight: bold; }
+label,
+legend > span { font-weight: bold; }
 
 .form_multiselect label,
 .plugin_count,

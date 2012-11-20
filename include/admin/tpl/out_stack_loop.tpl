@@ -9,11 +9,11 @@
     {/if}
     {if $ctype == 'select'}
         <div class="clearfix form_select">
-            <label>{$cname}
+            <label for="serendipity_{$config_item}">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
             </label>
-            
-            <select class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]{($is_multi_select) ? '[]' : ''}" {($is_multi_select) ? 'multiple="multiple"' : ''} {($is_multi_select && ($select_size > 0)) ? "size='{$select_size}'" : ''}>
+            {* Make sure id creation actually produces unique identifiers *}
+            <select id="serendipity_{$config_item}" class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]{($is_multi_select) ? '[]' : ''}" {($is_multi_select) ? 'multiple="multiple"' : ''} {($is_multi_select && ($select_size > 0)) ? "size='{$select_size}'" : ''}>
             {foreach $select AS $select_value => $select_desc}
                 {assign var="id" value="{$config_item|escape}_{$select_value|escape}"}
                 <!-- case select assign id={$id} -->
@@ -43,16 +43,16 @@
     {/if}
     {if $ctype == 'string'}
         <div class="clearfix form_field">
-            <label>{$cname}
+            <label for="serendipity_{$config_item}">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
             </label>
-
-            <input class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]" type="{$input_type}" value="{$hvalue}">
+            {* Make sure id creation actually produces unique identifiers *}
+            <input id="serendipity_{$config_item}" class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]" type="{$input_type}" value="{$hvalue}">
         </div>
     {/if}
     {if (($ctype == 'html') || ($ctype == 'text'))}
         <div class="clearfix form_area">
-            <label>{$cname}
+            <label for="nuggets{$elcount}">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
             </label>
 
@@ -81,10 +81,10 @@
             <script type="text/javascript" src="serendipity_editor.js"></script>
             <script type="text/javascript" src="{serendipity_getFile file='admin/image_selector.js'}"></script>
         {/if}
-            <label>{$cname}
+            <label for="serendipity[{$postKey}][{$config_item}]">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
             </label>
-
+            
             <div id="{$config_item}_preview" style="background-image: url({$value}); width: {$preview_width}; height: {$preview_height}; background-repeat: no-repeat;">&nbsp;</div>
             {* This should be input[type=file] … *}
             <input id="serendipity[{$postKey}][{$config_item}]" name="serendipity[{$postKey}][{$config_item}]" type="text" value="{$value}" onchange="change_preview('{$config_item}')">
