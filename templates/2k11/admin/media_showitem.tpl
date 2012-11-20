@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: NN *}
+
 <html>
     <head>
         <title>{$media.file.props.base_property.TITLE|@default:$media.file.realname}</title>

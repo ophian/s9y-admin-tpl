@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: NN *}
+
 {if $media.is_edit}
 <form id="mediaPropertyForm" action="?" method="POST">
     <div>

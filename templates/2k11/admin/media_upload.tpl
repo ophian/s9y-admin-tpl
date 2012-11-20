@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 <div class="image_add_form">{$CONST.ADD_MEDIA_BLAHBLAH}</div>
 
 <script type="text/javascript">

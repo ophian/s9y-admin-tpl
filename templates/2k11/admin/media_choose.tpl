@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 <html>
     <head>
         <title>{$CONST.SERENDIPITY_ADMIN_SUITE}: {$CONST.SELECT_FILE}</title>

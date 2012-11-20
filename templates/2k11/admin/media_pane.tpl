@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 <script type="text/javascript" language="JavaScript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
 <form style="display: inline; margin: 0px; padding: 0px;" method="get" action="?">

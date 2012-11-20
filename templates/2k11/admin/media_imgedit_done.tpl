@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: NN *}
+
         <fieldset class="info" id="fs_info">
             <legend>Output Information</legend>
 

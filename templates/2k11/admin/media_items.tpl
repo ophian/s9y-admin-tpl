@@ -1,3 +1,6 @@
+{* HTML5: No  *}
+{* jQuery: No *}
+
 {foreach from=$media.files item="file" name="mediafiles" key="mediakey"}
     {if $media.enclose}
     <td nowrap="nowrap" align="center" valign="{if $media.manage}top{else}middle{/if}" width="{$media.lineBreakP}%" class="serendipity_admin_list_item serendipity_admin_list_item_even">
