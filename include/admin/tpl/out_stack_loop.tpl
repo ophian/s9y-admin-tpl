@@ -1,4 +1,4 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: No *}
 
 {* serendipity_plugins_admin.inc.php::serendipity_plugin_config() - the OUT_STACK loop *}
