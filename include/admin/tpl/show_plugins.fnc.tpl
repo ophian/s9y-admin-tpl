@@ -78,7 +78,7 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
             </tr>
         </table>
         <div>
-            <input class="serendipityPrettyButton input_button" name="REMOVE" type="submit" title="{$CONST.DELETE}" value="{$CONST.REMOVE_TICKED_PLUGINS}">
-            <input class="serendipityPrettyButton input_button" name="SAVE" type="submit" title="{$CONST.SAVE_CHANGES_TO_LAYOUT}" value="{$CONST.SAVE}">
+            <input name="REMOVE" type="submit" title="{$CONST.DELETE}" value="{$CONST.REMOVE_TICKED_PLUGINS}">
+            <input name="SAVE" type="submit" title="{$CONST.SAVE_CHANGES_TO_LAYOUT}" value="{$CONST.SAVE}">
         </div>
     </form>

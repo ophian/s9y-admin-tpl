@@ -15,7 +15,7 @@
 {/if}
 {if $showSubmit_head}
     <div class="save_conf">
-        <input class="serendipityPrettyButton input_button" name="SAVECONF" type="submit" value="{$CONST.SAVE}">
+        <input name="SAVECONF" type="submit" value="{$CONST.SAVE}">
     </div>
 {/if}
 {if $showTable}
@@ -59,7 +59,7 @@
 {* $serendipity_printConfigJS *}{* outsourced to templates/default/admin/admin_scripts.js - see passed vars on top *}
 {if $showSubmit_foot}
     <div class="save_conf">
-        <input class="serendipityPrettyButton input_button" type="submit" name="SAVECONF" value="{$CONST.SAVE}">
+        <input name="SAVECONF" type="submit" value="{$CONST.SAVE}">
     </div>
 {/if}
 {if $showExample}
