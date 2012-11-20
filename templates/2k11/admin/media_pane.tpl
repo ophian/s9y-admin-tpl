@@ -8,14 +8,14 @@
     {$media.form_hidden}
     <table class="serendipity_admin_filters" width="100%">
         <colgroup>
-            <col width="13%" />
-            <col width="20%" />
+            <col width="13%">
+            <col width="20%">
 
-            <col width="13%" />
-            <col width="20%" />
+            <col width="13%">
+            <col width="20%">
 
-            <col width="13%" />
-            <col width="20%" />
+            <col width="13%">
+            <col width="20%">
         </colgroup>
         <tr>
             <td class="serendipity_admin_filters_headline" colspan="6"><strong>{$CONST.FILTERS}</strong> - {$CONST.FIND_MEDIA}</td>
@@ -30,7 +30,7 @@
                 </select>
             </td>
             <td>{$CONST.SORT_ORDER_NAME}</td>
-            <td><input class="input_textbox" type="text" name="serendipity[only_filename]" value="{$media.only_filename|@escape}" /></td>
+            <td><input class="input_textbox" type="text" name="serendipity[only_filename]" value="{$media.only_filename|@escape}"></td>
             <td colspan="2"><a href="#" class="serendipityPrettyButton input_button" onclick="showFilters(); return false">&raquo; {$CONST.FILTERS}</a></td>
         </tr>
         <tr>
@@ -39,7 +39,7 @@
                     <table width="100%" cellpadding="5" cellspacing="0" border="0">
                         <tr>
                             <td valign="top"><span style="white-space: nowrap">{$CONST.MEDIA_KEYWORDS}</span></td>
-                            <td><input class="input_textbox" id="keyword_input" type="text" name="serendipity[keywords]" value="{$media.keywords_selected|@escape}" /></td>
+                            <td><input class="input_textbox" id="keyword_input" type="text" name="serendipity[keywords]" value="{$media.keywords_selected|@escape}"></td>
                             <td width="98%">
                             {foreach from=$media.keywords item="keyword"}
                             <a href="#" onclick="AddKeyword('{$keyword|@escape}'); return false">{$keyword|@escape}</a>
@@ -52,18 +52,18 @@
                             {if $so_val.type == 'date'}
                                 {if $media.filter[$so_key].from != '' OR $media.filter[$so_key].to != ''}{assign var="show_filter" value=$media.filter[$so_key]}{/if}
                             <td>
-                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][from]" value="{$media.filter[$so_key].from|@escape}" />
+                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][from]" value="{$media.filter[$so_key].from|@escape}">
                             </td>
                             <td>
-                                - <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][to]" value="{$media.filter[$so_key].to|@escape}" /> (DD.MM.YYYY | YYYY-MM-DD | MM/DD/YYYY)
+                                - <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][to]" value="{$media.filter[$so_key].to|@escape}"> (DD.MM.YYYY | YYYY-MM-DD | MM/DD/YYYY)
                             </td>
                             {elseif $so_val.type == 'intrange'}
                                 {if $media.filter[$so_key].from != '' OR $media.filter[$so_key].to != ''}{assign var="show_filter" value=$media.filter[$so_key]}{/if}
                             <td>
-                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][from]" value="{$media.filter[$so_key].from|@escape}" />
+                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][from]" value="{$media.filter[$so_key].from|@escape}">
                             </td>
                             <td>
-                                - <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][to]" value="{$media.filter[$so_key].to|@escape}" />
+                                - <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}][to]" value="{$media.filter[$so_key].to|@escape}">
                             </td>
                             {elseif $so_val.type == 'authors'}
                                 {if $media.filter[$so_key] != ''}{assign var="show_filter" value=$media.filter[$so_key]}{/if}
@@ -78,7 +78,7 @@
                             {else}
                                 {if $media.filter[$so_key] != ''}{assign var="show_filter" value=$media.filter[$so_key]}{/if}
                             <td>
-                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}]" value="{$media.filter[$so_key]|@escape}" />
+                                <input class="input_textbox" type="text" name="serendipity[filter][{$so_key}]" value="{$media.filter[$so_key]|@escape}">
                             </td>
                             <td>&nbsp;</td>
                             {/if}
@@ -123,9 +123,9 @@
         <tr>
             <td align="right" colspan="6">
             {if $media.show_upload}
-                <input type="button" value="{$CONST.ADD_MEDIA|@escape}" onclick="location.href='{$media.url}&amp;serendipity[adminAction]=addSelect&amp;serendipity[only_path]={$media.only_path|escape:url}'; return false" class="serendipityPrettyButton input_button" />
+                <input type="button" value="{$CONST.ADD_MEDIA|@escape}" onclick="location.href='{$media.url}&amp;serendipity[adminAction]=addSelect&amp;serendipity[only_path]={$media.only_path|escape:url}'; return false" class="serendipityPrettyButton input_button">
             {/if}
-                <input type="submit" name="go" value=" - {$CONST.GO} - " class="serendipityPrettyButton input_button" />
+                <input type="submit" name="go" value=" - {$CONST.GO} - " class="serendipityPrettyButton input_button">
             </td>
         </tr>
 </table>
@@ -137,9 +137,9 @@
 {if $smarty.get.serendipity.adminModule == 'media'}
 <form action="?" method="post" name="formMultiDelete" id="formMultiDelete">
     {$media.token}
-    <input type="hidden" name="serendipity[action]" value="admin" />
-    <input type="hidden" name="serendipity[adminModule]" value="media" />
-    <input type="hidden" name="serendipity[adminAction]" value="multidelete" />
+    <input type="hidden" name="serendipity[action]" value="admin">
+    <input type="hidden" name="serendipity[adminModule]" value="media">
+    <input type="hidden" name="serendipity[adminAction]" value="multidelete">
 {/if}
 <table border="0" width="100%">
     <tr>
@@ -148,12 +148,12 @@
                 <tr>
                     <td>
                     {if $media.page != 1 AND $media.page <= $media.pages}
-                        <a href="{$media.linkPrevious}" class="serendipityIconLink"><img src="{$media.prevIMG}"" />{$CONST.PREVIOUS}</a>
+                        <a href="{$media.linkPrevious}" class="serendipityIconLink"><img src="{$media.prevIMG}"">{$CONST.PREVIOUS}</a>
                     {/if}
                     </td>
                     <td align="right">
                     {if $media.page != $media.pages}
-                        <a href="{$media.linkNext}" class="serendipityIconLinkRight">{$CONST.NEXT}<img src="{$media.nextIMG}" /></a>
+                        <a href="{$media.linkNext}" class="serendipityIconLinkRight">{$CONST.NEXT}<img src="{$media.nextIMG}"></a>
                     {/if}
                     </td>
                 </tr>
@@ -171,12 +171,12 @@
                 <tr>
                     <td>
                     {if $media.page != 1 AND $media.page <= $media.pages}
-                        <a href="{$media.linkPrevious}" class="serendipityIconLink"><img src="{$media.prevIMG}"" />{$CONST.PREVIOUS}</a>
+                        <a href="{$media.linkPrevious}" class="serendipityIconLink"><img src="{$media.prevIMG}"">{$CONST.PREVIOUS}</a>
                     {/if}
                     </td>
                     <td align="right">
                     {if $media.page != $media.pages}
-                        <a href="{$media.linkNext}" class="serendipityIconLinkRight">{$CONST.NEXT}<img src="{$media.nextIMG}" /></a>
+                        <a href="{$media.linkNext}" class="serendipityIconLinkRight">{$CONST.NEXT}<img src="{$media.nextIMG}"></a>
                     {/if}
                     </td>
                 </tr>
@@ -187,8 +187,8 @@
 
 {if $smarty.get.serendipity.adminModule == 'media'}
 <div class="button_block" align="center">
-    <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()" class="serendipityPrettyButton input_button" />
-    <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_ENTRIES}" class="serendipityPrettyButton input_button" />
+    <input type="button" name="toggle" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()" class="serendipityPrettyButton input_button">
+    <input type="submit" name="toggle" value="{$CONST.DELETE_SELECTED_ENTRIES}" class="serendipityPrettyButton input_button">
 </div>
 
 </form>

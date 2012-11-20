@@ -2,17 +2,16 @@
 {* jQuery: NN *}
 
 <html>
-    <head>
-        <title>{$media.file.props.base_property.TITLE|@default:$media.file.realname}</title>
-        <meta http-equiv="Content-Type" content="text/html; charset={$CONST.LANG_CHARSET}" />
-        <link rel="stylesheet" type="text/css" href="{$media.css}" />
-        <link rel="stylesheet" type="text/css" href="{$media.css_front}" />
-    </head>
-
+<head>
+    <meta charset="{$CONST.LANG_CHARSET}">
+    <title>{$media.file.props.base_property.TITLE|@default:$media.file.realname}</title>
+    <link rel="stylesheet" type="text/css" href="{$media.css}">
+    <link rel="stylesheet" type="text/css" href="{$media.css_front}">
+</head>
 <body id="{$media.body_id}">
-    {if $perm_denied}
-        {$CONST.PERM_DENIED}
-    {else}
+{if $perm_denied}
+    <span class="msg_error">{$CONST.PERM_DENIED}</span>
+{else}
     <div class="serendipity_Entry_Date">
         <h3 class="serendipity_date">{$media.file.realname}</h3>
         <h4 class="serendipity_title"><a href="#">{$media.file.props.base_property.TITLE|@default:''}</a></h4>
@@ -21,13 +20,13 @@
             <div class="serendipity_entry_body">
                 <div class="serendipity_center">
                     {if $media.file.is_image}
-                        <img src="{$media.file.full_file}" />
+                        <img src="{$media.file.full_file}">
                     {else}
                         <a href="{$media.file.full_file}">{$media.file.realname} ({$media.file.displaymime})</a>
                     {/if}
-                    <br /><a href="{$media.from|@escape}" title="{$CONST.BACK_TO_BLOG}">{$CONST.BACK_TO_BLOG}</a>
+                    <br><a href="{$media.from|@escape}" title="{$CONST.BACK_TO_BLOG}">{$CONST.BACK_TO_BLOG}</a>
                 </div>
-                <br />
+                <br>
 
                 {if $media.file.base_property}
                 <h3>{$CONST.MEDIA_PROP}</h3>
