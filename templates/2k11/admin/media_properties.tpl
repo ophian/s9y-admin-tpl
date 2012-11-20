@@ -1,4 +1,4 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: NN *}
 
 {if $media.is_edit}

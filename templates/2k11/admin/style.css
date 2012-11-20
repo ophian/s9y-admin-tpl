@@ -695,6 +695,9 @@ p, table {
 /* Plugin manager – might go into pluginmanager.css in the end */
 #configuration_footer { height: 100px; }
 
+/* Media db – might go into imgedit.css in the end */
+#fs_crop { min-height: 200px; }
+
 
 /* Mysterious stuff I'm not sure about yet */
 .img_error {
