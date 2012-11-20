@@ -67,7 +67,7 @@ function highlightComment(id, checkvalue) {
         <input name="serendipity[adminModule]" type="hidden" value="comments">
         <input name="serendipity[page]" type="hidden" value="{$page}">
         <fieldset>
-            <legend>{$CONST.FILTERS} ({$CONST.FIND_COMMENTS})</legend>
+            <legend><span>{$CONST.FILTERS} ({$CONST.FIND_COMMENTS})</span></legend>
             <div class="form_field">
                 <label for="filter_author">{$CONST.AUTHOR}:</label>
                 <input id="filter_author" name="serendipity[filter][author]" type="text" value="{$get.filter.author|escape}">

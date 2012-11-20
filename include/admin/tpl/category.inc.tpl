@@ -109,7 +109,7 @@
             </div>
 
             <fieldset>
-                <legend>{$CONST.CATEGORY_HIDE_SUB}</legend>
+                <legend><span>{$CONST.CATEGORY_HIDE_SUB}</span></legend>
                 <p>{$CONST.CATEGORY_HIDE_SUB_DESC}</p>
                 <div class="form_radio">
                     <input id="hide_sub_yes" name="serendipity[cat][hide_sub]" type="radio" value="1"{if $this_cat.hide_sub== 1} checked="checked"{/if}>

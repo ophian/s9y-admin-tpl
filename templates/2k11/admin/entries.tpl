@@ -108,7 +108,7 @@
     </div>
 
     <fieldset>
-        <legend>{$CONST.ADVANCED_OPTIONS}</legend>
+        <legend><span>{$CONST.ADVANCED_OPTIONS}</span></legend>
         {$entry_vars.entry|@serendipity_refhookPlugin:'backend_display'}
     </fieldset>
 </form>

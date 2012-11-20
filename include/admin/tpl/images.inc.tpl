@@ -10,7 +10,7 @@
     <span class="msg_notice">{$CONST.WARNING_THIS_BLAHBLAH|replace:'\\n':'<br />'}</span>
     <form method="POST" action="serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=doSync">
         <fieldset>
-            <legend>{$CONST.SYNC_OPTION_LEGEND}</legend>
+            <legend><span>{$CONST.SYNC_OPTION_LEGEND}</span></legend>
             <div class="form_radio">
                 <input id="keepthumbs" name="serendipity[deleteThumbs]" type="radio" value="no" checked="checked">
                 <label for="keepthumbs">{$CONST.SYNC_OPTION_KEEPTHUMBS}</label>
@@ -243,7 +243,7 @@
         <input name="serendipity[adminAction]" type="hidden" value="scale">
         <input name="serendipity[fid]" type="hidden" value="{$get.fid}">
         <fieldset>
-            <legend>{$CONST.NEWSIZE}</legend>
+            <legend><span>{$CONST.NEWSIZE}</span></legend>
             <div class="form_field">
                 <label for="resize_width">TODO_LANG</label>
                 <input id="resize_width" name="serendipity[width]" type="text" onchange="rescale('width' , value);" value="{$img_width}">

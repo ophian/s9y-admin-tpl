@@ -7,7 +7,7 @@
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="editSelect">
         <fieldset>
-            <legend>{$CONST.FILTERS} ({$CONST.FIND_ENTRIES})</legend>
+            <legend><span>{$CONST.FILTERS} ({$CONST.FIND_ENTRIES})</span></legend>
             <div class="form_select">
                 <label for="filter_author">{$CONST.AUTHOR}</label>
                 <select id="filter_author" name="serendipity[filter][author]">
@@ -41,7 +41,7 @@
             </div>
         </fieldset>
         <fieldset>
-            <legend>{$CONST.SORT_ORDER}</legend>
+            <legend><span>{$CONST.SORT_ORDER}</span></legend>
             <div class="form_select">
                 <label for="sort_order">{$CONST.SORT_BY}</label>
                 <select id="sort_order" name="serendipity[sort][order]">
@@ -141,7 +141,7 @@
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="editSelect">
         <fieldset id="entry_skip" class="clearfix">
-            <legend>{$CONST.EDIT_ENTRY} #</legend>
+            <legend><span>{$CONST.EDIT_ENTRY} #</span></legend>
             <input id="skipto_entry" name="serendipity[id]" type="text" size="3">
             <label for="skipto_entry" class="visuallyhidden">TODO_LANG</label>
         </fieldset>

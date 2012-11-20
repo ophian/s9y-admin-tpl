@@ -59,7 +59,7 @@
             <form action="serendipity_admin.php" method="post">
                 <input type="hidden" name="serendipity[action]" value="admin">
                 <fieldset>
-                    <legend>{$CONST.PLEASE_ENTER_CREDENTIALS}</legend>
+                    <legend><span>{$CONST.PLEASE_ENTER_CREDENTIALS}</span></legend>
                     <div class="form_field">
                         <label for="login_uid">{$CONST.USERNAME}</label>
                         <input id="login_uid" name="serendipity[user]" type="text">
