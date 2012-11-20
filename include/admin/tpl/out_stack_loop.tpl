@@ -28,15 +28,11 @@
                 <legend><span>{$cname}</span></legend>
                 {if $cdesc != ''}<p>{$cdesc}</p>{/if}
             {foreach $radio_button AS $r}
-                {if $r['counter'] == 1}
                 <div class="form_radio">
-                {/if}
                     <input id="serendipity_plugin_{$r['id']}" class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]" type="radio" value="{$r['value']}" {(!empty($r['checked'])) ? 'checked="checked"' : ''} title="{$r['index']|escape}">
                     <label for="serendipity_plugin_{$r['id']}">{$r['index']}{* escapement is already done *}</label>
-                {if ($r['counter'] == $per_row)}
                     {assign var="r" value="counter[0]"}
                 </div>
-                {/if}
             {/foreach}
             </fieldset>
         </div>
