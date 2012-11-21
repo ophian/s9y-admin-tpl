@@ -1,13 +1,14 @@
-{* HTML5: No  *}
+{* HTML5: Yes  *}
 {* jQuery: No *}
 
 {foreach from=$media.files item="file" name="mediafiles" key="mediakey"}
-    {if $media.enclose}
-    <td nowrap="nowrap" align="center" valign="{if $media.manage}top{else}middle{/if}" width="{$media.lineBreakP}%" class="serendipity_admin_list_item serendipity_admin_list_item_even">
-    {/if}
-
     {if NOT $media.manage}
-        {$file.preview}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}
+        <div class="media_file_preview">
+            {$file.preview}
+        {if $file.orderkey != ''}
+            <span>{$file.orderkey|@escape}</span>
+        {/if}
+        </div>
     {else}
         <article class="media_file">
             <header>
@@ -57,11 +58,8 @@
         </article>
     {/if}
 
-    {if $media.enclose}
-    </td>
-    {/if}
-
     {if NOT $media.enclose}
+        <article class="media_file media_enclose_no">
         <h3>{$file.realname} [<em>{$file.mime}</em>{if $file.realname != $file.diskname}, {$file.diskname}{/if}]</h3>
         <div>
             {if $file.authorid != 0}{$CONST.POSTED_BY} {$file.authorname}{/if} {$CONST.ON} {$file.date|@formatTime:DATE_FORMAT_SHORT}.
@@ -158,9 +156,6 @@
         {/foreach}
         </ul>
         {/if}
-    {/if}
-
-    {if $media.enclose AND (($smarty.foreach.mediafiles.iteration % $media.lineBreak) == 0)}
-    </tr><tr>
+        </article>
     {/if}
 {/foreach}
