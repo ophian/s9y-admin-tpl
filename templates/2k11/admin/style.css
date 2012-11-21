@@ -698,6 +698,8 @@ p, table {
 /* Media db – might go into imgedit.css in the end */
 #fs_crop { min-height: 200px; }
 
+.media_pane .pagination { margin: 0; }
+
 
 /* Mysterious stuff I'm not sure about yet */
 .img_error {

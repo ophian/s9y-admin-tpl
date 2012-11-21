@@ -143,14 +143,14 @@
         <input name="serendipity[adminModule]" type="hidden" value="media">
         <input name="serendipity[adminAction]" type="hidden" value="multidelete">
     {/if}
-    <div class="clearfix">
-        <ul class="clearfix pagination">
+    <div class="clearfix media_pane">
+        <ul class="clearfix pagination plainList">
             <li>{if $media.page != 1 AND $media.page <= $media.pages}<a href="{$media.linkPrevious}">{$CONST.PREVIOUS}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
             <li>{if $media.page != $media.pages}<a href="{$media.linkNext}">{$CONST.NEXT}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
         </ul>
         {$MEDIA_ITEMS}
         {* Should be cloned using JS *}
-        <ul class="clearfix pagination">
+        <ul class="clearfix pagination plainList">
             <li>{if $media.page != 1 AND $media.page <= $media.pages}<a href="{$media.linkPrevious}">{$CONST.PREVIOUS}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
             <li>{if $media.page != $media.pages}<a href="{$media.linkNext}">{$CONST.NEXT}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
         </ul>
