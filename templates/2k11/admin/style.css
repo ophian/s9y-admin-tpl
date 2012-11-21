@@ -617,6 +617,7 @@ p, table {
 }
 
 .plainList,
+.imageMessage ul,
 .actions {
     list-style: none;
     padding: 0;

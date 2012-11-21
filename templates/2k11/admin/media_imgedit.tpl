@@ -1,4 +1,4 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: No *}
 
 {* Erm, why isn't this localized at all? o_O *}
