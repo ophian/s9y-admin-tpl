@@ -243,15 +243,12 @@ function fillInput(source, target) {ldelim}
 
         {serendipity_hookPlugin hook="backend_image_addform" hookAll=true}
 
-        <div style="text-align: center; margin-top: 15px; margin-bottom: 15px">
-            <script>
-                document.write('<input class="serendipityPrettyButton input_button" type="button" value="{$CONST.IMAGE_MORE_INPUT}" onclick="hideForeign(); addField()"' + '/><br' + '/>');
-            </script>
-            <input type="hidden" name="serendipity[all_authors]" value="true" checked="checked" id="all_authors">
-            <br>
-            <input onclick="checkInputs();" type="submit" value="{$CONST.GO}" class="serendipityPrettyButton input_button">
-            - {$CONST.WORD_OR} -
-            <input onclick="checkInputs();" name="go_properties" type="submit" value="{$CONST.GO_ADD_PROPERTIES|@escape}" class="serendipityPrettyButton input_button">
+        <div class="form_buttons">
+            <script>document.write('<input type="button" value="{$CONST.IMAGE_MORE_INPUT}" onclick="hideForeign(); addField()">');</script>
+            <input id="all_authors" name="serendipity[all_authors]" type="hidden" value="true" checked="checked">
+            <input type="submit" value="{$CONST.GO}" onclick="checkInputs();">
+            <span class="standout"> {$CONST.WORD_OR} </span>
+            <input name="go_properties" type="submit" value="{$CONST.GO_ADD_PROPERTIES|@escape}" onclick="checkInputs();">
         </div>
     </div>
 </form>
