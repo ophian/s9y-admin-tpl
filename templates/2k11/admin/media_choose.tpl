@@ -5,11 +5,11 @@
 <head>
     <meta charset="{$CONST.LANG_CHARSET}">
     <title>{$CONST.SERENDIPITY_ADMIN_SUITE}: {$CONST.SELECT_FILE}</title>
-    {if $media.css}<link rel="stylesheet" type="text/css" href="{$media.css}">{/if}
-    {if $media.css_tree}<link rel="stylesheet" type="text/css" href="{$media.css_tree}">{/if}
-    {if $media.css_imgedit}<link rel="stylesheet" type="text/css" href="{$media.css_imgedit}">{/if}
+    {if $media.css}<link rel="stylesheet" href="{$media.css}">{/if}
+    {if $media.css_tree}<link rel="stylesheet" href="{$media.css_tree}">{/if}
+    {if $media.css_imgedit}<link rel="stylesheet" href="{$media.css_imgedit}">{/if}
 {if $media.is_imgedit}
-    <style type="text/css">
+    <style>
         #outer {ldelim}
             left: {$imgedit.zoombox_padding}px;
         {rdelim}
@@ -46,14 +46,14 @@
             display:                     block;
         {rdelim}
     </style>
-    <script type="text/javascript" src="{serendipity_getFile file='dragdrop.js'}" ></script>
-    <script type="text/javascript" src="{serendipity_getFile file='imgedit.js'}" ></script>
+    <script src="{serendipity_getFile file='dragdrop.js'}" ></script>
+    <script src="{serendipity_getFile file='imgedit.js'}" ></script>
 {/if}
-    <script type="text/javascript" src="{serendipity_getFile file='YahooUI/treeview/YAHOO.js'}"></script>
-    <script type="text/javascript" src="{serendipity_getFile file='YahooUI/treeview/treeview.js'}"></script>
+    <script src="{serendipity_getFile file='YahooUI/treeview/YAHOO.js'}"></script>
+    <script src="{serendipity_getFile file='YahooUI/treeview/treeview.js'}"></script>
 </head>
 
-    <script type="text/javascript">
+    <script>
         function addLoadEvent(func) {ldelim}
           var oldonload = window.onload;
           if (typeof window.onload != 'function') {ldelim}
@@ -136,7 +136,7 @@
 
     <!-- EXTERNAL MEDIA START -->
     {if $media.is_created OR $media.is_deleted}
-    <script type="text/javascript">
+    <script>
     if (parent.frames['tree']) {ldelim}
         parent.frames['tree'].location.href  = parent.frames['tree'].location.href;
         parent.frames['media'].location.href = '{$serendipityHTTPPath}serendipity_admin_image_selector.php?serendipity[step]=default&serendipity[only_path]={$media.new_dir}';
@@ -169,8 +169,8 @@
 
     <!-- MEDIA SELECTION START -->
     {$media.external}
-    <script type="text/javascript" language="JavaScript" src="{$serendipityHTTPPath}serendipity_define.js.php"></script>
-    <script type="text/javascript" language="Javascript" src="{$serendipityHTTPPath}serendipity_editor.js"></script>
+    <script language="JavaScript" src="{$serendipityHTTPPath}serendipity_define.js.php"></script>
+    <script language="Javascript" src="{$serendipityHTTPPath}serendipity_editor.js"></script>
     <div>
     {if $media.file.is_image}
         {serendipity_hookPlugin hook="frontend_image_selector" eventData=$media.file hookAll=true}
@@ -198,7 +198,7 @@
                     {/if}
 
                     {if $media.file.fast_select}
-                    <script type="text/javascript">
+                    <script>
                         {serendipity_hookPlugin hookAll=true hook='frontend_image_add_filenameonly' eventData=$media.file}
                         serendipity_imageSelector_done('{$media.textarea|@escape}');
                     </script>
@@ -274,13 +274,13 @@
     </p>
     {else}
         {if $media.filename_only}
-        <script type="text/javascript">
+        <script>
             {serendipity_hookPlugin hookAll=true hook='frontend_image_add_filenameonly' eventData=$media}
             parent.self.opener.serendipity_imageSelector_addToElement('{$media.file.full_file|escape}', '{$media.htmltarget|@escape}');
             parent.self.close();
         </script>
         {else}
-        <script type="text/javascript">
+        <script>
             block = '<a href="{$media.file.full_file}" title="{$media.file.realname|@escape}" target="_blank">{$media.file.realname|@escape}</a>';
             {serendipity_hookPlugin hookAll=true hook='frontend_image_add_unknown' eventData=$media}
             if (parent.self.opener.editorref) {ldelim}
@@ -312,7 +312,7 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script>
 	var tree;
 	var nodes = new Array();
 	var nodeIndex;

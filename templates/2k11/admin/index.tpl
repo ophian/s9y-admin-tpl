@@ -10,8 +10,8 @@
     <meta charset="{$CONST.LANG_CHARSET}">
     <title>{$admin_vars.title} | {$CONST.SERENDIPITY_ADMIN_SUITE}</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="{$admin_vars.css_file}">
-    <link rel="stylesheet" type="text/css" href="{$admin_vars.admin_css_file}">
+    <link rel="stylesheet" href="{$admin_vars.css_file}">
+    <link rel="stylesheet" href="{$admin_vars.admin_css_file}">
     <script src="{serendipity_getFile file='admin/js/modernizr-2.6.2.min.js'}"></script>
     <script src="{serendipity_getFile file='admin/header_spawn.js'}"></script>
 {if $admin_vars.admin_installed}

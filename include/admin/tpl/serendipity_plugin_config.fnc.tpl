@@ -2,14 +2,14 @@
 {* jQuery: No *}
 
 {* serendipity_plugins_admin.inc.php::serendipity_plugin_config() *}
-    <script type="text/javascript">
+    <script>
         var const_view = '{$CONST.VIEW_FULL}';
         var const_hide = '{$CONST.HIDE}';
         var img_plus   = '{serendipity_getFile file="img/plus.png"}';
         var img_minus  = '{serendipity_getFile file="img/minus.png"}';
     </script>
 {if $allow_admin_scripts}
-    <script type="text/javascript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
+    <script src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 {/if}
 {if $showSubmit_head}
     <div class="save_conf">
@@ -29,7 +29,7 @@
             {$OUT_STACK[$config_groupkey]}
         {/foreach}
         </div>
-        <script type="text/javascript">document.getElementById('el{$config_groupkeys@iteration}').style.display = "none";</script>
+        <script>document.getElementById('el{$config_groupkeys@iteration}').style.display = "none";</script>
     {/foreach}
         {* Is this really necessary? What for? *}
         <div id="configuration_footer">&nbsp;</div>
@@ -55,7 +55,7 @@
 {if $spawnNuggets}
     {serendipity_hookPlugin hook="backend_wysiwyg_nuggets" eventData=$ev hookAll=true}
     {if ($ev['skip_nuggets'] === false)}
-    <script type="text/javascript">
+    <script>
     function Spawnnugget() { 
         {foreach $htmlnugget AS $htmlnuggetid}
         Spawnnuggets('{$htmlnuggetid}');

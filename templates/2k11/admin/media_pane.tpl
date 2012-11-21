@@ -1,7 +1,7 @@
 {* HTML5: Yes *}
 {* jQuery: No *}
 
-<script type="text/javascript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
+<script src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
 <h2>{$CONST.FIND_MEDIA}</h2>
 
@@ -92,7 +92,7 @@
         </div>
     </fieldset>
 {if $media.keywords_selected != '' OR $show_filter}
-    <script type="text/javascript">showFilters();</script>
+    <script>showFilters();</script>
 {/if}
     <fieldset>
         <legend><span>{$CONST.SORT_ORDER}</span></legend>

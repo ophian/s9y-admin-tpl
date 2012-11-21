@@ -5,8 +5,8 @@
 <head>
     <meta charset="{$CONST.LANG_CHARSET}">
     <title>{$media.file.props.base_property.TITLE|@default:$media.file.realname}</title>
-    <link rel="stylesheet" type="text/css" href="{$media.css}">
-    <link rel="stylesheet" type="text/css" href="{$media.css_front}">
+    <link rel="stylesheet" href="{$media.css}">
+    <link rel="stylesheet" href="{$media.css_front}">
 </head>
 <body id="{$media.body_id}">
 {if $perm_denied}

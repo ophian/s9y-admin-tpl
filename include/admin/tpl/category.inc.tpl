@@ -62,7 +62,7 @@
             <div class="form_field">
                 <label for="category_icon">{$CONST.IMAGE}</label>
                 <input id="category_icon" name="serendipity[cat][icon]" type="text" value="{$this_cat.category_icon|default:""|escape:"html"}" onchange="document.getElementById('imagepreview').src = this.value; document.getElementById('imagepreview').style.display = '';">
-                <script type="text/javascript">
+                <script>
                     var category_icon = document.getElementById('category_icon');
                     var imgBtn        = document.createElement('div');
                     imgBtn.id         = "insert_image";

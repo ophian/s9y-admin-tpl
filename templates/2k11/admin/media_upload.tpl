@@ -3,7 +3,7 @@
 
 <div class="image_add_form">{$CONST.ADD_MEDIA_BLAHBLAH}</div>
 
-<script type="text/javascript">
+<script>
 // Function prototype inspired by http://molily.de/javascript-nodelist
 function showNodes(n) {ldelim}
     var html;
@@ -242,7 +242,7 @@ function fillInput(source, target) {ldelim}
        <div id="debug">
        </div>
 
-       <script type="text/javascript">
+       <script>
             document.getElementById('upload_template').style.display  = 'none';
             document.write('<span id="upload_form"><' + '/span>');
             addField();
@@ -251,7 +251,7 @@ function fillInput(source, target) {ldelim}
         {serendipity_hookPlugin hook="backend_image_addform" hookAll=true}
 
         <div style="text-align: center; margin-top: 15px; margin-bottom: 15px">
-            <script type="text/javascript">
+            <script>
                 document.write('<input class="serendipityPrettyButton input_button" type="button" value="{$CONST.IMAGE_MORE_INPUT}" onclick="hideForeign(); addField()"' + '/><br' + '/>');
             </script>
             <input type="hidden" name="serendipity[all_authors]" value="true" checked="checked" id="all_authors" />

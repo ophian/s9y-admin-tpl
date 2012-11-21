@@ -8,7 +8,7 @@
 Smarty 3 has a new auto literal option which is enabled by default.
 When the { is followed by a space it's not interpreted as smarty delimiter but literal.
 *}
-<script type="text/javascript">
+<script>
 function FT_toggle(id) { 
     if ( document.getElementById(id + '_full').style.display == '' ) { 
         document.getElementById(id + '_full').style.display='none';

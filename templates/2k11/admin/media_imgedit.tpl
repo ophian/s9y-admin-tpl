@@ -22,7 +22,7 @@
             <div id="zoom" class="clearfix">
                 <input id="action_enlarge" name="action[enlarge]" type="submit" onclick="return imgedit_zoom(-2); this.blur();" value="Enlarge">
 
-                <script type="text/javascript">document.write('<div id="zoomslider"><img id="zoombutton" src="{serendipity_getFile file="admin/img/imgedit_slider.gif"}" width="25" height="5" alt="[Slider]"></div>');</script>
+                <script>document.write('<div id="zoomslider"><img id="zoombutton" src="{serendipity_getFile file="admin/img/imgedit_slider.gif"}" width="25" height="5" alt="[Slider]"></div>');</script>
 
                 <noscript>
                     <div class="zoomfactor">Zoom: {$imgedit.zoombox_factor}x</div>
@@ -52,6 +52,6 @@
             </div>
         </form>
     </div>
-    <script type="text/javascript">imgedit_init({$imgedit.zoombox_width}, {$imgedit.area_border}, {$imgedit.zoombox_x}, {$imgedit.zoombox_y}, '{$imgedit.area_orientation}');</script>
+    <script>imgedit_init({$imgedit.zoombox_width}, {$imgedit.area_border}, {$imgedit.zoombox_x}, {$imgedit.zoombox_y}, '{$imgedit.area_orientation}');</script>
 </body>
 </html>

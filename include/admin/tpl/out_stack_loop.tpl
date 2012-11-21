@@ -74,8 +74,8 @@
     {if $ctype == 'media'}
         <div class="clearfix">
         {if !$mediajs_output}
-            <script type="text/javascript" src="serendipity_editor.js"></script>
-            <script type="text/javascript" src="{serendipity_getFile file='admin/image_selector.js'}"></script>
+            <script src="serendipity_editor.js"></script>
+            <script src="{serendipity_getFile file='admin/image_selector.js'}"></script>
         {/if}
             <label for="serendipity[{$postKey}][{$config_item}]">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
@@ -92,7 +92,7 @@
     {if $ctype == 'sequence'}
         <div class="clearfix">
         {if !$sequencejs_output}
-            <script src="{serendipity_getFile file='dragdrop.js'}" type="text/javascript"></script>
+            <script src="{serendipity_getFile file='dragdrop.js'}"></script>
         {/if}
             <fieldset>
                 <legend><span>{$cname}</span></legend>
@@ -141,7 +141,7 @@
             </fieldset>
 {* Smarty 3 has a new auto literal option which is enabled by default.
    When the { is followed by a space it's not interpreted as smarty delimiter but literal. *}
-            <script type="text/javascript">
+            <script>
                 function sort_{$config_item}_Sequence() { 
                     //var seq = DragDrop.serData('{$config_item}_group', null);
                     var seq = DragDrop.serData(null, '+citem+');

@@ -82,7 +82,7 @@
     </nav>
     {/if}
 
-    <script type="text/javascript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
+    <script src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
 
     <form id="formMultiDelete" action="?" method="post" name="formMultiDelete">
         {$formtoken}

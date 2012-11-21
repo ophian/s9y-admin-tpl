@@ -10,7 +10,7 @@
 Smarty 3 has a new auto literal option which is enabled by default.
 When the { is followed by a space it's not interpreted as smarty delimiter but literal.
 *}
-    <script type="text/javascript">
+    <script>
         function templatePluginMoverInit() { 
 
         {foreach $sidebars AS $sidebar}
@@ -30,7 +30,7 @@ When the { is followed by a space it's not interpreted as smarty delimiter but l
     <form action="?serendipity[adminModule]=plugins" method="post" onsubmit="pluginMovergetSort(); return true">
         <input id="order" name="serendipity[pluginorder]" type="hidden" value="">
     {else}
-    <script type="text/javascript">addLoadEvent(pluginMoverInitEvent);</script>
+    <script>addLoadEvent(pluginMoverInitEvent);</script>
     <form action="?serendipity[adminModule]=plugins" method="post" onsubmit="pluginMovergetSortEvent(); return true">
         <input id="eventorder" name="serendipity[pluginorder]" type="hidden" value="">
     {/if}
