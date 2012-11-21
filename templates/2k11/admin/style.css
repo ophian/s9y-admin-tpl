@@ -550,7 +550,7 @@ optgroup {
 }
 
 /* Backend-specific form stuff */
-label,
+label, .standout,
 legend > span { font-weight: bold; }
 
 .block_level,
