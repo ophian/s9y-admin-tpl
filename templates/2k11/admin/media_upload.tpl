@@ -173,38 +173,31 @@ function fillInput(source, target) {ldelim}
 {rdelim}
 </script>
 
-<form action="?" method="POST" id="uploadform" enctype="multipart/form-data" onsubmit="rememberOptions()">
+<form id="uploadform" action="?" method="POST" enctype="multipart/form-data" onsubmit="rememberOptions()">
     <div>
-        {if $media.max_file_size}
-        <input type="hidden" name="MAX_FILE_SIZE" value="{$max_file_size}">
-        {/if}
+    {if $media.max_file_size}
+        <input name="MAX_FILE_SIZE" type="hidden" value="{$max_file_size}">
+    {/if}
         {$media.token}
-        <input type="hidden" name="serendipity[action]"      value="admin">
-        <input type="hidden" name="serendipity[adminModule]" value="images">
-        <input type="hidden" name="serendipity[adminAction]" value="add">
+        <input name="serendipity[action]" type="hidden" value="admin">
+        <input name="serendipity[adminModule]" type="hidden" value="images">
+        <input name="serendipity[adminAction]" type="hidden" value="add">
         {$media.form_hidden}
-        <table id="foreign_upload" class="image_add_foreign">
-            <tr>
-                <td nowrap="nowrap">{$CONST.ENTER_MEDIA_URL}</td>
-                <td><input class="input_textbox" type="text" id="imageurl" name="serendipity[imageurl]"
-                         onchange="checkInputs()"
-                          value=""
-                           size="40"></td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">{$CONST.ENTER_MEDIA_URL_METHOD}</td>
-                <td>
-                    <select name="serendipity[imageimporttype]">
-                        <option value="image">{$CONST.FETCH_METHOD_IMAGE}</option>
-                        <option value="hotlink">{$CONST.FETCH_METHOD_HOTLINK}</option>
-                    </select>
-                </td>
-            </tr>
+        <div id="foreign_upload" class="image_add_foreign">
+            <div class="form_field">
+                <label for="imageurl">{$CONST.ENTER_MEDIA_URL}</label>
+                <input id="imageurl" name="serendipity[imageurl]" type="text" onchange="checkInputs()" value="">
+            </div>
 
-            <tr>
-                <td align="center" colspan="2"><b> - {$CONST.WORD_OR} - </b></td>
-            </tr>
-        </table>
+            <div class="form_select">
+                <label for="serendipity_imageimporttype">{$CONST.ENTER_MEDIA_URL_METHOD}</label>
+                <select name="serendipity[imageimporttype]">
+                    <option value="image">{$CONST.FETCH_METHOD_IMAGE}</option>
+                    <option value="hotlink">{$CONST.FETCH_METHOD_HOTLINK}</option>
+                </select>
+            </div>
+            <span class="standout"> {$CONST.WORD_OR} </span>
+        </div>
 
         <!-- WARNING: Do not change spacing or breaks below. If you do, the JavaScript childNodes need to be edited. Newlines count as nodes! -->
         <div id="upload_template">
