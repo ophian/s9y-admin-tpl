@@ -59,7 +59,7 @@
                      - 
                     <label for="serendipity_filter_{$so_key}_to" class="visuallyhidden">TODO_LANG</label>
                     <input id="serendipity_filter_{$so_key}_to" name="serendipity[filter][{$so_key}][to]" type="date" value="{$media.filter[$so_key].to|@escape}">
-                    <span class="input_hint">(DD.MM.YYYY | YYYY-MM-DD | MM/DD/YYYY)</span>
+                    {* <span class="input_hint">(DD.MM.YYYY | YYYY-MM-DD | MM/DD/YYYY)</span> *}
                 </div>
             {elseif $so_val.type == 'intrange'}
                 {if $media.filter[$so_key].from != '' OR $media.filter[$so_key].to != ''}{assign var="show_filter" value=$media.filter[$so_key]}{/if}
