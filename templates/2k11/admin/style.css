@@ -647,7 +647,7 @@ p, table {
 }
 
 /* Layout */
-#top > div,
+#top > div, #jshint,
 #main, #meta {
     margin: 0 auto;
     max-width: 1280px;
