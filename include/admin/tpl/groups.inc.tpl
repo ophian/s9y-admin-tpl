@@ -61,7 +61,7 @@
                 {$indent="&nbsp;&nbsp;"}
             {else}
                 {if $section != {$perm@key}}
-                    {$indent="<br />"}
+                    {$indent="<br>"}
                     {$section="{$perm@key}"}
                 {/if}
             {/if}

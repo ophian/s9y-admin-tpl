@@ -7,7 +7,7 @@
     {if !$perm_adminImagesSync}
     <span class="msg_error">{$CONST.PERM_DENIED}</span>
     {else}
-    <span class="msg_notice">{$CONST.WARNING_THIS_BLAHBLAH|replace:'\\n':'<br />'}</span>
+    <span class="msg_notice">{$CONST.WARNING_THIS_BLAHBLAH|replace:'\\n':'<br>'}</span>
     <form method="POST" action="serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=doSync">
         <fieldset>
             <legend><span>{$CONST.SYNC_OPTION_LEGEND}</span></legend>
@@ -55,7 +55,7 @@
     {if ( $is_delete || $is_multidelete )}
         <span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILES}</span>
         {foreach $rip_image AS $ripimg}
-        <span class="msg_dialog_ripentry">{$ripimg}</span><br />
+        <span class="msg_dialog_ripentry">{$ripimg}</span><br>
         {/foreach}
         <ul class="dialog_delrip">
             <li><a class="link_abort" href="{$smarty.server.HTTP_REFERER|escape}">{$CONST.NOT_REALLY}</a></li>

@@ -176,12 +176,12 @@ function fillInput(source, target) {ldelim}
 <form action="?" method="POST" id="uploadform" enctype="multipart/form-data" onsubmit="rememberOptions()">
     <div>
         {if $media.max_file_size}
-        <input type="hidden" name="MAX_FILE_SIZE" value="{$max_file_size}" />
+        <input type="hidden" name="MAX_FILE_SIZE" value="{$max_file_size}">
         {/if}
         {$media.token}
-        <input type="hidden" name="serendipity[action]"      value="admin" />
-        <input type="hidden" name="serendipity[adminModule]" value="images" />
-        <input type="hidden" name="serendipity[adminAction]" value="add" />
+        <input type="hidden" name="serendipity[action]"      value="admin">
+        <input type="hidden" name="serendipity[adminModule]" value="images">
+        <input type="hidden" name="serendipity[adminAction]" value="add">
         {$media.form_hidden}
         <table id="foreign_upload" class="image_add_foreign">
             <tr>
@@ -189,7 +189,7 @@ function fillInput(source, target) {ldelim}
                 <td><input class="input_textbox" type="text" id="imageurl" name="serendipity[imageurl]"
                          onchange="checkInputs()"
                           value=""
-                           size="40" /></td>
+                           size="40"></td>
             </tr>
             <tr>
                 <td nowrap="nowrap">{$CONST.ENTER_MEDIA_URL_METHOD}</td>
@@ -213,16 +213,16 @@ function fillInput(source, target) {ldelim}
                 <td nowrap='nowrap'>{$CONST.ENTER_MEDIA_UPLOAD}</td>
                 <td><input class="input_file" id="userfile_1" name="serendipity[userfile][1]"
                          onchange="checkInputs();"
-                           type="file" /></td>
+                           type="file"></td>
             </tr>
 
             <tr>
-                <td align="center" colspan="2"><br /></td>
+                <td align="center" colspan="2"><br></td>
             </tr>
 
             <tr>
                 <td>{$CONST.SAVE_FILE_AS}</td>
-                <td><input class="input_textbox" type="text" id="target_filename_1" name="serendipity[target_filename][1]" value="" size="40" /></td>
+                <td><input class="input_textbox" type="text" id="target_filename_1" name="serendipity[target_filename][1]" value="" size="40"></td>
             </tr>
 
             <tr>
@@ -236,7 +236,7 @@ function fillInput(source, target) {ldelim}
                 </td>
             </tr>
        </table>
-       <div id="ccounter"><input type="hidden" name="serendipity[column_count][1]" id="column_count_1" value="true" /></div>
+       <div id="ccounter"><input type="hidden" name="serendipity[column_count][1]" id="column_count_1" value="true"></div>
        </div>
 
        <div id="debug">
@@ -254,11 +254,11 @@ function fillInput(source, target) {ldelim}
             <script>
                 document.write('<input class="serendipityPrettyButton input_button" type="button" value="{$CONST.IMAGE_MORE_INPUT}" onclick="hideForeign(); addField()"' + '/><br' + '/>');
             </script>
-            <input type="hidden" name="serendipity[all_authors]" value="true" checked="checked" id="all_authors" />
-            <br />
-            <input onclick="checkInputs();" type="submit" value="{$CONST.GO}" class="serendipityPrettyButton input_button" />
+            <input type="hidden" name="serendipity[all_authors]" value="true" checked="checked" id="all_authors">
+            <br>
+            <input onclick="checkInputs();" type="submit" value="{$CONST.GO}" class="serendipityPrettyButton input_button">
             - {$CONST.WORD_OR} -
-            <input onclick="checkInputs();" name="go_properties" type="submit" value="{$CONST.GO_ADD_PROPERTIES|@escape}" class="serendipityPrettyButton input_button" />
+            <input onclick="checkInputs();" name="go_properties" type="submit" value="{$CONST.GO_ADD_PROPERTIES|@escape}" class="serendipityPrettyButton input_button">
         </div>
     </div>
     <div class="image_add_note">{$CONST.ADD_MEDIA_BLAHBLAH_NOTE}</div>
