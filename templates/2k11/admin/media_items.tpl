@@ -55,7 +55,6 @@
             {/if}
                 </ul>
             </footer>
-            <p>Debug: $media.enclose</p>
         </article>
     {/if}
 
