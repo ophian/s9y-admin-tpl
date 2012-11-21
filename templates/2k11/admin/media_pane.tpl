@@ -1,4 +1,4 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: No *}
 
 <script type="text/javascript" src="{serendipity_getFile file='admin/admin_scripts.js'}"></script>
