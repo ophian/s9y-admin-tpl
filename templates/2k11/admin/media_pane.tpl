@@ -35,6 +35,7 @@
                 <label for="keyword_input">{$CONST.MEDIA_KEYWORDS}</label>
                 <input id="keyword_input" name="serendipity[keywords]" type="text" value="{$media.keywords_selected|@escape}">
             </div>
+
             <div id="keyword_list" class="clearfix">
             {foreach from=$media.keywords item="keyword"}
                 <a href="#" onclick="AddKeyword('{$keyword|@escape}'); return false">{$keyword|@escape}</a>
@@ -97,9 +98,9 @@
         <legend><span>{$CONST.SORT_ORDER}</span></legend>
 
         <div class="form_select">
-            <label for="">{$CONST.SORT_BY}</label>
+            <label for="serendipity_sortorder_order">{$CONST.SORT_BY}</label>
 
-            <select name="serendipity[sortorder][order]">
+            <select id="serendipity_sortorder_order" name="serendipity[sortorder][order]">
             {foreach from=$media.sort_order item="so_val" key="so_key"}
                 <option value="{$so_key}" {if $media.sortorder.order == $so_key}selected="selected"{/if}>{$so_val.desc}</option>
             {/foreach}
@@ -107,18 +108,18 @@
         </div>
 
         <div class="form_select">
-            <label for="">{$CONST.SORT_ORDER}</label>
+            <label for="serendipity_sortorder_ordermode">{$CONST.SORT_ORDER}</label>
             
-            <select name="serendipity[sortorder][ordermode]">
+            <select id="serendipity_sortorder_ordermode" name="serendipity[sortorder][ordermode]">
                 <option value="DESC" {if $media.sortorder.ordermode == 'DESC'}selected="selected"{/if}>{$CONST.SORT_ORDER_DESC}</option>
                 <option value="ASC"  {if $media.sortorder.ordermode == 'ASC'}selected="selected"{/if}>{$CONST.SORT_ORDER_ASC}</option>
             </select>
         </div>
 
         <div class="form_select">
-            <label for="">{$CONST.FILES_PER_PAGE}</label>
+            <label for="serendipity_sortorder_perpage">{$CONST.FILES_PER_PAGE}</label>
 
-            <select name="serendipity[sortorder][perpage]">
+            <select id="serendipity_sortorder_perpage" name="serendipity[sortorder][perpage]">
             {foreach from=$media.sort_row_interval item="so_val"}
                 <option value="{$so_val}" {if $media.perPage == $so_val}selected="selected"{/if}>{$so_val}</option>
             {/foreach}
