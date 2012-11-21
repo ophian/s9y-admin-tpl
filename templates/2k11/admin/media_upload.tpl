@@ -246,6 +246,9 @@ function fillInput(source, target) {ldelim}
         <div class="form_buttons">
             <script>document.write('<input type="button" value="{$CONST.IMAGE_MORE_INPUT}" onclick="hideForeign(); addField()">');</script>
             <input id="all_authors" name="serendipity[all_authors]" type="hidden" value="true" checked="checked">
+        </div>
+        
+        <div class="form_buttons">
             <input type="submit" value="{$CONST.GO}" onclick="checkInputs();">
             <span class="standout"> {$CONST.WORD_OR} </span>
             <input name="go_properties" type="submit" value="{$CONST.GO_ADD_PROPERTIES|@escape}" onclick="checkInputs();">
