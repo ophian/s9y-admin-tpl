@@ -1,9 +1,14 @@
-{* HTML5: Yes *}
+{* HTML5: Yes  *}
 {* jQuery: No *}
 
 {foreach from=$media.files item="file" name="mediafiles" key="mediakey"}
     {if NOT $media.manage}
-        {$file.preview}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}
+        <div class="media_file_preview">
+            {$file.preview}
+        {if $file.orderkey != ''}
+            <span>{$file.orderkey|@escape}</span>
+        {/if}
+        </div>
     {else}
         <article class="media_file">
             <header>
@@ -55,6 +60,7 @@
     {/if}
 
     {if NOT $media.enclose}
+        <article class="media_file media_enclose_no">
         <h3>{$file.realname} [<em>{$file.mime}</em>{if $file.realname != $file.diskname}, {$file.diskname}{/if}]</h3>
         <div>
             {if $file.authorid != 0}{$CONST.POSTED_BY} {$file.authorname}{/if} {$CONST.ON} {$file.date|@formatTime:DATE_FORMAT_SHORT}.
@@ -151,5 +157,6 @@
         {/foreach}
         </ul>
         {/if}
+        </article>
     {/if}
 {/foreach}
