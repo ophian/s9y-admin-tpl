@@ -553,6 +553,7 @@ optgroup {
 label,
 legend > span { font-weight: bold; }
 
+.block_level,
 .form_multiselect label,
 .plugin_count,
 label > span { display: block; }
