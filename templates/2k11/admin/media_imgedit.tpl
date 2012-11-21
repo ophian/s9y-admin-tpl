@@ -1,6 +1,8 @@
 {* HTML5: No  *}
 {* jQuery: No *}
 
+{* Erm, why isn't this localized at all? o_O *}
+
         <div id="imgedit">
             <form class="nospace" method="post" action="{$imgedit.my_url}" onsubmit="imgedit_getCoordinates()">
                 <div class="smallcaps center">
