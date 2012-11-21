@@ -9,45 +9,53 @@
     {if NOT $media.manage}
         {$file.preview}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}
     {else}
-        <table width="100%" border="0" cellspacing="0" cellpadding="3">
-            <tr>
-                <td valign="top" width="16" rowspan="3">
-                {if $file.is_editable}
-                    <img class="serendipityImageButton" title="{$CONST.MEDIA_FULLSIZE}" alt="{$CONST.MEDIA_FULLSIZE}" src="{$media.zoomIMG}"   border="0" onclick="F1 = window.open('{if $file.hotlink}{$file.path}{else}{$file.full_file}{/if}', 'Zoom', 'height={$file.popupHeight},width={$file.popupWidth},top='+ (screen.height-{$file.popupHeight})/2 +',left='+ (screen.width-{$file.popupWidth})/2 +',toolbar=no,menubar=no,location=no,resize=1,resizable=1{if NOT $file.is_image},scrollbars=yes{/if}');"><br>
-                    <img class="serendipityImageButton" title="{$CONST.MEDIA_RENAME}"   alt="{$CONST.MEDIA_RENAME}"   src="{$media.renameIMG}" border="0" onclick="rename('{$file.id}', '{$file.name|escape:javascript}')"><br>
-                    {if $file.is_image AND NOT $file.hotlink}<img class="serendipityImageButton" title="{$CONST.IMAGE_RESIZE}"   alt="{$CONST.IMAGE_RESIZE}" src="{$media.resizeIMG}" border="0" onclick="location.href='?serendipity[adminModule]=images&amp;serendipity[adminAction]=scaleSelect&amp;serendipity[fid]={$file.id}';"><br>{/if}
-                    {if $file.is_image AND NOT $file.hotlink}<a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCCW&amp;serendipity[fid]={$file.id}"><img class="serendipityImageButton" title="{$CONST.IMAGE_ROTATE_LEFT}"  alt="{$CONST.IMAGE_ROTATE_LEFT}"  src="{$media.rotateccwIMG}" border="0"></a><br>{/if}
-                    {if $file.is_image AND NOT $file.hotlink}<a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCW&amp;serendipity[fid]={$file.id}"><img  class="serendipityImageButton" title="{$CONST.IMAGE_ROTATE_RIGHT}" alt="{$CONST.IMAGE_ROTATE_RIGHT}" src="{$media.rotatecwIMG}" border="0"></a><br>{/if}
-                    <a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=properties&amp;serendipity[fid]={$file.id}"><img class="serendipityImageButton" title="{$CONST.MEDIA_PROP}" alt="{$CONST.MEDIA_PROP}"    src="{$media.configureIMG}" border="0"></a><br>
-                    <a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=delete&amp;serendipity[fid]={$file.id}"><img class="serendipityImageButton" title="{$CONST.MEDIA_DELETE}"   alt="{$CONST.MEDIA_DELETE}"  src="{$media.deleteIMG}"    border="0"></a><br>
-                    <input type="checkbox" value="{$file.id}" name="serendipity[multiDelete][]" id="multidelete_image{$file.id}">
-                {/if}
-                </td>
-                <td colspan="2">
-                    <div class="serendipity_media_filename" style="font-weight: bold; font-size: 8pt">{$file.realname}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}</div>
-                    <div class="serendipity_media_author"   style="font-size: 8pt">{if $file.authorid != 0}{$file.authorname}{else}<br>{/if}</div>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" colspan="2">
-                    {$file.preview}
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" height="10" align="center" style="font-size: 8pt">
-                {if $file.hotlink}
-                    {$file.nice_hotlink}
-                {else}
-                    {if $file.is_image}
-                    {$CONST.ORIGINAL_SHORT}: {$file.dimensions_width}x{$file.dimensions_height},
-                    {$CONST.THUMBNAIL_SHORT}: {$file.dim.0}x{$file.dim.1}<br>
-                    {/if}
-                    {$file.nice_size}kb {if $file.realname != $file.diskname} [{$file.diskname}]{/if}
+        <article class="media_file">
+            <header>
+                <h3>{$file.realname}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}</h3>
+                {if $file.authorid != 0}<span class="author">{$file.authorname}</span>{/if}
+            </header>
 
+            <div class="media_file_preview">
+            {$file.preview}
+            </div>
+        {if $file.is_editable}
+            <ul class="media_file_actions">
+                <li><a id="media_fullsize" href="#"  onclick="F1 = window.open('{if $file.hotlink}{$file.path}{else}{$file.full_file}{/if}', 'Zoom', 'height={$file.popupHeight},width={$file.popupWidth},top='+ (screen.height-{$file.popupHeight})/2 +',left='+ (screen.width-{$file.popupWidth})/2 +',toolbar=no,menubar=no,location=no,resize=1,resizable=1{if NOT $file.is_image},scrollbars=yes{/if}');">{$CONST.MEDIA_FULLSIZE}</a></li>
+                <li><a id="media_rename" href="#" onclick="rename('{$file.id}', '{$file.name|escape:javascript}')">{$CONST.MEDIA_RENAME}</a></li>
+            {if $file.is_image AND NOT $file.hotlink}
+                <li><a id="media_resize" href="#" onclick="location.href='?serendipity[adminModule]=images&amp;serendipity[adminAction]=scaleSelect&amp;serendipity[fid]={$file.id}';">{$CONST.IMAGE_RESIZE}</a></li>
+            {/if}
+            {if $file.is_image AND NOT $file.hotlink}
+                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_LEFT}</a></li>
+            {/if}
+            {if $file.is_image AND NOT $file.hotlink}
+                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_RIGHT}</a></li>
+            {/if}
+                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=properties&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_PROP}</a></li>
+                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=delete&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_DELETE}</a></li>
+                <li><input id="multidelete_image{$file.id}" name="serendipity[multiDelete][]" type="checkbox" value="{$file.id}">
+                    <label for="multidelete_image{$file.id}" class="visuallyhidden">TODO_LANG</label>
+                </li>
+            </ul>
+        {/if}
+
+            <footer>
+                <ul class="media_file_meta plainList">
+            {if $file.hotlink}
+                    <li>{$file.nice_hotlink}</li>
+            {else}
+                {if $file.is_image}
+                    <li><b>{$CONST.ORIGINAL_SHORT}:</b> {$file.dimensions_width}x{$file.dimensions_height}</li>
+                    <li><b>{$CONST.THUMBNAIL_SHORT}:</b> {$file.dim.0}x{$file.dim.1}</li>
                 {/if}
-                </td>
-            </tr>
-        </table>
+                    <li>{$file.nice_size} KB</li>
+                {if $file.realname != $file.diskname}
+                    <li>{$file.diskname}</li>
+                {/if}
+            {/if}
+                </ul>
+            </footer>
+        </article>
     {/if}
 
     {if $media.enclose}
