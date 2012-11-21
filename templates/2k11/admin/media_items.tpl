@@ -1,11 +1,7 @@
-{* HTML5: No  *}
+{* HTML5: Yes *}
 {* jQuery: No *}
 
 {foreach from=$media.files item="file" name="mediafiles" key="mediakey"}
-    {if $media.enclose}
-    <td nowrap="nowrap" align="center" valign="{if $media.manage}top{else}middle{/if}" width="{$media.lineBreakP}%" class="serendipity_admin_list_item serendipity_admin_list_item_even">
-    {/if}
-
     {if NOT $media.manage}
         {$file.preview}{if $file.orderkey != ''}: {$file.orderkey|@escape}{/if}
     {else}
@@ -19,7 +15,7 @@
             {$file.preview}
             </div>
         {if $file.is_editable}
-            <ul class="media_file_actions">
+            <ul class="media_file_actions plainList">
                 <li><a id="media_fullsize" href="#"  onclick="F1 = window.open('{if $file.hotlink}{$file.path}{else}{$file.full_file}{/if}', 'Zoom', 'height={$file.popupHeight},width={$file.popupWidth},top='+ (screen.height-{$file.popupHeight})/2 +',left='+ (screen.width-{$file.popupWidth})/2 +',toolbar=no,menubar=no,location=no,resize=1,resizable=1{if NOT $file.is_image},scrollbars=yes{/if}');">{$CONST.MEDIA_FULLSIZE}</a></li>
                 <li><a id="media_rename" href="#" onclick="rename('{$file.id}', '{$file.name|escape:javascript}')">{$CONST.MEDIA_RENAME}</a></li>
             {if $file.is_image AND NOT $file.hotlink}
@@ -54,11 +50,8 @@
             {/if}
                 </ul>
             </footer>
+            <p>Debug: $media.enclose</p>
         </article>
-    {/if}
-
-    {if $media.enclose}
-    </td>
     {/if}
 
     {if NOT $media.enclose}
@@ -158,9 +151,5 @@
         {/foreach}
         </ul>
         {/if}
-    {/if}
-
-    {if $media.enclose AND (($smarty.foreach.mediafiles.iteration % $media.lineBreak) == 0)}
-    </tr><tr>
     {/if}
 {/foreach}
