@@ -611,11 +611,6 @@ p, table {
     margin-bottom: 1.5em;
 }
 
-.js #jshint {
-    display: none;
-    visibility: hidden;
-}
-
 .plainList,
 .imageMessage ul,
 .actions {

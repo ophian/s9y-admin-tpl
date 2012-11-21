@@ -19,7 +19,6 @@
 {/if}
 </head>
 <body id="serendipity_admin_page" onload="spawn()">
-    <p id="jshint">For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/">instructions how to enable JavaScript in your web browser</a>.</p>
 {if NOT $admin_vars.no_banner}
     <header id="top">
         <div class="clearfix">
