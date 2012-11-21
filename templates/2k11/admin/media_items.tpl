@@ -26,19 +26,18 @@
                 <li><a id="media_resize" href="#" onclick="location.href='?serendipity[adminModule]=images&amp;serendipity[adminAction]=scaleSelect&amp;serendipity[fid]={$file.id}';">{$CONST.IMAGE_RESIZE}</a></li>
             {/if}
             {if $file.is_image AND NOT $file.hotlink}
-                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_LEFT}</a></li>
+                <li><a id="media_rotate_left" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_LEFT}</a></li>
             {/if}
             {if $file.is_image AND NOT $file.hotlink}
-                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_RIGHT}</a></li>
+                <li><a id="media_rotate_right" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=rotateCW&amp;serendipity[fid]={$file.id}">{$CONST.IMAGE_ROTATE_RIGHT}</a></li>
             {/if}
-                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=properties&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_PROP}</a></li>
-                <li><a href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=delete&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_DELETE}</a></li>
+                <li><a id="media_prop" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=properties&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_PROP}</a></li>
+                <li><a id="media_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=delete&amp;serendipity[fid]={$file.id}">{$CONST.MEDIA_DELETE}</a></li>
                 <li><input id="multidelete_image{$file.id}" name="serendipity[multiDelete][]" type="checkbox" value="{$file.id}">
                     <label for="multidelete_image{$file.id}" class="visuallyhidden">TODO_LANG</label>
                 </li>
             </ul>
         {/if}
-
             <footer>
                 <ul class="media_file_meta plainList">
             {if $file.hotlink}
