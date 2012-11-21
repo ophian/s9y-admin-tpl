@@ -709,10 +709,6 @@ p, table {
 }
 
 .transparent { background: transparent; }
-
-.button_block { display: block; }
-
-.button_block input { margin: 0 10px; }
 /* End mysterious stuff */
 
 

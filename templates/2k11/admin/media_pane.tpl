@@ -133,64 +133,30 @@
 {if $media.nr_files < 1}
     <span class="msg_notice">{$CONST.NO_IMAGES_FOUND}</span>
 {else}
-{if $smarty.get.serendipity.adminModule == 'media'}
-<form id="formMultiDelete" name="formMultiDelete" action="?" method="post">
-    {$media.token}
-    <input name="serendipity[action]" type="hidden" value="admin">
-    <input name="serendipity[adminModule]" type="hidden" value="media">
-    <input name="serendipity[adminAction]" type="hidden" value="multidelete">
-{/if}
-<table border="0" width="100%">
-    <tr>
-        <td colspan="{$media.lineBreak}">
-            <table width="100%">
-                <tr>
-                    <td>
-                    {if $media.page != 1 AND $media.page <= $media.pages}
-                        <a href="{$media.linkPrevious}">{$CONST.PREVIOUS}</a>
-                    {/if}
-                    </td>
-                    <td align="right">
-                    {if $media.page != $media.pages}
-                        <a href="{$media.linkNext}">{$CONST.NEXT}</a>
-                    {/if}
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-
-    <tr>
-    {$MEDIA_ITEMS}
-    </tr>
-
-    <tr>
-        <td colspan="{$media.lineBreak}">
-            <table width="100%">
-                <tr>
-                    <td>
-                    {if $media.page != 1 AND $media.page <= $media.pages}
-                        <a href="{$media.linkPrevious}">>{$CONST.PREVIOUS}</a>
-                    {/if}
-                    </td>
-                    <td align="right">
-                    {if $media.page != $media.pages}
-                        <a href="{$media.linkNext}">{$CONST.NEXT}</a>
-                    {/if}
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-{if $smarty.get.serendipity.adminModule == 'media'}
-<div class="button_block">
-    <input name="toggle" type="button" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
-    <input name="toggle" type="submit" value="{$CONST.DELETE_SELECTED_ENTRIES}">
-</div>
-
-</form>
-{/if}
-
+    {if $smarty.get.serendipity.adminModule == 'media'}
+    <form id="formMultiDelete" name="formMultiDelete" action="?" method="post">
+        {$media.token}
+        <input name="serendipity[action]" type="hidden" value="admin">
+        <input name="serendipity[adminModule]" type="hidden" value="media">
+        <input name="serendipity[adminAction]" type="hidden" value="multidelete">
+    {/if}
+    <div class="clearfix">
+        <ul class="clearfix pagination">
+            <li>{if $media.page != 1 AND $media.page <= $media.pages}<a href="{$media.linkPrevious}">{$CONST.PREVIOUS}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
+            <li>{if $media.page != $media.pages}<a href="{$media.linkNext}">{$CONST.NEXT}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
+        </ul>
+        {$MEDIA_ITEMS}
+        {* Should be cloned using JS *}
+        <ul class="clearfix pagination">
+            <li>{if $media.page != 1 AND $media.page <= $media.pages}<a href="{$media.linkPrevious}">{$CONST.PREVIOUS}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
+            <li>{if $media.page != $media.pages}<a href="{$media.linkNext}">{$CONST.NEXT}</a>{else}<span class="visuallyhidden">{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>
+        </ul>
+    </div>
+    {if $smarty.get.serendipity.adminModule == 'media'}
+        <div class="form_buttons">
+            <input name="toggle" type="button" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">
+            <input name="toggle" type="submit" value="{$CONST.DELETE_SELECTED_ENTRIES}">
+        </div>
+    </form>
+    {/if}
 {/if}
