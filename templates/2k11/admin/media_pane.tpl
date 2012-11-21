@@ -97,33 +97,35 @@
     <fieldset>
         <legend><span>{$CONST.SORT_ORDER}</span></legend>
 
-        <div class="form_select">
-            <label for="serendipity_sortorder_order">{$CONST.SORT_BY}</label>
+        <div class="clearfix">
+            <div class="form_select">
+                <label for="serendipity_sortorder_order">{$CONST.SORT_BY}</label>
 
-            <select id="serendipity_sortorder_order" name="serendipity[sortorder][order]">
-            {foreach from=$media.sort_order item="so_val" key="so_key"}
-                <option value="{$so_key}" {if $media.sortorder.order == $so_key}selected="selected"{/if}>{$so_val.desc}</option>
-            {/foreach}
-            </select>
-        </div>
+                <select id="serendipity_sortorder_order" name="serendipity[sortorder][order]">
+                {foreach from=$media.sort_order item="so_val" key="so_key"}
+                    <option value="{$so_key}" {if $media.sortorder.order == $so_key}selected="selected"{/if}>{$so_val.desc}</option>
+                {/foreach}
+                </select>
+            </div>
 
-        <div class="form_select">
-            <label for="serendipity_sortorder_ordermode">{$CONST.SORT_ORDER}</label>
-            
-            <select id="serendipity_sortorder_ordermode" name="serendipity[sortorder][ordermode]">
-                <option value="DESC" {if $media.sortorder.ordermode == 'DESC'}selected="selected"{/if}>{$CONST.SORT_ORDER_DESC}</option>
-                <option value="ASC"  {if $media.sortorder.ordermode == 'ASC'}selected="selected"{/if}>{$CONST.SORT_ORDER_ASC}</option>
-            </select>
-        </div>
+            <div class="form_select">
+                <label for="serendipity_sortorder_ordermode">{$CONST.SORT_ORDER}</label>
+                
+                <select id="serendipity_sortorder_ordermode" name="serendipity[sortorder][ordermode]">
+                    <option value="DESC" {if $media.sortorder.ordermode == 'DESC'}selected="selected"{/if}>{$CONST.SORT_ORDER_DESC}</option>
+                    <option value="ASC"  {if $media.sortorder.ordermode == 'ASC'}selected="selected"{/if}>{$CONST.SORT_ORDER_ASC}</option>
+                </select>
+            </div>
 
-        <div class="form_select">
-            <label for="serendipity_sortorder_perpage">{$CONST.FILES_PER_PAGE}</label>
+            <div class="form_select">
+                <label for="serendipity_sortorder_perpage">{$CONST.FILES_PER_PAGE}</label>
 
-            <select id="serendipity_sortorder_perpage" name="serendipity[sortorder][perpage]">
-            {foreach from=$media.sort_row_interval item="so_val"}
-                <option value="{$so_val}" {if $media.perPage == $so_val}selected="selected"{/if}>{$so_val}</option>
-            {/foreach}
-            </select>
+                <select id="serendipity_sortorder_perpage" name="serendipity[sortorder][perpage]">
+                {foreach from=$media.sort_row_interval item="so_val"}
+                    <option value="{$so_val}" {if $media.perPage == $so_val}selected="selected"{/if}>{$so_val}</option>
+                {/foreach}
+                </select>
+            </div>
         </div>
     </fieldset>
 {if $media.show_upload}
