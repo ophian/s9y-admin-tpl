@@ -2,7 +2,6 @@
 {* jQuery: No *}
 
 <div class="image_add_form">{$CONST.ADD_MEDIA_BLAHBLAH}</div>
-<div class="image_add_note">{$CONST.ADD_MEDIA_BLAHBLAH_NOTE}</div>
 
 <script>
 // Function prototype inspired by http://molily.de/javascript-nodelist
@@ -257,3 +256,4 @@ function fillInput(source, target) {ldelim}
     </div>
 </form>
 
+<div class="image_add_note">{$CONST.ADD_MEDIA_BLAHBLAH_NOTE}</div>
