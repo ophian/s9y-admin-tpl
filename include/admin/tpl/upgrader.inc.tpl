@@ -39,7 +39,7 @@
     <h3>{$CONST.FIRST_WE_TAKE_A_LOOK}</h3>
 
     <div class="diagnose">
-        <span class="msg_notice transparent">{$result_diagnose}.</span>
+        <span class="msg_notice">{$result_diagnose}.</span>
 
     {if $checksums}
         <h4>{$CONST.INTEGRITY}</h4>
