@@ -124,22 +124,28 @@
 
     <span class="msg_notice">{$CONST.PREFERENCE_USE_JS_WARNING}</span>
     {/if}
-    <h3>{$CONST.SIDEBAR_PLUGINS}</h3>
+    <section id="pluginlist_sidebar">
+        <h3>{$CONST.SIDEBAR_PLUGINS}</h3>
 
-    <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.SIDEBAR_PLUGIN}"}</a>
+        <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.SIDEBAR_PLUGIN}"}</a>
 
-    {$backend_plugins_sidebar_header}
-    {$sidebar_plugins}
+        {$backend_plugins_sidebar_header}
+        {$sidebar_plugins}
+    </section>
 
-    <h3>{$CONST.EVENT_PLUGINS}</h3>
+    <section id="pluginlist_event">
+        <h3>{$CONST.EVENT_PLUGINS}</h3>
 
-    <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.EVENT_PLUGIN}"}</a>
+        <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.EVENT_PLUGIN}"}</a>
 
-    {$backend_plugins_event_header}
-    {$event_plugins}
+        {$backend_plugins_event_header}
+        {$event_plugins}
+    </section>
     {if $memsnaps}
-    <h3>Memory Usage</h3>
+    <section>
+        <h3>Memory Usage</h3>
 
-    <pre>{$memSnaps|print_r}</pre>
+        <pre>{$memSnaps|print_r}</pre>
+    </section>
     {/if}
 {/if}
