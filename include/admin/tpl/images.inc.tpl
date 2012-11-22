@@ -178,9 +178,11 @@
 
     <ul class="plainList">
     {foreach $folders as $folder}
-        <li class="level_{$folder.depth}">{$folder.name}
+        <li class="level_{$folder.depth} clearfix">
+            <span class="folder_name">{$folder.name}</span>
             <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.EDIT}</a>
-            <a class="link_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDelete&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.DELETE}</a></li>
+            <a class="link_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDelete&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.DELETE}</a>
+        </li>
     {/foreach}
     </ul>
     <a class="link_create block_level" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryCreate">{$CONST.CREATE_NEW_DIRECTORY}</a>
