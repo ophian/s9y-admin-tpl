@@ -571,6 +571,10 @@ input[type=radio] + label,
 }
 
 /* Styles common to all resolutions */
+
+/* Color scheme:
+ */
+
 body { font-size: 0.875em; }
 
 a, a:visited { color: #3a4b6f; }
