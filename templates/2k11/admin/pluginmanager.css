@@ -4,7 +4,7 @@
 }
 
 .pluginmanager_container {
-    background-color: #eee;
+    background: transparent;
     border: 1px dashed #ddd;
     height: 98%;
     margin: 0;
@@ -19,8 +19,8 @@
 
 .pluginmanager_item_even,
 .pluginmanager_item_uneven {
-    background-color: #ccc;
-    border: 1px solid #bbb;
+    background: #eee;
+    border: 1px solid #ddd;
 }
 
 .pluginmanager_place,
