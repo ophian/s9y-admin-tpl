@@ -30,33 +30,35 @@
     {foreach $templates as $template=>$info}
         {if $info.info.engine == 'yes'}{continue}{/if}
         {if !empty($template)}
-        <li><h3>{$info.info.name}</h3>
+        <li><div class="clearfix">
+                <h3>{$info.info.name}</h3>
             {if $info.fullsize_preview || $info.preview}
-            <div class="preview_image">
-                {if $info.fullsize_preview}<a href="{$info.fullsize_preview}">{/if}
-                {if $info.preview}<img src="{$info.preview}" alt="" >{/if}
-                {if $info.fullsize_preview}</a>{/if}
-            </div>
+                <div class="preview_image">
+                    {if $info.fullsize_preview}<a href="{$info.fullsize_preview}">{/if}
+                    {if $info.preview}<img src="{$info.preview}" alt="" >{/if}
+                    {if $info.fullsize_preview}</a>{/if}
+                </div>
             {/if}
-            <dl class="template_info clearfix">
-                <dt class="template_author">{$CONST.AUTHOR}:</dt>
-                <dd>{$info.info.author}</dd>
-                <dt class="template_date">{$CONST.LAST_UPDATED}:</dt>
-                <dd>{$info.info.date}</dd>
-                <dt class="template_admin">{$CONST.CUSTOM_ADMIN_INTERFACE}:</dt>
-                <dd>{$info.info.custom_admin_interface}</dd>
-            </dl>
+                <dl class="template_info clearfix">
+                    <dt class="template_author">{$CONST.AUTHOR}:</dt>
+                    <dd>{$info.info.author}</dd>
+                    <dt class="template_date">{$CONST.LAST_UPDATED}:</dt>
+                    <dd>{$info.info.date}</dd>
+                    <dt class="template_admin">{$CONST.CUSTOM_ADMIN_INTERFACE}:</dt>
+                    <dd>{$info.info.custom_admin_interface}</dd>
+                </dl>
             
-            <div class="template_status">
-            {if $template != $cur_template}
-                {if !$info.unmetRequirements}
-                <a href="?serendipity[adminModule]=templates&amp;serendipity[adminAction]=install&amp;serendipity[theme]={$template}{$info.info.customURI}">{$CONST.SET_AS_TEMPLATE}</a>
+                <div class="template_status">
+                {if $template != $cur_template}
+                    {if !$info.unmetRequirements}
+                    <a href="?serendipity[adminModule]=templates&amp;serendipity[adminAction]=install&amp;serendipity[theme]={$template}{$info.info.customURI}">{$CONST.SET_AS_TEMPLATE}</a>
+                    {else}
+                    <span class="unmet_requirements">{$info.unmetRequirements}></span>
+                    {/if}
                 {else}
-                <span class="unmet_requirements">{$info.unmetRequirements}></span>
+                    <span class="installed">{$CONST.ALREADY_INSTALLED}</span>
                 {/if}
-            {else}
-                <span class="installed">{$CONST.ALREADY_INSTALLED}</span>
-            {/if}
+                </div>
             </div>
         </li>
         {/if}
