@@ -580,9 +580,12 @@ input[type=radio] + label,
    Off black:   #222        Off white:   #fcfcfc
  */
 
-html, body { background: #fcfcfc; }
+html { background: #ccdee7; }
 
-body { font-size: 0.875em; }
+body {
+    background: #fcfcfc;
+    font-size: 0.875em;
+}
 
 a, a:visited { color: #3a4b6f; }
 
