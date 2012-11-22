@@ -730,6 +730,15 @@ p, table {
 /* Plugin manager – might go into pluginmanager.css in the end */
 #configuration_footer { height: 100px; }
 
+.pluginmanager_side {
+    float: left;
+    margin: 0 0 1em;
+}
+
+#pluginlist_sidebar .pluginmanager_side  { width: 33%; }
+
+#pluginlist_event .pluginmanager_side  { width: 49%; }
+
 /* Media db – might go into imgedit.css in the end */
 #fs_crop { min-height: 200px; }
 
