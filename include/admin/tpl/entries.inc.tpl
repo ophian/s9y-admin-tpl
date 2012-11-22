@@ -6,8 +6,10 @@
         <input name="serendipity[action]" type="hidden" value="admin">
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="editSelect">
+
         <fieldset>
             <legend><span>{$CONST.FILTERS} ({$CONST.FIND_ENTRIES})</span></legend>
+
             <div class="form_select">
                 <label for="filter_author">{$CONST.AUTHOR}</label>
                 <select id="filter_author" name="serendipity[filter][author]">
@@ -26,6 +28,7 @@
                     <option value="publish" {(isset($get.filter.isdraft) && ($get.filter.isdraft == 'publish') ? 'selected="selected"' : '')}>{$CONST.PUBLISH}</option>
                 </select>
             </div>
+
             <div class="form_select">
                 <label for="filter_category">{$CONST.CATEGORY}</label>
                 <select id="filter_category" name="serendipity[filter][category]">
@@ -40,8 +43,10 @@
                 <input id="filter_content" name="serendipity[filter][body]" type="text" value="{(isset($get.filter.body)) ? "{$get.filter.body|escape}" : ''}">
             </div>
         </fieldset>
+
         <fieldset>
             <legend><span>{$CONST.SORT_ORDER}</span></legend>
+
             <div class="form_select">
                 <label for="sort_order">{$CONST.SORT_BY}</label>
                 <select id="sort_order" name="serendipity[sort][order]">
@@ -50,6 +55,7 @@
                 {/foreach}
                 </select>
             </div>
+
             <div class="form_select">
                 <label for="sort_ordermode">{$CONST.SORT_ORDER}</label>
                 <select id="sort_ordermode" name="serendipity[sort][ordermode]">
@@ -57,6 +63,7 @@
                     <option value="ASC" {(isset($get.sort.ordermode) && ($get.sort.ordermode == 'ASC') ? 'selected="selected"' : '')}>{$CONST.SORT_ORDER_ASC}</option>
                 </select>
             </div>
+
             <div class="form_select">
                 <label for="sort_perpage">{$CONST.ENTRIES_PER_PAGE}</label>
                 <select id="sort_perpage" name="serendipity[sort][perPage]">
@@ -89,11 +96,13 @@
         <input name="serendipity[action]" type="hidden" value="admin">
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="multidelete">
+
         <ul class="plainList">
         {foreach $entries as $entry}
             {if ($entry@index > $perPage)}{continue}{/if}
             <li><h3><a href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]={$entry.id}" title="#{$entry.id}">{$entry.title|escape|truncate:50:"&hellip;"}</a></h3>
                 <input id="multidelete_entry{$entry.id}" name="serendipity[multiDelete][]" type="checkbox" value="{$entry.id}"><label for="multidelete_entry{$entry.id}" class="visuallyhidden">TODO_LANG #{$entry_id}</label>
+
                 <div class="entry_status">
                 {if (!$showFutureEntries) && ($entry.timestamp >= $serverOffsetHour)}
                     <span class="status_future">{$CONST.ENTRY_PUBLISHED_FUTURE}</span>
@@ -108,6 +117,7 @@
                         {$entry.timestamp|@formatTime:"{$CONST.DATE_FORMAT_SHORT}"}{if $entry.timestamp <= ($entry.last_modified - (60*30))} <a href="#" title="{$CONST.LAST_UPDATED}: {$entry.last_modified|@formatTime:"{$CONST.DATE_FORMAT_SHORT}"}" onclick="alert(this.title)">TODO_LANG</a>{/if}
                     </span>
                 </div>
+
                 <span class="entry_meta">{$CONST.POSTED_BY} {$entry.author|escape}
                 {if count($entry.cats)} {$CONST.IN}
                   {foreach $entry.cats AS $cat}
@@ -115,6 +125,7 @@
                   {/foreach}
                 {/if}
                 </span>
+
                 <ul class="actions">
                 {if $entry.preview || (!$showFutureEntries && ($entry.timestamp >= $serverOffsetHour))}
                     <li><a class="link_view" href="{$entry.preview_link}" title="{$CONST.PREVIEW} #{$entry.id}">{$CONST.PREVIEW}</a></li>
@@ -140,10 +151,14 @@
         <input name="serendipity[action]" type="hidden" value="admin">
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="editSelect">
+
         <fieldset id="entry_skip" class="clearfix">
             <legend><span>{$CONST.EDIT_ENTRY} #</span></legend>
-            <input id="skipto_entry" name="serendipity[id]" type="text" size="3">
-            <label for="skipto_entry" class="visuallyhidden">TODO_LANG</label>
+
+            <div class="form_field">
+                <input id="skipto_entry" name="serendipity[id]" type="text" size="3">
+                <label for="skipto_entry" class="visuallyhidden">TODO_LANG</label>
+            </div>
         </fieldset>
         <input name="serendipity[editSubmit]" type="submit" value="{$CONST.GO}">
     </form>

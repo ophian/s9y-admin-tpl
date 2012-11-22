@@ -6,6 +6,7 @@
 {if $output.show_links}
 <aside class="{$output.links_css}">
     <h3>{$output.links_title}</h3>
+    
     <ul>
     {foreach $output.links AS $link}
         <li>{$link}</li>

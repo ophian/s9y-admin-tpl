@@ -38,6 +38,7 @@
     <form action="" method="GET">
         <input name="serendipity[adminModule]" type="hidden" value="import">
         {$formToken}
+
         <div class="form_select">
             <label for="import_from">{$CONST.IMPORT_WEBLOG_APP}:</label>
             <select id="import_from" name="serendipity[importFrom]">
@@ -46,6 +47,7 @@
             {/foreach}
             </select>
         </div>
+        
         <input type="submit" value="{$CONST.GO}">
     </form>
 {/if}

@@ -42,7 +42,7 @@
             <label for="serendipity_{$config_item}">{$cname}
             {if $cdesc != ''}<span>{$cdesc}</span>{/if}
             </label>
-            {* Make sure id creation actually produces unique identifiers *}
+            {* TODO: Make sure id creation actually produces unique identifiers *}
             <input id="serendipity_{$config_item}" class="direction_{$lang_direction}" name="serendipity[{$postKey}][{$config_item}]" type="{$input_type}" value="{$hvalue}">
         </div>
     {/if}
@@ -96,8 +96,9 @@
         {/if}
             <fieldset>
                 <legend><span>{$cname}</span></legend>
-                {if $cdesc != ''}<p>{$cdesc}</p>{/if}
-                
+            {if $cdesc != ''}
+                <p>{$cdesc}</p>
+            {/if}    
                 <input id="{$config_item}_value" name="serendipity[{$postKey}][{$config_item}]" type="hidden" value="{$value}">
 
                 <noscript>

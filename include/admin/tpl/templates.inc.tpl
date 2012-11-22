@@ -43,6 +43,7 @@
                 <dt class="template_admin">{$CONST.CUSTOM_ADMIN_INTERFACE}:</dt>
                 <dd>{$info.info.custom_admin_interface}</dd>
             </dl>
+            
             <div class="template_status">
             {if $template != $cur_template}
                 {if !$info.unmetRequirements}

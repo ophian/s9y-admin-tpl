@@ -150,6 +150,7 @@
             <h4>{$CONST.PERMISSIONS}</h4>
 
             <h5>{$basedir}</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_WRITABLE AS $fwrite}
                 <li>{$fwrite}</li>
@@ -157,6 +158,7 @@
             </ul>
 
             <h5>{$basedir} {$CONST.PATH_SMARTY_COMPILE}</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_COMPILE AS $compile}
                 <li>{$compile}</li>
@@ -164,6 +166,7 @@
             </ul>
 
             <h5>{$basedir}archives/</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_ARCHIVES AS $archives}
                 <li>{$archives}</li>
@@ -171,6 +174,7 @@
             </ul>
 
             <h5>{$basedir}plugins/</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_PLUGINS AS $plugins}
                 <li>{$plugins}</li>
@@ -178,6 +182,7 @@
             </ul>
         {if $is_dir_uploads}
             <h5>{$basedir}uploads/</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_UPLOADS AS $uploads}
                 <li>{$uploads}</li>
@@ -186,6 +191,7 @@
         {/if}
         {if $is_imb_executable}
             <h5>Execute Imagemagick binary</h5>
+
             <ul class="plainList">
             {foreach $installerResultDiagnose_IMB AS $im_binary}
                 <li>{$im_binary}</li>
@@ -197,9 +203,11 @@
         {/if}
         {if $errorCount > 0}
             <span class="msg_error">{$CONST.PROBLEM_DIAGNOSTIC}</span>
+
             <a href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
         {else}
             <span class="msg_notice">{$CONST.SELECT_INSTALLATION_TYPE}:</span>
+
             <a href="?serendipity[step]=2a">{$CONST.SIMPLE_INSTALLATION}</a> - <a href="?serendipity[step]=2b">{$CONST.EXPERT_INSTALLATION}</a>
         {/if}
         </div>
@@ -236,6 +244,7 @@
         <span class="msg_success">{$CONST.DONE}</span>
     {else}
         <h4>{$CONST.FAILED}</h4>
+
         <ul class="plainList">
         {foreach $errors_sif AS $error_f}
             <li><span class="msg_error">{$error_f}</span></li>
@@ -244,7 +253,9 @@
     {/if}
     {if $s9y_installed}
         <span class="msg_success">{$CONST.SERENDIPITY_INSTALLED}</span>
+
         <p><strong>{$CONST.THANK_YOU_FOR_CHOOSING}</strong></p>
+        
         <a href="{$smarty.post.serendipityHTTPPath}">{$CONST.VISIT_BLOG_HERE}</a>
     {else}
         <span class="msg_error">{$CONST.ERROR_DETECTED_IN_INSTALL}</span>

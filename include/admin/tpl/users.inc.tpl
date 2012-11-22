@@ -77,6 +77,7 @@
     <form action="?serendipity[adminModule]=users" method="post">
         {$formToken}
         <input name="serendipity[user]" type="hidden" value="{$userid}">
+        
         <fieldset class="users_delete_action">
             <legend><span>{$CONST.DELETE_USER|sprintf:"{$userid}":"{$realname|escape:"html"}"}</span></legend>
             <input name="DELETE_YES" type="submit" value="{$CONST.DUMP_IT}">

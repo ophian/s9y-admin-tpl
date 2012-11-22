@@ -6,10 +6,8 @@
 {if !$eyecandy}
     <form action="?serendipity[adminModule]=plugins" method="post">
 {elseif !$event_only}
-{*
-Smarty 3 has a new auto literal option which is enabled by default.
-When the { is followed by a space it's not interpreted as smarty delimiter but literal.
-*}
+{* Smarty 3 has a new auto literal option which is enabled by default.
+   When the { is followed by a space it's not interpreted as smarty delimiter but literal. *}
     <script>
         function templatePluginMoverInit() { 
 

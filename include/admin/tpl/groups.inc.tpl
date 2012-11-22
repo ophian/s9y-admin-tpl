@@ -33,6 +33,7 @@
         {$formToken}
     {if $edit}
         <h2>{$CONST.EDIT}</h2>
+
         <input name="serendipity[group]" type="hidden" value="{$from.id}">
     {else}
         <h2>{$CONST.CREATE}</h2>
@@ -109,7 +110,9 @@
     <form action="?serendipity[adminModule]=groups" method="post">
         {$formToken}
         <input name="serendipity[group]" type="hidden" value="{$group_id|escape:"html"}">
+
         <h2>{$CONST.DELETE_GROUP|sprintf:"{$group_id}":"{$group.name|escape:"html"}"}</h2>
+        
         <div id="groups_delete_action">
             <input name="DELETE_YES" type="submit" value="{$CONST.DUMP_IT}">
             <input name="NO" type="submit" value="{$CONST.NOT_REALLY}">

@@ -34,6 +34,7 @@
     <h2>{$CONST.SERENDIPITY_UPGRADER_WELCOME}</h2>
 
     <p>{$CONST.SERENDIPITY_UPGRADER_PURPOSE|sprintf:$s9y_version_installed}</p>
+
     <p>{$CONST.SERENDIPITY_UPGRADER_WHY|sprintf:$s9y_version}</p>
 
     <h3>{$CONST.FIRST_WE_TAKE_A_LOOK}</h3>
@@ -73,6 +74,7 @@
     {/if}
     {if ($errorCount > 0)}
         <span class="msg_error">{$CONST.PROBLEM_DIAGNOSTIC}</span>
+        
         <a class="link_reload" href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
     {/if}
     </div>

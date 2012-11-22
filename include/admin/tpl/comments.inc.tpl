@@ -4,10 +4,8 @@
 {if !empty($errormsg)}
     <span class="msg_error">{$errormsg}</span>
 {/if}
-{*
-Smarty 3 has a new auto literal option which is enabled by default.
-When the { is followed by a space it's not interpreted as smarty delimiter but literal.
-*}
+{* Smarty 3 has a new auto literal option which is enabled by default.
+   When the { is followed by a space it's not interpreted as smarty delimiter but literal. *}
 <script>
 function FT_toggle(id) { 
     if ( document.getElementById(id + '_full').style.display == '' ) { 
@@ -66,32 +64,40 @@ function highlightComment(id, checkvalue) {
         {$formtoken}
         <input name="serendipity[adminModule]" type="hidden" value="comments">
         <input name="serendipity[page]" type="hidden" value="{$page}">
+
         <fieldset>
             <legend><span>{$CONST.FILTERS} ({$CONST.FIND_COMMENTS})</span></legend>
+
             <div class="form_field">
                 <label for="filter_author">{$CONST.AUTHOR}:</label>
                 <input id="filter_author" name="serendipity[filter][author]" type="text" value="{$get.filter.author|escape}">
             </div>
+
             <div class="form_field">
                 <label for="filter_email">{$CONST.EMAIL}:</label>
                 <input id="filter_email" name="serendipity[filter][email]" type="text" value="{$get.filter.email|escape}">
             </div>
+
             <div class="form_field">
                 <label for="filter_url">{$CONST.URL}:</label>
                 <input id="filter_url" name="serendipity[filter][url]" type="text" value="{$get.filter.url|escape}">
             </div>
+
             <div class="form_field">
                 <label for="filter_ip">IP:</label>
                 <input id="filter_ip" name="serendipity[filter][ip]" type="text" value="{$get.filter.ip|escape}">
             </div>
+
             <div class="form_field">
                 <label for="filter_body">{$CONST.CONTENT}:</label>
                 <input id="filter_body" name="serendipity[filter][body]" type="text" value="{$get.filter.body|escape}">
             </div>
+
             <div class="form_field">
                 <label for="filter_referer">{$CONST.REFERER}:</label>
                 <input id="filter_referer" name="serendipity[filter][referer]" type="text" value="{$get.filter.referer|escape}">
             </div>
+
             <div class="form_select">
                 <label for="filter_perpage">{$CONST.COMMENTS}:</label>
                 <select id="filter_perpage" name="serendipity[filter][perpage]">
@@ -100,6 +106,7 @@ function highlightComment(id, checkvalue) {
                 {/foreach}
                 </select>
             </div>
+
             <div class="form_select">
                 <label for="filter_show">{$CONST.COMMENTS_FILTER_SHOW}:</label>
                 <select id="filter_show" name="serendipity[filter][show]">
@@ -109,6 +116,7 @@ function highlightComment(id, checkvalue) {
                     <option value="confirm"{if $get.filter.show == 'confirm'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_NEED_CONFIRM}</option>
                 </select>
             </div>
+
             <div class="form_select">
                 <label for="">{$CONST.TYPE}</label>
                 <select name="serendipity[filter][type]">
@@ -124,11 +132,13 @@ function highlightComment(id, checkvalue) {
     </form>
 {if !is_array($sql)}
     <span class="msg_notice">{$CONST.NO_COMMENTS}</span>
+
     <a href="serendipity_admin.php?serendipity[adminModule]=comments">Return to default comment list</a>
 {else}
     <form id="formMultiDelete" action="" method="POST" name="formMultiDelete">
         {$formtoken}
         <input name="serendipity[formAction]" type="hidden" value="multiDelete">
+
         <nav class="pagination">
             <h2>{$CONST.PAGE_BROWSE_COMMENTS|sprintf:$page:$pages:$totalComments}</h2>
             {if ($page != 1 && $page <= $pages)||$page != $pages}
@@ -166,8 +176,11 @@ function highlightComment(id, checkvalue) {
                         <dd>{if empty($comment.referer)}N/A{else}<a class="link_url" href="{$comment.referer|escape}" title="{$comment.referer|escape}">{$comment.referer|escape|truncate:30:"&hellip;"}</a>{/if}</dd>
                         <dd class="action_referer">{$comment.action_referer}</dd>
                     </dl>
+
                     <div id="{$comment.id}_summary" class="comment_summary">{$comment.summary}</div>
+                    
                     <div id="{$comment.id}_full" class="comment_full" style="display:none;">{$comment.fullBody}</div>
+
                     <ul class="actions clearfix">
                     {if ($comment.status == 'pending') || ($comment.status == 'confirm')}
                         <li><a class="link_approve" href="?serendipity[action]=admin&amp;serendipity[adminModule]=comments&amp;serendipity[adminAction]=approve&amp;serendipity[id]={$comment.id}&amp;{$urltoken}">{$CONST.APPROVE}</a></li>
