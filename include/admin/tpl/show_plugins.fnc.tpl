@@ -48,7 +48,7 @@
                         <input name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
                     {/if}
                     {if $plugin_data['can_configure']}
-                        <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">[C]</a>
+                        <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">{$CONST.CONFIGURATION}</a>
                     {/if}
                         <h6>
                         {if $plugin_data['can_configure']}
