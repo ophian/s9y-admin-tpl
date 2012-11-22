@@ -170,7 +170,7 @@
     </form>
 {/if}
 {if $case_directorySelect}
-    <h2>{$CONST.CATEGORIES}</h2>
+    <h2>{$CONST.MANAGE_DIRECTORIES}</h2>
 
     <p>{$CONST.DIRECTORIES_AVAILABLE}</p>
 
