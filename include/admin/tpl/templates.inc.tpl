@@ -7,7 +7,8 @@
 {if $deprecated}
     <span class="msg_notice">{$CONST.WARNING_TEMPLATE_DEPRECATED}</span>
 {/if}
-    <h3>{$CONST.STYLE_OPTIONS} ({$cur_template})</h3>
+<section id="template_options">
+    <h2>{$CONST.STYLE_OPTIONS} ({$cur_template})</h2>
 {if $has_config}
     {if $adminAction == 'configure'}
     <span class="msg_success">{$CONST.DONE}: {$save_time}</span>
@@ -21,9 +22,11 @@
 {else}
     <p>{$CONST.STYLE_OPTIONS_NONE}</p>
 {/if}
+</section>
+<section id="template_select">
     <h2>{$CONST.SELECT_TEMPLATE}</h2>
 
-    <ul class="plainList">
+    <ul class="plainList clearfix">
     {foreach $templates as $template=>$info}
         {if $info.info.engine == 'yes'}{continue}{/if}
         {if !empty($template)}
@@ -59,3 +62,4 @@
         {/if}
     {/foreach}
     </ul>
+</section>
