@@ -5,7 +5,7 @@
 
 .pluginmanager_container {
     background: transparent;
-    border: 1px dashed #ddd;
+    border: 1px solid #ddd;
     height: 98%;
     margin: 0;
     min-height: 200px;
@@ -20,7 +20,7 @@
 .pluginmanager_item_even,
 .pluginmanager_item_uneven {
     background: #eee;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 }
 
 .pluginmanager_place,
