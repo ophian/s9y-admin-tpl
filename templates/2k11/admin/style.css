@@ -571,6 +571,16 @@ input[type=radio] + label,
 }
 
 /* Styles common to all resolutions */
+
+/* Color scheme:
+   -------------
+   Dark blue:   #25253d     Mid blue:    #3e5f81
+   Lite blue:   #ccdee7     Yellow:      #ffbf00
+   Off black:   #222        Off white:   #fcfcfc
+ */
+
+html, body { background: #fcfcfc; }
+
 body { font-size: 0.875em; }
 
 a, a:visited { color: #3a4b6f; }
@@ -644,22 +654,37 @@ p, table {
 }
 
 /* Layout */
-#top > div, #jshint,
-#main, #meta {
+#top > div,
+#main {
     margin: 0 auto;
     max-width: 1280px;
     width: 96%;
 }
 
 /* Header area */
+#top {
+    background: #25253d;
+    color: #fcfcfc;
+}
+
+#top a, #top a:visited { color: #ffbf00; }
+#top a:hover, #top a:focus { color: #fcfcfc; }
+
 #banner h1,
 #banner a { float: left; }
 
-#banner a { margin: 1.5em 0 0 2em; }
+#banner a { margin: 2.25em 0 0 2em; }
 
 #user_menu { clear: both; }
 
 #user_menu h2 { margin: 1.5em 0 0; }
+
+#user_menu li {
+    display: inline-block;
+    margin: 0 1em 0 0;
+    *display: inline;
+    *zoom: 1;
+}
 
 /* Content area */
 .comment_data dt, .comment_data dd,
@@ -688,6 +713,19 @@ p, table {
 }
 
 .sub_perm { margin-left: 1em; }
+
+/* Footer area */
+#meta {
+    background: #ccdee7;
+    border-top: 1px solid #25253d;
+    text-align: center;
+}
+
+#meta small {
+    display: block;
+    font-size: 1em;
+    padding: 8px;
+}
 
 /* Plugin manager – might go into pluginmanager.css in the end */
 #configuration_footer { height: 100px; }
@@ -743,12 +781,7 @@ p, table {
         text-align: right;
     }
 
-    #user_menu li {
-        display: inline-block;
-        margin: 0 0 0 1em;
-        *display: inline;
-        *zoom: 1;
-    }
+    #user_menu li { margin: 0 0 0 1em; }
 
     #content { width: 73%; }
     .lt-ie8 #content { width: 72.5%; }
