@@ -150,7 +150,9 @@
 {elseif $media.case == 'default'}
     <!-- MEDIA MANAGER START -->
     <h1>{$CONST.SELECT_FILE}</h1>
+
     <p>{$CONST.CLICK_FILE_TO_INSERT}</p>
+    
     {$media.external}
     {$MEDIA_LIST}
     <!-- MEDIA MANAGER END -->

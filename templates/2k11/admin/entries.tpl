@@ -72,11 +72,15 @@
         <div class="form_check">
             <input id="checkbox_allow_comments" name="serendipity[allow_comments]" type="checkbox" value="true"{if $entry_vars.allow_comments} checked="checked"{/if}><label for="checkbox_allow_comments">{$CONST.COMMENTS_ENABLE}</label>
         </div>
+
         <div class="form_check">
             <input id="checkbox_moderate_comments" name="serendipity[moderate_comments]" type="checkbox" value="true"{if $entry_vars.moderate_comments} checked="checked"{/if}><label for="checkbox_moderate_comments">{$CONST.COMMENTS_MODERATE}</label>
         </div>
-        <input type="submit" accesskey="p" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
-        <input type="submit" accesskey="s" value="{$CONST.SAVE}"onclick="return checkSave();">
+
+        <div class="form_buttons">
+            <input type="submit" accesskey="p" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
+            <input type="submit" accesskey="s" value="{$CONST.SAVE}"onclick="return checkSave();">
+        </div>
     </div>
 
     <div class="form_area">
