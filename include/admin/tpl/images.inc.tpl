@@ -170,17 +170,20 @@
     </form>
 {/if}
 {if $case_directorySelect}
-    <h3>{$CONST.DIRECTORIES_AVAILABLE}</h3>
-    <h4>{$CONST.BASE_DIRECTORY}</h4>
+    <h2>{$CONST.CATEGORIES}</h2>
 
-    <ul>
+    <p>{$CONST.DIRECTORIES_AVAILABLE}</p>
+
+    <h3>{$CONST.BASE_DIRECTORY}</h3>
+
+    <ul class="plainList">
     {foreach $folders as $folder}
         <li class="level_{$folder.depth}">{$folder.name}
             <a class="link_edit" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.EDIT}</a>
             <a class="link_delete" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDelete&amp;serendipity[dir]={$folder.relpath|escape:'html'}">{$CONST.DELETE}</a></li>
     {/foreach}
     </ul>
-    <a class="link_create" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryCreate">{$CONST.CREATE_NEW_DIRECTORY}</a>
+    <a class="link_create block_level" href="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryCreate">{$CONST.CREATE_NEW_DIRECTORY}</a>
 {/if}
 
 {* TODO: obsolete? *}
