@@ -204,11 +204,11 @@
         {if $errorCount > 0}
             <span class="msg_error">{$CONST.PROBLEM_DIAGNOSTIC}</span>
 
-            <a href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
+            <a class="block_level" href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
         {else}
             <span class="msg_notice">{$CONST.SELECT_INSTALLATION_TYPE}:</span>
 
-            <a href="?serendipity[step]=2a">{$CONST.SIMPLE_INSTALLATION}</a> - <a href="?serendipity[step]=2b">{$CONST.EXPERT_INSTALLATION}</a>
+            <div><a href="?serendipity[step]=2a">{$CONST.SIMPLE_INSTALLATION}</a> - <a href="?serendipity[step]=2b">{$CONST.EXPERT_INSTALLATION}</a></div>
         {/if}
         </div>
 {elseif $s9yGETstep == '2a'}
@@ -255,8 +255,8 @@
         <span class="msg_success">{$CONST.SERENDIPITY_INSTALLED}</span>
 
         <p><strong>{$CONST.THANK_YOU_FOR_CHOOSING}</strong></p>
-        
-        <a href="{$smarty.post.serendipityHTTPPath}">{$CONST.VISIT_BLOG_HERE}</a>
+
+        <a class="block_level" href="{$smarty.post.serendipityHTTPPath}">{$CONST.VISIT_BLOG_HERE}</a>
     {else}
         <span class="msg_error">{$CONST.ERROR_DETECTED_IN_INSTALL}</span>
     {/if}

@@ -74,8 +74,8 @@
     {/if}
     {if ($errorCount > 0)}
         <span class="msg_error">{$CONST.PROBLEM_DIAGNOSTIC}</span>
-        
-        <a class="link_reload" href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
+
+        <a class="link_reload block_level" href="serendipity_admin.php">{$CONST.RECHECK_INSTALLATION}</a>
     {/if}
     </div>
     {if ($errorCount < 1)}
@@ -106,10 +106,11 @@
         {if (($taskCount > 0) || (sizeof($sqlfiles) > 0))}
             <h3>{$CONST.SERENDIPITY_UPGRADER_PROCEED_QUESTION}</h3>
 
-            <a href="{$upgradeLoc}">{$CONST.SERENDIPITY_UPGRADER_PROCEED_DOIT}</a>{if $showAbort} <a href="{$abortLoc}">{$CONST.SERENDIPITY_UPGRADER_PROCEED_ABORT}</a>{/if}
+            <a class="block_level" href="{$upgradeLoc}">{$CONST.SERENDIPITY_UPGRADER_PROCEED_DOIT}</a>{if $showAbort} <a href="{$abortLoc}">{$CONST.SERENDIPITY_UPGRADER_PROCEED_ABORT}</a>{/if}
         {else}
             <h3>{$CONST.SERENDIPITY_UPGRADER_NO_UPGRADES}</h3>
-            <a href="{$upgradeLoc}">{$CONST.SERENDIPITY_UPGRADER_CONSIDER_DONE}</a>
+
+            <a class="block_level" href="{$upgradeLoc}">{$CONST.SERENDIPITY_UPGRADER_CONSIDER_DONE}</a>
         {/if}
     {/if}
 {/if}

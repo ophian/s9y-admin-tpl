@@ -133,7 +133,7 @@ function highlightComment(id, checkvalue) {
 {if !is_array($sql)}
     <span class="msg_notice">{$CONST.NO_COMMENTS}</span>
 
-    <a href="serendipity_admin.php?serendipity[adminModule]=comments">Return to default comment list</a>
+    <a class="block_level" href="serendipity_admin.php?serendipity[adminModule]=comments">Return to default comment list</a>
 {else}
     <form id="formMultiDelete" action="" method="POST" name="formMultiDelete">
         {$formtoken}
@@ -178,7 +178,7 @@ function highlightComment(id, checkvalue) {
                     </dl>
 
                     <div id="{$comment.id}_summary" class="comment_summary">{$comment.summary}</div>
-                    
+
                     <div id="{$comment.id}_full" class="comment_full" style="display:none;">{$comment.fullBody}</div>
 
                     <ul class="actions clearfix">

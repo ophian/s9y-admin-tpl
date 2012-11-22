@@ -126,20 +126,20 @@
     {/if}
     <h4>{$CONST.SIDEBAR_PLUGINS}</h4>
 
-    <a class="install_plugins" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.SIDEBAR_PLUGIN}"}</a>
+    <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.SIDEBAR_PLUGIN}"}</a>
 
     {$backend_plugins_sidebar_header}
     {$sidebar_plugins}
 
     <h4>{$CONST.EVENT_PLUGINS}</h4>
 
-    <a class="install_plugins" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.EVENT_PLUGIN}"}</a>
+    <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.EVENT_PLUGIN}"}</a>
 
     {$backend_plugins_event_header}
     {$event_plugins}
     {if $memsnaps}
     <h4>Memory Usage</h4>
-    
+
     <pre>{$memSnaps|print_r}</pre>
     {/if}
 {/if}
