@@ -555,7 +555,6 @@ legend > span { font-weight: bold; }
 
 .block_level,
 .form_multiselect label,
-.plugin_count,
 label > span { display: block; }
 
 label > span,
@@ -738,6 +737,12 @@ p, table {
 #pluginlist_sidebar .pluginmanager_side  { width: 33%; }
 
 #pluginlist_event .pluginmanager_side  { width: 49%; }
+
+.plugin_count {
+    clear: both;
+    margin: 0 0 1em;
+    text-align: right;
+}
 
 /* Media db – might go into imgedit.css in the end */
 #fs_crop { min-height: 200px; }

@@ -71,7 +71,7 @@
                 </ol>
             </div>
         {/foreach}
-            <span class="plugin_count">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:$total}</span>
+            <span class="plugin_count block_level">{$CONST.PLUGIN_AVAILABLE_COUNT|sprintf:$total}</span>
         </div>
         <div class="form_buttons">
             <input name="REMOVE" type="submit" title="{$CONST.DELETE}" value="{$CONST.REMOVE_TICKED_PLUGINS}">
