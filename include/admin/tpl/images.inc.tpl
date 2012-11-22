@@ -8,6 +8,7 @@
     <span class="msg_error">{$CONST.PERM_DENIED}</span>
     {else}
     <span class="msg_notice">{$CONST.WARNING_THIS_BLAHBLAH|replace:'\\n':'<br>'}</span>
+
     <form method="POST" action="serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=doSync">
         <fieldset>
             <legend><span>{$CONST.SYNC_OPTION_LEGEND}</span></legend>
@@ -24,6 +25,7 @@
                 <label for="deletethumbs">{$CONST.SYNC_OPTION_DELETETHUMBS}</label>
             </div>
         </fieldset>
+
         <div class="form_buttons">
             <input name="doSync" type="submit" value="{$CONST.CREATE_THUMBS}">
             <a href="serendipity_admin.php">{$CONST.ABORT_NOW}</a>
@@ -36,13 +38,17 @@
         <span class="msg_error">{$CONST.PERM_DENIED}</span>
     {else}
         <h2>{$CONST.SYNCING}</h2>
+
         <span class="msg_success">{$print_SYNC_DONE}</span>
+
         <h2>{$CONST.RESIZING}</h2>
+
         <span class="msg_success">{$print_RESIZE_DONE}</span>
     {/if}
 {/if}
 {if $case_delete}
     <span class="msg_notice">{$CONST.ABOUT_TO_DELETE_FILE|sprintf:"$file"}</span>
+
     <form id="delete_image" method="get">
         <div class="form_buttons">
             <a href="{$newLoc}">{$CONST.DUMP_IT}</a>
@@ -102,10 +108,12 @@
     <form id="image_directory_edit_form" method="POST" action="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$dir|escape:'html'}">
         {$formtoken}
         <input name="serendipity[oldDir]" type="hidden" value="{$use_dir}">
+
         <div class="form_field">
             <label for="diredit_new">{$CONST.NAME}</label>
             <input id="diredit_new" name="serendipity[newDir]" type="text" value="{$use_dir}">
         </div>
+
         <div class="form_select">
             <label for="read_authors">{$CONST.PERM_READ}</label>
             <select id="read_authors" name="serendipity[read_authors][]" multiple="multiple" size="6">
@@ -115,6 +123,7 @@
             {/foreach}
             </select>
         </div>
+
         <div class="form_select">
             <label for="write_authors">{$CONST.PERM_WRITE}</label>
             <select id="write_authors" name="serendipity[write_authors][]" multiple="multiple" size="6">
@@ -124,9 +133,11 @@
             {/foreach}
             </select>
         </div>
+
         <div class="form_check">
             <input id="setchild" name="serendipity[update_children]" type="checkbox" value="true"{if !empty($smarty.post.update_children) == 'on'} checked="checked"{/if}><label for="setchild">{$CONST.PERM_SET_CHILD}</label>
         </div>
+
         <input name="serendipity[save]" type="submit" value="{$CONST.SAVE}">
     </form>
 {/if}
@@ -141,7 +152,9 @@
             <label for="diredit_delete">{$CONST.NAME}: {$basename_dir} - {$CONST.FORCE_DELETE}</label>
             <input id="diredit_delete" name="serendipity[nuke]" type="checkbox" value="true">
         </div>
+
         <p>{$CONST.CONFIRM_DELETE_DIRECTORY|sprintf:$dir|escape:'html'}</p>
+
         <input name="SAVE" type="submit" value="{$CONST.DELETE_DIRECTORY}">
     </form>
 {/if}
@@ -156,10 +169,12 @@
 
     <form id="image_directory_create_form" method="POST" action="?serendipity[step]=directoryDoCreate&amp;serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDoCreate">
         {$formtoken}
+
         <div class="form_field">
             <label for="dircreate_name">{$CONST.NAME}</label>
             <input id="dircreate_name" name="serendipity[name]" type="text" value="">
         </div>
+
         <div class="form_select">
             <label for="dircreate_parent">{$CONST.PARENT_DIRECTORY}</label>
             <select id="dircreate_parent" name="serendipity[parent]">
@@ -251,21 +266,26 @@
         <input name="serendipity[adminModule]" type="hidden" value="images">
         <input name="serendipity[adminAction]" type="hidden" value="scale">
         <input name="serendipity[fid]" type="hidden" value="{$get.fid}">
+
         <fieldset>
             <legend><span>{$CONST.NEWSIZE}</span></legend>
+
             <div class="form_field">
                 <label for="resize_width">TODO_LANG</label>
                 <input id="resize_width" name="serendipity[width]" type="text" onchange="rescale('width' , value);" value="{$img_width}">
             </div>
+
             <div class="form_field">
                 <label for="resize_height">TODO_LANG</label>
                 <input id="resize_height" name="serendipity[height]" type="text" onchange="rescale('height', value);" value="{$img_height}">
             </div>
         </fieldset>
+
         <div class="form_check">
             <input id="resize_keepprops" name="auto" type="checkbox" checked="checked">
             <label for="resize_keepprops">{$CONST.KEEP_PROPORTIONS}</label>
         </div>
+        
         <input name="scale" type="button" value="{$CONST.IMAGE_RESIZE}" onclick="if (confirm('{$CONST.REALLY_SCALE_IMAGE}')) document.serendipityScaleForm.submit();">
     </form>
     <img src="{$file}" name="serendipityScaleImg" style="width: {$img_width}px; height: {$img_height}px;" alt="">
