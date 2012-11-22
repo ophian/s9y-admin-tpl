@@ -731,15 +731,6 @@ p, table {
 /* Plugin manager – might go into pluginmanager.css in the end */
 #configuration_footer { height: 100px; }
 
-.pluginmanager_side {
-    float: left;
-    margin: 0 0 1em;
-}
-
-#pluginlist_sidebar .pluginmanager_side  { width: 33%; }
-
-#pluginlist_event .pluginmanager_side  { width: 49%; }
-
 .plugin_count {
     clear: both;
     margin: 0 0 1em;
@@ -773,6 +764,16 @@ p, table {
         line-height: 1.71429em;
         margin: 1.71429em 0;
     }
+
+    /* Plugin manager – might go into pluginmanager.css in the end */
+    .pluginmanager_side {
+        float: left;
+        margin: 0 0 1em;
+    }
+
+    #pluginlist_sidebar .pluginmanager_side  { width: 33%; }
+
+    #pluginlist_event .pluginmanager_side  { width: 49%; }
 }
 
 @media only screen and (min-width: 1024px) {
