@@ -72,7 +72,7 @@
     {elseif !empty($only_group) && $pluggroup != $only_group}{continue}{else}
         <h4>{foreach $groupnames as $available_group => $available_name}{if $pluggroup == $available_group}{$available_name}{/if}{/foreach}</h4>
     {/if}
-        <ul>
+        <ul class="plainList">
         {foreach $groupstack as $plug}
             <li><h5>{$plug.name} ({$plug.class_name})</h5>
 
@@ -118,27 +118,27 @@
     {if $save}
     <span class="msg_success">{$CONST.DONE}:{$CONST.SETTINGS_SAVED_AT|sprintf:"$timestamp"}</span>
     {/if}
-    <h3>{$CONST.BELOW_IS_A_LIST_OF_INSTALLED_PLUGINS}</h3>
+    <h2>{$CONST.BELOW_IS_A_LIST_OF_INSTALLED_PLUGINS}</h2>
     {if $eyecandy}
     <script src="{serendipity_getFile file="dragdrop.js"}"></script>
 
     <span class="msg_notice">{$CONST.PREFERENCE_USE_JS_WARNING}</span>
     {/if}
-    <h4>{$CONST.SIDEBAR_PLUGINS}</h4>
+    <h3>{$CONST.SIDEBAR_PLUGINS}</h3>
 
     <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.SIDEBAR_PLUGIN}"}</a>
 
     {$backend_plugins_sidebar_header}
     {$sidebar_plugins}
 
-    <h4>{$CONST.EVENT_PLUGINS}</h4>
+    <h3>{$CONST.EVENT_PLUGINS}</h3>
 
     <a class="install_plugins block_level" href="?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">{$CONST.CLICK_HERE_TO_INSTALL_PLUGIN|sprintf:"{$CONST.EVENT_PLUGIN}"}</a>
 
     {$backend_plugins_event_header}
     {$event_plugins}
     {if $memsnaps}
-    <h4>Memory Usage</h4>
+    <h3>Memory Usage</h3>
 
     <pre>{$memSnaps|print_r}</pre>
     {/if}
