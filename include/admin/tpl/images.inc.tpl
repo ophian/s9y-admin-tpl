@@ -97,7 +97,7 @@
     {if $ob_serendipity_moveMediaDirectory}{$ob_serendipity_moveMediaDirectory}{/if}
     <span class="msg_notice">{$print_CONST.SETTINGS_SAVED_AT}</span>
     {/if}
-    <h3>{$CONST.MANAGE_DIRECTORIES}</h3>
+    <h2>{$CONST.MANAGE_DIRECTORIES}</h2>
 
     <form id="image_directory_edit_form" method="POST" action="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryEdit&amp;serendipity[dir]={$dir|escape:'html'}">
         {$formtoken}
@@ -131,8 +131,10 @@
     </form>
 {/if}
 {if $case_directoryDelete}
-    <h3>{$CONST.DELETE_DIRECTORY}</h3>
+    <h2>{$CONST.DELETE_DIRECTORY}</h2>
+
     <p>{$CONST.DELETE_DIRECTORY_DESC}</p>
+
     <form id="image_directory_delete_form" method="POST" action="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDoDelete&amp;serendipity[dir]={$dir|escape:'html'}">
         {$formtoken}
         <div class="form_check">
@@ -148,8 +150,10 @@
     {if $print_DIRECTORY_WRITE_ERROR}{$print_DIRECTORY_WRITE_ERROR}{/if}
 {/if}
 {if $case_directoryCreate}
-    <h3>{$CONST.CREATE_DIRECTORY}</h3>
+    <h2>{$CONST.CREATE_DIRECTORY}</h2>
+
     <p>{$CONST.CREATE_DIRECTORY_DESC}</p>
+
     <form id="image_directory_create_form" method="POST" action="?serendipity[step]=directoryDoCreate&amp;serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDoCreate">
         {$formtoken}
         <div class="form_field">
@@ -240,7 +244,7 @@
 
     {if $print_RESIZE_BLAHBLAH}<span class="msg_notice">{$print_RESIZE_BLAHBLAH}</span>{/if}
     {if $print_ORIGINAL_SIZE}<span class="msg_notice">{$print_ORIGINAL_SIZE}</span>{/if}
-    <h3>{$CONST.HERE_YOU_CAN_ENTER_BLAHBLAH}</h3>
+    <h2>{$CONST.HERE_YOU_CAN_ENTER_BLAHBLAH}</h2>
 
     <form name="serendipityScaleForm" action="?" method="GET">
         {$formtoken}
