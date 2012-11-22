@@ -569,7 +569,7 @@ input[type=radio] + label,
     *zoom: 1;
 }
 
-.form_buttons { margin: 1em 0; }
+.form_buttons { margin: 1.5em 0; }
 
 /* Styles common to all resolutions */
 
@@ -633,6 +633,7 @@ p, table {
 .msg_error, .msg_success,
 .msg_notice {
     display: block;
+    margin: 1.5em 0;
     padding: 10px;
 }
 
@@ -733,7 +734,7 @@ p, table {
 
 .plugin_count {
     clear: both;
-    margin: 0 0 1em;
+    margin: 0 0 1.5em;
 }
 
 /* Media db – might go into imgedit.css in the end */
@@ -768,7 +769,7 @@ p, table {
     /* Plugin manager – might go into pluginmanager.css in the end */
     .pluginmanager_side {
         float: left;
-        margin: 0 0 1em;
+        margin: 0 0 1.5em;
     }
 
     #pluginlist_sidebar .pluginmanager_side  {
