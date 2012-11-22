@@ -569,6 +569,8 @@ input[type=radio] + label,
     *zoom: 1;
 }
 
+.form_buttons { margin: 1em 0; }
+
 /* Styles common to all resolutions */
 
 /* Color scheme:
@@ -741,7 +743,6 @@ p, table {
 .plugin_count {
     clear: both;
     margin: 0 0 1em;
-    text-align: right;
 }
 
 /* Media db – might go into imgedit.css in the end */
