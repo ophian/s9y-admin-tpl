@@ -77,10 +77,10 @@
                     </div>
 
                     <input id="login_send" name="submit" type="submit" value="{$CONST.LOGIN}">
-                    <a href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
                 </fieldset>
                 {$admin_vars.out.table}
             </form>
+            <a href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
             {$admin_vars.out.footer}
         {* </div> *}
     {else}
