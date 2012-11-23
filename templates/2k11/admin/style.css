@@ -723,7 +723,12 @@ p, table {
 
 #back_to_blog {
     display: block;
-    margin: 1em 0 2em;
+    margin: 1em auto 2em;
+}
+
+#back_to_blog,
+#login {
+    max-width: 20em;
 }
 
 #login .form_field label {
