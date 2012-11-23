@@ -562,6 +562,8 @@ input[type=checkbox] + label,
 input[type=radio] + label,
 .form_check label { font-weight: normal; }
 
+input[type=checkbox] { margin-right: .4em; }
+
 #login .form_field label {
     display: inline-block;
     min-width: 8em;
