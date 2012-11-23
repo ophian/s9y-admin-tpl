@@ -564,14 +564,11 @@ input[type=radio] + label,
 
 input[type=checkbox] { margin-right: .4em; }
 
-#login .form_field label {
-    display: inline-block;
-    min-width: 8em;
-    *display: inline;
-    *zoom: 1;
-}
-
 .form_buttons { margin: 1.5em 0; }
+
+.form_field, .form_area,
+.form_check, .form_radio,
+.form_select, .form_multiselect { margin: .75em 0;}
 
 /* Styles common to all resolutions */
 
@@ -720,6 +717,20 @@ p, table {
 }
 
 .sub_perm { margin-left: 1em; }
+
+/* Login form */
+#login { margin: 2em auto; }
+
+#login .form_field label {
+    display: inline-block;
+    min-width: 8em;
+    *display: inline;
+    *zoom: 1;
+}
+
+#login_send {
+    float: right;
+}
 
 /* Footer area */
 #meta {
