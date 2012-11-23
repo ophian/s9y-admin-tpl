@@ -719,7 +719,12 @@ p, table {
 .sub_perm { margin-left: 1em; }
 
 /* Login form */
-#login { margin: 2em auto; }
+#login { margin: 2em auto 1em; }
+
+#back_to_blog {
+    display: block;
+    margin: 1em 0 2em;
+}
 
 #login .form_field label {
     display: inline-block;

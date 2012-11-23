@@ -80,7 +80,7 @@
                 </fieldset>
                 {$admin_vars.out.table}
             </form>
-            <a href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
+            <a id="back_to_blog" href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
             {$admin_vars.out.footer}
         {* </div> *}
     {else}
