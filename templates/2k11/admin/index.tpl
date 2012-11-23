@@ -74,9 +74,9 @@
                     <div class="form_check">
                         <input id="login_auto" name="serendipity[auto]" type="checkbox"><label for="login_auto">{$CONST.AUTOMATIC_LOGIN}</label>
                     </div>
+
+                    <input id="login_send" name="submit" type="submit" value="{$CONST.LOGIN}">
                 </fieldset>
-                
-                <input id="login_send" name="submit" type="submit" value="{$CONST.LOGIN}">
                 {$admin_vars.out.table}
             </form>
             {$admin_vars.out.footer}
