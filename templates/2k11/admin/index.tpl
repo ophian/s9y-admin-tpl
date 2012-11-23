@@ -50,16 +50,16 @@
     <div id="main" class="clearfix">
     {if NOT $admin_vars.is_logged_in}
         {$admin_vars.out|@serendipity_refhookPlugin:'backend_login_page'}
-        <div id="login">
-            <h2>{$CONST.WELCOME_TO_ADMIN}</h2>
+        {* <div id="login_container"> *}
+            {* <h2>{$CONST.WELCOME_TO_ADMIN}</h2> *}
             {$admin_vars.out.header}
         {if $admin_vars.post_action != '' AND NOT $admin_vars.is_logged_in}
             <span class="msg_error">{$CONST.WRONG_USERNAME_OR_PASSWORD}</span>
         {/if}
-            <form action="serendipity_admin.php" method="post">
+            <form id="login" action="serendipity_admin.php" method="post">
                 <input type="hidden" name="serendipity[action]" value="admin">
                 <fieldset>
-                    <legend><span>{$CONST.PLEASE_ENTER_CREDENTIALS}</span></legend>
+                    <legend class="visuallyhidden"><span>{$CONST.PLEASE_ENTER_CREDENTIALS}</span></legend>
 
                     <div class="form_field">
                         <label for="login_uid">{$CONST.USERNAME}</label>
@@ -80,7 +80,7 @@
                 {$admin_vars.out.table}
             </form>
             {$admin_vars.out.footer}
-        </div>
+        {* </div> *}
     {else}
         <div id="content" class="clearfix">
         {$admin_vars.main_content}
