@@ -25,8 +25,9 @@
         {if $admin_vars.admin_installed}
             <div id="banner">
                 <h1><span class="visuallyhidden">{$CONST.SERENDIPITY_ADMIN_SUITE}: </span>{$blogTitle}</h1>
-
+                {if $admin_vars.is_logged_in}
                 <a href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
+                {/if}
             {else}
                 <h1>{$CONST.SERENDIPITY_INSTALLATION}</h1>
             {/if}
@@ -76,6 +77,7 @@
                     </div>
 
                     <input id="login_send" name="submit" type="submit" value="{$CONST.LOGIN}">
+                    <a href="{$serendipityBaseURL}">{$CONST.BACK_TO_BLOG}</a>
                 </fieldset>
                 {$admin_vars.out.table}
             </form>
