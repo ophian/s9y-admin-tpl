@@ -727,9 +727,12 @@ p, table {
 }
 
 #back_to_blog,
-#login {
-    max-width: 20em;
-}
+#login { max-width: 24em; }
+
+#login .form_check,
+#login_send { float: left; }
+
+#login_send { margin: .5em 0 0 7.5em;}
 
 #login .form_field label {
     display: inline-block;
