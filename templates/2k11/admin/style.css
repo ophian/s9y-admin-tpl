@@ -722,10 +722,8 @@ p, table {
 #login { margin: 2em auto 1em; }
 
 #back_to_blog {
-    display: inline-block;
+    display: block;
     margin: 1em auto 2em;
-    *display: inline;
-    *zoom: 1;
 }
 
 #back_to_blog,
