@@ -60,79 +60,85 @@ function highlightComment(id, checkvalue) {
 } 
 </script>
 
+    <h2>{$CONST.COMMENTS}</h2>
+
     <form action="" method="GET">
         {$formtoken}
         <input name="serendipity[adminModule]" type="hidden" value="comments">
         <input name="serendipity[page]" type="hidden" value="{$page}">
 
-        <fieldset>
+        <fieldset id="filter_comments">
             <legend><span>{$CONST.FILTERS} ({$CONST.FIND_COMMENTS})</span></legend>
 
-            <div class="form_field">
-                <label for="filter_author">{$CONST.AUTHOR}:</label>
-                <input id="filter_author" name="serendipity[filter][author]" type="text" value="{$get.filter.author|escape}">
-            </div>
+            <div class="clearfix">
+                <div class="form_field">
+                    <label for="filter_author">{$CONST.AUTHOR}:</label>
+                    <input id="filter_author" name="serendipity[filter][author]" type="text" value="{$get.filter.author|escape}">
+                </div>
 
-            <div class="form_field">
-                <label for="filter_email">{$CONST.EMAIL}:</label>
-                <input id="filter_email" name="serendipity[filter][email]" type="text" value="{$get.filter.email|escape}">
-            </div>
+                <div class="form_field">
+                    <label for="filter_email">{$CONST.EMAIL}:</label>
+                    <input id="filter_email" name="serendipity[filter][email]" type="text" value="{$get.filter.email|escape}">
+                </div>
 
-            <div class="form_field">
-                <label for="filter_url">{$CONST.URL}:</label>
-                <input id="filter_url" name="serendipity[filter][url]" type="text" value="{$get.filter.url|escape}">
-            </div>
+                <div class="form_field">
+                    <label for="filter_url">{$CONST.URL}:</label>
+                    <input id="filter_url" name="serendipity[filter][url]" type="text" value="{$get.filter.url|escape}">
+                </div>
 
-            <div class="form_field">
-                <label for="filter_ip">IP:</label>
-                <input id="filter_ip" name="serendipity[filter][ip]" type="text" value="{$get.filter.ip|escape}">
-            </div>
+                <div class="form_field">
+                    <label for="filter_ip">IP:</label>
+                    <input id="filter_ip" name="serendipity[filter][ip]" type="text" value="{$get.filter.ip|escape}">
+                </div>
 
-            <div class="form_field">
-                <label for="filter_body">{$CONST.CONTENT}:</label>
-                <input id="filter_body" name="serendipity[filter][body]" type="text" value="{$get.filter.body|escape}">
-            </div>
+                <div class="form_field">
+                    <label for="filter_body">{$CONST.CONTENT}:</label>
+                    <input id="filter_body" name="serendipity[filter][body]" type="text" value="{$get.filter.body|escape}">
+                </div>
 
-            <div class="form_field">
-                <label for="filter_referer">{$CONST.REFERER}:</label>
-                <input id="filter_referer" name="serendipity[filter][referer]" type="text" value="{$get.filter.referer|escape}">
-            </div>
+                <div class="form_field">
+                    <label for="filter_referer">{$CONST.REFERER}:</label>
+                    <input id="filter_referer" name="serendipity[filter][referer]" type="text" value="{$get.filter.referer|escape}">
+                </div>
 
-            <div class="form_select">
-                <label for="filter_perpage">{$CONST.COMMENTS}:</label>
-                <select id="filter_perpage" name="serendipity[filter][perpage]">
-                {foreach $filter_vals AS $filter}
-                    <option value="{$filter}" {($commentsPerPage == $filter) ? ' selected="selected"' : ''}>{$filter}</option>
-                {/foreach}
-                </select>
-            </div>
+                <div class="form_select">
+                    <label for="filter_perpage">{$CONST.COMMENTS}:</label>
+                    <select id="filter_perpage" name="serendipity[filter][perpage]">
+                    {foreach $filter_vals AS $filter}
+                        <option value="{$filter}" {($commentsPerPage == $filter) ? ' selected="selected"' : ''}>{$filter}</option>
+                    {/foreach}
+                    </select>
+                </div>
 
-            <div class="form_select">
-                <label for="filter_show">{$CONST.COMMENTS_FILTER_SHOW}:</label>
-                <select id="filter_show" name="serendipity[filter][show]">
-                    <option value="all"{if $get.filter.show == 'all'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_ALL}</option>
-                    <option value="approved"{if $get.filter.show == 'approved'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_APPROVED_ONLY}</option>
-                    <option value="pending"{if $get.filter.show == 'pending'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_NEED_APPROVAL}</option>
-                    <option value="confirm"{if $get.filter.show == 'confirm'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_NEED_CONFIRM}</option>
-                </select>
-            </div>
+                <div class="form_select">
+                    <label for="filter_show">{$CONST.COMMENTS_FILTER_SHOW}:</label>
+                    <select id="filter_show" name="serendipity[filter][show]">
+                        <option value="all"{if $get.filter.show == 'all'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_ALL}</option>
+                        <option value="approved"{if $get.filter.show == 'approved'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_APPROVED_ONLY}</option>
+                        <option value="pending"{if $get.filter.show == 'pending'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_NEED_APPROVAL}</option>
+                        <option value="confirm"{if $get.filter.show == 'confirm'} selected="selected"{/if}>{$CONST.COMMENTS_FILTER_NEED_CONFIRM}</option>
+                    </select>
+                </div>
 
-            <div class="form_select">
-                <label for="">{$CONST.TYPE}</label>
-                <select name="serendipity[filter][type]">
-                    <option value="">{$CONST.COMMENTS_FILTER_ALL}</option>
-                    <option value="NORMAL"{if $c_type == 'NORMAL'} selected="selected"{/if}>{$CONST.COMMENTS}</option>
-                    <option value="TRACKBACK"{if $c_type == 'TRACKBACK'} selected="selected"{/if}>{$CONST.TRACKBACKS}</option>
-                    <option value="PINGBACK"{if $c_type == 'PINGBACK'} selected="selected"{/if}>{$CONST.PINGBACKS}</option>
-                </select>
+                <div class="form_select">
+                    <label for="">{$CONST.TYPE}</label>
+                    <select name="serendipity[filter][type]">
+                        <option value="">{$CONST.COMMENTS_FILTER_ALL}</option>
+                        <option value="NORMAL"{if $c_type == 'NORMAL'} selected="selected"{/if}>{$CONST.COMMENTS}</option>
+                        <option value="TRACKBACK"{if $c_type == 'TRACKBACK'} selected="selected"{/if}>{$CONST.TRACKBACKS}</option>
+                        <option value="PINGBACK"{if $c_type == 'PINGBACK'} selected="selected"{/if}>{$CONST.PINGBACKS}</option>
+                    </select>
+                </div>
             </div>
         </fieldset>
+
         <input name="submit" type="submit" value="{$CONST.GO}">
         {serendipity_hookPlugin hookAll=true hook="backend_comments_top" addData=$sql}
     </form>
 {if !is_array($sql)}
     <span class="msg_notice">{$CONST.NO_COMMENTS}</span>
 
+    {* TODO: l18n *}
     <a class="block_level" href="serendipity_admin.php?serendipity[adminModule]=comments">Return to default comment list</a>
 {else}
     <form id="formMultiDelete" action="" method="POST" name="formMultiDelete">
