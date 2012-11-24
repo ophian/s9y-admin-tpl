@@ -32,7 +32,9 @@
     {/if}
 {else}
     <h2>{$CONST.IMPORT_WELCOME}</h2>
+
     <p>{$CONST.IMPORT_WHAT_CAN}</p>
+    
     <h3>{$CONST.IMPORT_SELECT}:</h3>
 
     <form action="" method="GET">
