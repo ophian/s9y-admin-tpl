@@ -121,8 +121,8 @@ function highlightComment(id, checkvalue) {
                 </div>
 
                 <div class="form_select">
-                    <label for="">{$CONST.TYPE}</label>
-                    <select name="serendipity[filter][type]">
+                    <label for="filter_type">{$CONST.TYPE}</label>
+                    <select id="filter_type" name="serendipity[filter][type]">
                         <option value="">{$CONST.COMMENTS_FILTER_ALL}</option>
                         <option value="NORMAL"{if $c_type == 'NORMAL'} selected="selected"{/if}>{$CONST.COMMENTS}</option>
                         <option value="TRACKBACK"{if $c_type == 'TRACKBACK'} selected="selected"{/if}>{$CONST.TRACKBACKS}</option>
