@@ -576,6 +576,17 @@ input[type=checkbox] { margin-right: .4em; }
     visibility: visible;
 }
 
+.tinynav_label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 #main_menu>ul {
     display: none;
     visibility: hidden;
@@ -840,6 +851,7 @@ p, table {
     }
 
     /* Responsive navigation using TinyNav */
+    .tinynav_label,
     .tinynav {
         display: none;
         visibility: hidden;
