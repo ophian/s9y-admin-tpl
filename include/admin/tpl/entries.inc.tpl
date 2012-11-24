@@ -80,7 +80,7 @@
                 </div>
             </div>
         </fieldset>
-        
+
         <input name="go" type="submit" value="{$CONST.GO}">
     </form>
     {if $is_entries}
@@ -147,7 +147,6 @@
         {/foreach}
         </ul>
     {/if}
-
         {* TODO: Clone pagination using JS *}
         <div id="multidelete_tools">
             <input name="toggle" type="button" value="{$CONST.INVERT_SELECTIONS}" onclick="invertSelection()">

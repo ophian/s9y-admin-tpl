@@ -1,5 +1,6 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
+
 {if $delete_yes}
     <span class="msg_success">{$CONST.DELETED_GROUP|sprintf:"{$group_id|escape:"html"}":"{$group.name|escape:"html"}"}</span>
 {/if}
@@ -15,7 +16,7 @@
 
     <ul id="serendipity_groups" class="plainList">
     {foreach $groups as $group}
-        <li><span>{$group.name|escape:"html"}</span>
+        <li><span class="group_name">{$group.name|escape:"html"}</span>
             <a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a>
             {* BUG: Doesn't skip to the deletion process - What does that mean??? *}
             <a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
@@ -32,11 +33,11 @@
     <form action="?serendipity[adminModule]=groups" method="post">
         {$formToken}
     {if $edit}
-        <h2>{$CONST.EDIT}</h2>
+        <h3>{$CONST.EDIT}</h3>
 
         <input name="serendipity[group]" type="hidden" value="{$from.id}">
     {else}
-        <h2>{$CONST.CREATE}</h2>
+        <h3>{$CONST.CREATE}</h3>
     {/if}
         <div class="form_field">
             <label for="group_name">{$CONST.NAME}</label>
