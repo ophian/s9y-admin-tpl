@@ -564,6 +564,11 @@ input[type=radio] + label,
 
 input[type=checkbox] { margin-right: .4em; }
 
+.form_radio {
+    float: left;
+    margin-right: 1em;
+}
+
 .form_buttons { margin: 1.5em 0; }
 
 .form_field, .form_area,
