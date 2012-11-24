@@ -570,38 +570,6 @@ input[type=checkbox] { margin-right: .4em; }
 .form_check, .form_radio,
 .form_select, .form_multiselect { margin: .75em 0;}
 
-/* Responsive navigation using TinyNav */
-.tinynav {
-    display: block;
-    visibility: visible;
-}
-
-.tinynav_label {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-#main_menu>ul {
-    display: none;
-    visibility: hidden;
-}
-
-#main {
-    position: relative;
-    padding-top: 4em;
-}
-
-#main_menu {
-    position: absolute;
-    top: 1em;
-}
-
 /* Styles common to all resolutions */
 
 /* Color scheme:
@@ -848,28 +816,6 @@ p, table {
     #pluginlist_event .pluginmanager_side  {
         margin-right: 1%;
         width: 48%;
-    }
-
-    /* Responsive navigation using TinyNav */
-    .tinynav_label,
-    .tinynav {
-        display: none;
-        visibility: hidden;
-    }
-
-    #main_menu>ul {
-        display: block;
-        visibility: visible;
-    }
-
-    #main {
-        position: static;
-        padding-top: 0;
-    }
-
-    #main_menu {
-        position: static;
-        top: 0;
     }
 }
 
