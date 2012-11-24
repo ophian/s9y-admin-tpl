@@ -7,7 +7,7 @@
 <aside class="{$output.links_css}">
     <h3>{$output.links_title}</h3>
     
-    <ul>
+    <ul class="plainList">
     {foreach $output.links AS $link}
         <li>{$link}</li>
     {/foreach}
