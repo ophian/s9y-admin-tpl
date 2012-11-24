@@ -1,7 +1,5 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
-{* Note: Can't really access this since it's being "overwritten" by pluginmanager *}
-{* Ian: Should not be any more, since smartification of functions_plugins_admin.inc.php ?? *}
 
 {if $plugin_to_conf}
     {if is_array($save_errors)}
