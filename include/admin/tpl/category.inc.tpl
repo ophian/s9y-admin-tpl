@@ -24,9 +24,10 @@
 {/if}
 {if $delete}
     {if $deletePermission == true}
+        <h2>{$categoryName|escape:"html"}</h2>
+
         <form method="POST" name="serendipityCategory" action="?serendipity[adminModule]=category&amp;serendipity[adminAction]=doDelete&amp;serendipity[cid]={$cid}">
             {$formToken}
-            <h2>{$categoryName|escape:"html"}</h2>
 
             <div class="form_select">
                 <label for="remaining_cat">{$CONST.CATEGORY_REMAINING}:</label>
@@ -61,6 +62,7 @@
 
             <div class="form_field">
                 <label for="category_icon">{$CONST.IMAGE}</label>
+                {* TODO: this should probably become/fallback to input[type=file] *}
                 <input id="category_icon" name="serendipity[cat][icon]" type="text" value="{$this_cat.category_icon|default:""|escape:"html"}" onchange="document.getElementById('imagepreview').src = this.value; document.getElementById('imagepreview').style.display = '';">
                 <script>
                     var category_icon = document.getElementById('category_icon');
