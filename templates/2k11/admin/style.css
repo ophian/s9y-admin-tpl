@@ -718,6 +718,17 @@ p, table {
 
 .sub_perm { margin-left: 1em; }
 
+/* Categories */
+#categories dl,
+.category_name,
+.category_desc,
+.category_author {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    *display: inline;
+    *zoom: 1;
+}
+
 /* Login form */
 #login { margin: 2em auto 1em; }
 

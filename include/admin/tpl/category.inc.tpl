@@ -130,7 +130,7 @@
         <ul id="categories" class="plainList">
         {foreach $viewCategories as $category}
         {* TODO: Ideally, this should use true nesting, i.e. nested lists instead of a level class. *}
-            <li class="level_{$category.depth}">
+            <li class="clearfix level_{$category.depth}">
                 <dl>
                     <dt class="category_name{if $category.category_icon} category_hasicon{/if}">{$category.category_name|escape:"html"}</dt>
                 {if $category.category_description != ''}
