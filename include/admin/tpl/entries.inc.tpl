@@ -9,72 +9,78 @@
         <input name="serendipity[adminModule]" type="hidden" value="entries">
         <input name="serendipity[adminAction]" type="hidden" value="editSelect">
 
-        <fieldset>
+        <fieldset id="filter_entries">
             <legend><span>{$CONST.FILTERS} ({$CONST.FIND_ENTRIES})</span></legend>
 
-            <div class="form_select">
-                <label for="filter_author">{$CONST.AUTHOR}</label>
-                <select id="filter_author" name="serendipity[filter][author]">
-                    <option value="">-</option>
-                {if is_array($users)}
-                    {foreach $users AS $user}
-                    {if isset($user.artcount) && $user.artcount < 1}{continue}{/if}
-                    <option value="{$user.authorid}" {(isset($get.filter.author) && ($get.filter.author == $user.authorid)) ? 'selected="selected"' : ''}>{$user.realname|escape}</option>
-                    {/foreach}
-                {/if}
-                </select>
-                <label for="filter_draft" class="visuallyhidden">TODO_LANG</label>
-                <select id="filter_draft" name="serendipity[filter][isdraft]">
-                    <option value="all">{$CONST.COMMENTS_FILTER_ALL}</option>
-                    <option value="draft" {(isset($get.filter.isdraft) && ($get.filter.isdraft == 'draft') ? 'selected="selected"' : '')}>{$CONST.DRAFT}</option>
-                    <option value="publish" {(isset($get.filter.isdraft) && ($get.filter.isdraft == 'publish') ? 'selected="selected"' : '')}>{$CONST.PUBLISH}</option>
-                </select>
-            </div>
+            <div class="clearfix">
+                <div class="form_select">
+                    <label for="filter_author">{$CONST.AUTHOR}</label>
+                    <select id="filter_author" name="serendipity[filter][author]">
+                        <option value="">-</option>
+                    {if is_array($users)}
+                        {foreach $users AS $user}
+                        {if isset($user.artcount) && $user.artcount < 1}{continue}{/if}
+                        <option value="{$user.authorid}" {(isset($get.filter.author) && ($get.filter.author == $user.authorid)) ? 'selected="selected"' : ''}>{$user.realname|escape}</option>
+                        {/foreach}
+                    {/if}
+                    </select>
+                    <label for="filter_draft" class="visuallyhidden">TODO_LANG</label>
+                    <select id="filter_draft" name="serendipity[filter][isdraft]">
+                        <option value="all">{$CONST.COMMENTS_FILTER_ALL}</option>
+                        <option value="draft" {(isset($get.filter.isdraft) && ($get.filter.isdraft == 'draft') ? 'selected="selected"' : '')}>{$CONST.DRAFT}</option>
+                        <option value="publish" {(isset($get.filter.isdraft) && ($get.filter.isdraft == 'publish') ? 'selected="selected"' : '')}>{$CONST.PUBLISH}</option>
+                    </select>
+                </div>
 
-            <div class="form_select">
-                <label for="filter_category">{$CONST.CATEGORY}</label>
-                <select id="filter_category" name="serendipity[filter][category]">
-                    <option value="">-</option>
-                {foreach $categories as $cat}
-                    <option value="{$cat.categoryid}"{($get.filter.category == $cat.categoryid) ? ' selected="selected"' : ''}>{'&nbsp;'|str_repeat:$cat.depth} {$cat.category_name|escape}</option>
-                {/foreach}
-                </select>
-            </div>
-            <div class="form_field">
-                <label for="filter_content">{$CONST.CONTENT}</label>
-                <input id="filter_content" name="serendipity[filter][body]" type="text" value="{(isset($get.filter.body)) ? "{$get.filter.body|escape}" : ''}">
+                <div class="form_select">
+                    <label for="filter_category">{$CONST.CATEGORY}</label>
+                    <select id="filter_category" name="serendipity[filter][category]">
+                        <option value="">-</option>
+                    {foreach $categories as $cat}
+                        <option value="{$cat.categoryid}"{($get.filter.category == $cat.categoryid) ? ' selected="selected"' : ''}>{'&nbsp;'|str_repeat:$cat.depth} {$cat.category_name|escape}</option>
+                    {/foreach}
+                    </select>
+                </div>
+
+                <div class="form_field">
+                    <label for="filter_content">{$CONST.CONTENT}</label>
+                    <input id="filter_content" name="serendipity[filter][body]" type="text" value="{(isset($get.filter.body)) ? "{$get.filter.body|escape}" : ''}">
+                </div>
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="sort_entries">
             <legend><span>{$CONST.SORT_ORDER}</span></legend>
 
-            <div class="form_select">
-                <label for="sort_order">{$CONST.SORT_BY}</label>
-                <select id="sort_order" name="serendipity[sort][order]">
-                {foreach $sort_order as $so_key => $so_val}
-                    <option value="{$so_key}" {(isset($get.sort.order) && ($get.sort.order == $so_key) ? 'selected="selected"': '')}>{$so_val}</option>
-                {/foreach}
-                </select>
-            </div>
+            <div class="clearfix">
+                <div class="form_select">
+                    <label for="sort_order">{$CONST.SORT_BY}</label>
+                    <select id="sort_order" name="serendipity[sort][order]">
+                    {foreach $sort_order as $so_key => $so_val}
+                        <option value="{$so_key}" {(isset($get.sort.order) && ($get.sort.order == $so_key) ? 'selected="selected"': '')}>{$so_val}</option>
+                    {/foreach}
+                    </select>
+                </div>
 
-            <div class="form_select">
-                <label for="sort_ordermode">{$CONST.SORT_ORDER}</label>
-                <select id="sort_ordermode" name="serendipity[sort][ordermode]">
-                    <option value="DESC" {(isset($get.sort.ordermode) && ($get.sort.ordermode == 'DESC') ? 'selected="selected"' : '')}>{$CONST.SORT_ORDER_DESC}</option>
-                    <option value="ASC" {(isset($get.sort.ordermode) && ($get.sort.ordermode == 'ASC') ? 'selected="selected"' : '')}>{$CONST.SORT_ORDER_ASC}</option>
-                </select>
-            </div>
+                <div class="form_select">
+                    <label for="sort_ordermode">{$CONST.SORT_ORDER}</label>
+                    <select id="sort_ordermode" name="serendipity[sort][ordermode]">
+                        <option value="DESC" {(isset($get.sort.ordermode) && ($get.sort.ordermode == 'DESC') ? 'selected="selected"' : '')}>{$CONST.SORT_ORDER_DESC}</option>
+                        <option value="ASC" {(isset($get.sort.ordermode) && ($get.sort.ordermode == 'ASC') ? 'selected="selected"' : '')}>{$CONST.SORT_ORDER_ASC}</option>
+                    </select>
+                </div>
 
-            <div class="form_select">
-                <label for="sort_perpage">{$CONST.ENTRIES_PER_PAGE}</label>
-                <select id="sort_perpage" name="serendipity[sort][perPage]">
-                {foreach $per_page AS $per_page_nr}
-                    <option value="{$per_page_nr}" {((isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr)) ? 'selected="selected"' : '')}> {$per_page_nr}</option>
-                {/foreach}
-                </select>
+                <div class="form_select">
+                    <label for="sort_perpage">{$CONST.ENTRIES_PER_PAGE}</label>
+                    <select id="sort_perpage" name="serendipity[sort][perPage]">
+                    {foreach $per_page AS $per_page_nr}
+                        <option value="{$per_page_nr}" {((isset($get.sort.perPage) && ($get.sort.perPage == $per_page_nr)) ? 'selected="selected"' : '')}> {$per_page_nr}</option>
+                    {/foreach}
+                    </select>
+                </div>
             </div>
         </fieldset>
+        
         <input name="go" type="submit" value="{$CONST.GO}">
     </form>
     {if $is_entries}
