@@ -581,6 +581,16 @@ input[type=checkbox] { margin-right: .4em; }
     visibility: hidden;
 }
 
+#main {
+    position: relative;
+    padding-top: 4em;
+}
+
+#main_menu {
+    position: absolute;
+    top: 1em;
+}
+
 /* Styles common to all resolutions */
 
 /* Color scheme:
@@ -838,6 +848,16 @@ p, table {
     #main_menu>ul {
         display: block;
         visibility: visible;
+    }
+
+    #main {
+        position: static;
+        padding-top: 0;
+    }
+
+    #main_menu {
+        position: static;
+        top: 0;
     }
 }
 
