@@ -153,7 +153,7 @@
         {$formtoken}
         <div class="form_check">
             <input id="diredit_delete" name="serendipity[nuke]" type="checkbox" value="true">
-            <label for="diredit_delete"><b>{$CONST.NAME}:</b> {$basename_dir} - {$CONST.FORCE_DELETE}</label>
+            <label for="diredit_delete"><b>{$basename_dir}</b> - {$CONST.FORCE_DELETE}</label>
         </div>
 
         {* I think this is redudant: <p>{$CONST.CONFIRM_DELETE_DIRECTORY|sprintf:$dir|escape:'html'}</p> *}
