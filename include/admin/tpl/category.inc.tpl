@@ -127,12 +127,12 @@
 {if $view}
     <h2>{$CONST.CATEGORY_INDEX}:</h2>
     {if is_array($viewCats)}
-        <ul class="plainList">
+        <ul id="categories" class="plainList">
         {foreach $viewCategories as $category}
         {* TODO: Ideally, this should use true nesting, i.e. nested lists instead of a level class. *}
             <li class="level_{$category.depth}">
                 <dl>
-                    <dt{if $category.category_icon} class="category_hasicon"{/if}>{$category.category_name|escape:"html"}</dt>
+                    <dt class="category_name{if $category.category_icon} category_hasicon{/if}">{$category.category_name|escape:"html"}</dt>
                 {if $category.category_description != ''}
                     <dd class="category_desc">{$category.category_description|escape:"html"}</dd>
                 {/if}
