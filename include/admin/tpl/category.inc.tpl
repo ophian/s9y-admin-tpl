@@ -125,11 +125,8 @@
         <script src="serendipity_editor.js"></script>
 {/if}
 {if $view}
+    <h2>{$CONST.CATEGORY_INDEX}:</h2>
     {if is_array($viewCats)}
-        <h2>{$CONST.CATEGORY_INDEX}:</h2>
-    {else}
-        <span class="msg_notice">{$CONST.NO_CATEGORIES}</span>
-    {/if}
         <ul class="plainList">
         {foreach $viewCategories as $category}
         {* TODO: Ideally, this should use true nesting, i.e. nested lists instead of a level class. *}
@@ -146,5 +143,8 @@
             </li>
         {/foreach}
         </ul>
+    {else}
+        <span class="msg_notice">{$CONST.NO_CATEGORIES}</span>
+    {/if}
         <a class="link_create" href="?serendipity[adminModule]=category&serendipity[adminAction]=new">{$CONST.CREATE_NEW_CAT}</a>
 {/if}
