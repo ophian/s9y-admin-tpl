@@ -3,5 +3,8 @@
 b.header||e.find(":eq("+a(f+" li").index(a(f+" li."+b.active))+")").attr("selected",!0);e.change(function(){i.location.href=a(this).val()});a(f).after(e);b.label&&e.before(a("<label/>").attr("for",d).addClass("tinynav_label "+d+"_label").append(b.label))}})}})(jQuery,this,0);
 
 jQuery(document).ready(function($) {
-	$('#main_menu>ul').tinyNav();
+	$('#main_menu>ul').tinyNav({
+		header: 'Navigation',
+		label: 'Navigation'
+	});
 });
