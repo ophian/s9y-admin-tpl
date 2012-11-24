@@ -199,14 +199,16 @@
             <fieldset id="image_size">
                 <legend><span>{$CONST.IMAGE_SIZE}</span></legend>
 
-                <div class="form_radio">
-                    <input id="radio_link_no" name="serendipity[linkThumbnail]" type="radio" value="no" {'linkThumbnail'|@ifRemember:'no':true}>
-                    <label for="radio_link_no">{$CONST.I_WANT_THUMB}</label>
-                </div>
+                <div class="clearfix">
+                    <div class="form_radio">
+                        <input id="radio_link_no" name="serendipity[linkThumbnail]" type="radio" value="no" {'linkThumbnail'|@ifRemember:'no':true}>
+                        <label for="radio_link_no">{$CONST.I_WANT_THUMB}</label>
+                    </div>
 
-                <div class="form_radio">
-                    <input id="radio_link_yes" name="serendipity[linkThumbnail]" type="radio" value="yes" {'linkThumbnail'|@ifRemember:'yes'}>
-                    <label for="radio_link_yes">{$CONST.I_WANT_BIG_IMAGE}</label>
+                    <div class="form_radio">
+                        <input id="radio_link_yes" name="serendipity[linkThumbnail]" type="radio" value="yes" {'linkThumbnail'|@ifRemember:'yes'}>
+                        <label for="radio_link_yes">{$CONST.I_WANT_BIG_IMAGE}</label>
+                    </div>
                 </div>
                 {serendipity_hookPlugin hookAll=true hook='frontend_image_selector_imagesize' eventData=$media.file}
             </fieldset>
@@ -214,19 +216,21 @@
             <fieldset id="image_alignment">
                 <legend><span>{$CONST.IMAGE_ALIGNMENT}</span></legend>
 
-                <div class="form_radio">
-                    <input id="image_align_top" name="serendipity[align]" {'align'|@ifRemember:''} type="radio" value="">
-                    <label for="image_align_top"><img src="{serendipity_getFile file='img/img_align_top.png'}" alt="TODO_LANG"></label>
-                </div>
+                <div class="clearfix">
+                    <div class="form_radio">
+                        <input id="image_align_top" name="serendipity[align]" {'align'|@ifRemember:''} type="radio" value="">
+                        <label for="image_align_top"><img src="{serendipity_getFile file='img/img_align_top.png'}" alt="TODO_LANG"></label>
+                    </div>
 
-                <div class="form_radio">
-                    <input id="image_align_left" name="serendipity[align]" {'align'|@ifRemember:'left':true} type="radio" value="left">
-                    <label for="image_align_left"><img src="{serendipity_getFile file='img/img_align_left.png'}" alt="TODO_LANG"></label>
-                </div>
+                    <div class="form_radio">
+                        <input id="image_align_left" name="serendipity[align]" {'align'|@ifRemember:'left':true} type="radio" value="left">
+                        <label for="image_align_left"><img src="{serendipity_getFile file='img/img_align_left.png'}" alt="TODO_LANG"></label>
+                    </div>
 
-                <div class="form_radio">
-                    <input id="image_align_right" name="serendipity[align]" {'align'|@ifRemember:'right'} type="radio" value="right">
-                    <label for="image_align_right"><img src="{serendipity_getFile file='img/img_align_right.png'}" alt="TODO_LANG"></label>
+                    <div class="form_radio">
+                        <input id="image_align_right" name="serendipity[align]" {'align'|@ifRemember:'right'} type="radio" value="right">
+                        <label for="image_align_right"><img src="{serendipity_getFile file='img/img_align_right.png'}" alt="TODO_LANG"></label>
+                    </div>
                 </div>
                 {serendipity_hookPlugin hookAll=true hook='frontend_image_selector_imagealign' eventData=$media.file}
             </fieldset>
@@ -234,14 +238,16 @@
             <fieldset id="image_as_link">
                 <legend><span>{$CONST.IMAGE_AS_A_LINK}</span></legend>
 
-                <div class="form_radio">
-                    <input id="radio_islink_yes" name="serendipity[isLink]" type="radio" value="yes" {'isLink'|@ifRemember:'yes':true}>
-                    <label for="radio_islink_yes">{$CONST.I_WANT_NO_LINK}</label>
-                </div>
+                <div class="clearfix">
+                    <div class="form_radio">
+                        <input id="radio_islink_yes" name="serendipity[isLink]" type="radio" value="yes" {'isLink'|@ifRemember:'yes':true}>
+                        <label for="radio_islink_yes">{$CONST.I_WANT_NO_LINK}</label>
+                    </div>
 
-                <div class="form_radio">
-                    <input id="radio_islink_no" name="serendipity[isLink]" type="radio" value="no" {'isLink'|@ifRemember:'no'}>
-                    <label for="radio_islink_no">{$CONST.I_WANT_IT_TO_LINK}</label>
+                    <div class="form_radio">
+                        <input id="radio_islink_no" name="serendipity[isLink]" type="radio" value="no" {'isLink'|@ifRemember:'no'}>
+                        <label for="radio_islink_no">{$CONST.I_WANT_IT_TO_LINK}</label>
+                    </div>
                 </div>
 
                 <div class="form_field">

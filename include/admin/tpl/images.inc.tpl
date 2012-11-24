@@ -13,19 +13,21 @@
         <fieldset>
             <legend><span>{$CONST.SYNC_OPTION_LEGEND}</span></legend>
 
-            <div class="form_radio">
-                <input id="keepthumbs" name="serendipity[deleteThumbs]" type="radio" value="no" checked="checked">
-                <label for="keepthumbs">{$CONST.SYNC_OPTION_KEEPTHUMBS}</label>
-            </div>
+            <div class="clearfix">
+                <div class="form_radio">
+                    <input id="keepthumbs" name="serendipity[deleteThumbs]" type="radio" value="no" checked="checked">
+                    <label for="keepthumbs">{$CONST.SYNC_OPTION_KEEPTHUMBS}</label>
+                </div>
 
-            <div class="form_radio">
-                <input id="sizecheckthumbs" name="serendipity[deleteThumbs]" type="radio" value="check">
-                <label for="sizecheckthumbs">{$CONST.SYNC_OPTION_SIZECHECKTHUMBS}</label>
-            </div>
-            
-            <div class="form_radio">
-                <input id="deletethumbs" name="serendipity[deleteThumbs]" type="radio" value="yes">
-                <label for="deletethumbs">{$CONST.SYNC_OPTION_DELETETHUMBS}</label>
+                <div class="form_radio">
+                    <input id="sizecheckthumbs" name="serendipity[deleteThumbs]" type="radio" value="check">
+                    <label for="sizecheckthumbs">{$CONST.SYNC_OPTION_SIZECHECKTHUMBS}</label>
+                </div>
+                
+                <div class="form_radio">
+                    <input id="deletethumbs" name="serendipity[deleteThumbs]" type="radio" value="yes">
+                    <label for="deletethumbs">{$CONST.SYNC_OPTION_DELETETHUMBS}</label>
+                </div>
             </div>
         </fieldset>
 

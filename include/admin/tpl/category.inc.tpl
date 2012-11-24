@@ -113,13 +113,16 @@
             <fieldset>
                 <legend><span>{$CONST.CATEGORY_HIDE_SUB}</span></legend>
                 <p>{$CONST.CATEGORY_HIDE_SUB_DESC}</p>
-                <div class="form_radio">
-                    <input id="hide_sub_yes" name="serendipity[cat][hide_sub]" type="radio" value="1"{if $this_cat.hide_sub== 1} checked="checked"{/if}>
-                    <label for="hide_sub_yes">{$CONST.YES}</label>
-                </div>
-                <div class="form_radio">
-                    <input id="hide_sub_no" name="serendipity[cat][hide_sub]" type="radio" value="0"{if $this_cat.hide_sub == 0} checked="checked"{/if}>
-                    <label for="hide_sub_no">{$CONST.NO}</label>
+                <div class="clearfix">
+                    <div class="form_radio">
+                        <input id="hide_sub_yes" name="serendipity[cat][hide_sub]" type="radio" value="1"{if $this_cat.hide_sub== 1} checked="checked"{/if}>
+                        <label for="hide_sub_yes">{$CONST.YES}</label>
+                    </div>
+
+                    <div class="form_radio">
+                        <input id="hide_sub_no" name="serendipity[cat][hide_sub]" type="radio" value="0"{if $this_cat.hide_sub == 0} checked="checked"{/if}>
+                        <label for="hide_sub_no">{$CONST.NO}</label>
+                    </div>
                 </div>
             </fieldset>
             <input name="SAVE" type="submit" value="{$save}">
