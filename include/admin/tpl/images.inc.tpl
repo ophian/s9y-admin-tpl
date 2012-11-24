@@ -152,11 +152,11 @@
     <form id="image_directory_delete_form" method="POST" action="?serendipity[adminModule]=images&amp;serendipity[adminAction]=directoryDoDelete&amp;serendipity[dir]={$dir|escape:'html'}">
         {$formtoken}
         <div class="form_check">
-            <label for="diredit_delete">{$CONST.NAME}: {$basename_dir} - {$CONST.FORCE_DELETE}</label>
             <input id="diredit_delete" name="serendipity[nuke]" type="checkbox" value="true">
+            <label for="diredit_delete"><b>{$CONST.NAME}:</b> {$basename_dir} - {$CONST.FORCE_DELETE}</label>
         </div>
 
-        <p>{$CONST.CONFIRM_DELETE_DIRECTORY|sprintf:$dir|escape:'html'}</p>
+        {* I think this is redudant: <p>{$CONST.CONFIRM_DELETE_DIRECTORY|sprintf:$dir|escape:'html'}</p> *}
 
         <input name="SAVE" type="submit" value="{$CONST.DELETE_DIRECTORY}">
     </form>
