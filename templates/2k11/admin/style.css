@@ -570,6 +570,17 @@ input[type=checkbox] { margin-right: .4em; }
 .form_check, .form_radio,
 .form_select, .form_multiselect { margin: .75em 0;}
 
+/* Responsive navigation using TinyNav */
+.tinynav {
+    display: block;
+    visibility: visible;
+}
+
+#main_menu {
+    display: none;
+    visibility: hidden;
+}
+
 /* Styles common to all resolutions */
 
 /* Color scheme:
@@ -816,6 +827,17 @@ p, table {
     #pluginlist_event .pluginmanager_side  {
         margin-right: 1%;
         width: 48%;
+    }
+
+    /* Responsive navigation using TinyNav */
+    .tinynav {
+        display: none;
+        visibility: hidden;
+    }
+
+    #main_menu {
+        display: block;
+        visibility: visible;
     }
 }
 

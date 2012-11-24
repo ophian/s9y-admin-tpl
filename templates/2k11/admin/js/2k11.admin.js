@@ -4,7 +4,7 @@ b.header||e.find(":eq("+a(f+" li").index(a(f+" li."+b.active))+")").attr("select
 
 jQuery(document).ready(function($) {
 	$('#main_menu>ul').tinyNav({
-		header: 'Navigation',
+		header: 'What do you want to do?',
 		label: 'Navigation'
 	});
 });
