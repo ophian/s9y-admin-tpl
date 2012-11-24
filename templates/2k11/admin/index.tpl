@@ -184,5 +184,6 @@
         <small>{$admin_vars.version_info}</small>
     </footer>
 {/if}
+    <script src="{serendipity_getFile file='admin/js/2k11.admin.js'}"></script>
 </body>
 </html>
