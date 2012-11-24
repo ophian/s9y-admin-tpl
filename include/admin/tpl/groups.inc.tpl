@@ -1,6 +1,9 @@
 {* HTML5: Yes *}
 {* jQuery: NN *}
 
+{* TODO/BUG: Creating a new group always triggers an error message complaining about
+   an incorrect HTTP header; also, editing a group gives an error message. *}
+
 {if $delete_yes}
     <span class="msg_success">{$CONST.DELETED_GROUP|sprintf:"{$group_id|escape:"html"}":"{$group.name|escape:"html"}"}</span>
 {/if}
