@@ -42,7 +42,7 @@
                 {foreach $plugin_placement['plugin_data'] as $plugin_data}
                     <li id="{$plugin_data['css_key']}" class="pluginmanager_item_{cycle values="even,uneven"}">
                         <div id="g{$plugin_data['css_key']}" class="pluginmanager_grablet">
-                            <a href="#" id="grab{$plugin_data['css_key']}"></a>
+                            <a id="grab{$plugin_data['css_key']}" href="#">Move</a>{* TODO_LANG *}
                         </div>
                     {if $plugin_data['is_plugin_editable']}
                         <input name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
