@@ -45,7 +45,10 @@
                             <a id="grab{$plugin_data['css_key']}" href="#">Move</a>{* TODO_LANG *}
                         </div>
                     {if $plugin_data['is_plugin_editable']}
-                        <input name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
+                        <div class="form_check">
+                            <input id="remove_{$plugin_data['name']}" name="serendipity[plugin_to_remove][]" type="checkbox" value="{$plugin_data['name']}">
+                            <label for="remove_{$plugin_data['name']}" class="visuallyhidden">Remove this plugin</label>{* TODO_LANG *}
+                        </div>
                     {/if}
                     {if $plugin_data['can_configure']}
                         <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">{$CONST.CONFIGURATION}</a>
