@@ -30,12 +30,12 @@
     {foreach $templates as $template=>$info}
         {if $info.info.engine == 'yes'}{continue}{/if}
         {if !empty($template)}
-        <li><div class="clearfix">
+        <li><article class="clearfix">
                 <h3>{$info.info.name}</h3>
             {if $info.fullsize_preview || $info.preview}
                 <div class="preview_image">
                     {if $info.fullsize_preview}<a href="{$info.fullsize_preview}">{/if}
-                    {if $info.preview}<img src="{$info.preview}" alt="" >{/if}
+                    {if $info.preview}<img src="{$info.preview}" alt="{$CONST.PREVIEW}" >{/if}
                     {if $info.fullsize_preview}</a>{/if}
                 </div>
             {/if}
@@ -53,13 +53,13 @@
                     {if !$info.unmetRequirements}
                     <a href="?serendipity[adminModule]=templates&amp;serendipity[adminAction]=install&amp;serendipity[theme]={$template}{$info.info.customURI}">{$CONST.SET_AS_TEMPLATE}</a>
                     {else}
-                    <span class="unmet_requirements">{$info.unmetRequirements}></span>
+                    <span class="unmet_requirements block_level">{$info.unmetRequirements}></span>
                     {/if}
                 {else}
-                    <span class="installed">{$CONST.ALREADY_INSTALLED}</span>
+                    <span class="installed block_level">{$CONST.ALREADY_INSTALLED}</span>
                 {/if}
                 </div>
-            </div>
+            </article>
         </li>
         {/if}
     {/foreach}
