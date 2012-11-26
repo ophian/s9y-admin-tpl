@@ -705,6 +705,8 @@ summary { cursor: pointer; }
     *zoom: 1;
 }
 
+.edit_actions li { margin: 0 0 0 1em; }
+
 .user_name,
 .group_name,
 .edit_actions { float: left; }
