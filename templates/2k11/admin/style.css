@@ -631,7 +631,8 @@ h5, h6,
 blockquote,
 ul, ol, dl,
 p, table,
-details {
+details,
+.standalone {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
