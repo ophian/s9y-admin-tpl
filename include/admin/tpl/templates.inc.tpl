@@ -39,14 +39,18 @@
                     {if $info.fullsize_preview}</a>{/if}
                 </div>
             {/if}
-                <dl class="template_info clearfix">
-                    <dt class="template_author">{$CONST.AUTHOR}:</dt>
-                    <dd>{$info.info.author}</dd>
-                    <dt class="template_date">{$CONST.LAST_UPDATED}:</dt>
-                    <dd>{$info.info.date}</dd>
-                    <dt class="template_admin">{$CONST.CUSTOM_ADMIN_INTERFACE}:</dt>
-                    <dd>{$info.info.custom_admin_interface}</dd>
-                </dl>
+                <details class="template_info">
+                    <summary>TODO_LANG</summary>
+
+                    <dl class="clearfix">
+                        <dt class="template_author">{$CONST.AUTHOR}:</dt>
+                        <dd>{$info.info.author}</dd>
+                        <dt class="template_date">{$CONST.LAST_UPDATED}:</dt>
+                        <dd>{$info.info.date}</dd>
+                        <dt class="template_admin">{$CONST.CUSTOM_ADMIN_INTERFACE}:</dt>
+                        <dd>{$info.info.custom_admin_interface}</dd>
+                    </dl>
+                </details>
             
                 <div class="template_status">
                 {if $template != $cur_template}
