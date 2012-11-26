@@ -711,6 +711,9 @@ summary { cursor: pointer; }
 .group_name,
 .edit_actions { float: left; }
 
+.user_name,
+.group_name { min-width: 8em; }
+
 /* Content area */
 .comment_data dt, .comment_data dd,
 .template_info dt,
