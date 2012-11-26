@@ -708,12 +708,14 @@ summary { cursor: pointer; }
 
 .edit_actions li { margin: 0 0 0 1em; }
 
-.user_name,
-.group_name,
+.category_data,
+.user_name, .group_name,
 .edit_actions { float: left; }
 
-.user_name,
-.group_name { min-width: 8em; }
+.category_data,
+.user_name, .group_name { min-width: 8em; }
+
+.category_data { margin: 0 1em 0 0; }
 
 /* Content area */
 .comment_data dt, .comment_data dd,
@@ -742,17 +744,6 @@ summary { cursor: pointer; }
 }
 
 .sub_perm { margin-left: 1em; }
-
-/* Categories */
-#categories dl,
-.category_name,
-.category_desc,
-.category_author {
-    display: inline-block;
-    margin: 0 10px 0 0;
-    *display: inline;
-    *zoom: 1;
-}
 
 /* Login form */
 #login { margin: 2em auto 1em; }

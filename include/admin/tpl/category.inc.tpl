@@ -136,15 +136,21 @@
         {foreach $viewCategories as $category}
         {* TODO: Ideally, this should use true nesting, i.e. nested lists instead of a level class. *}
             <li class="clearfix level_{$category.depth}">
-                <dl>
-                    <dt class="category_name{if $category.category_icon} category_hasicon{/if}">{$category.category_name|escape:"html"}</dt>
-                {if $category.category_description != ''}
-                    <dd class="category_desc">{$category.category_description|escape:"html"}</dd>
-                {/if}
-                    <dd class="category_author">{if $category.authorid == 0}{$CONST.ALL_AUTHORS}{else}{$category.realname|escape:"html"}{/if}</dd>
-                </dt>
-                <a class="link_edit" href="?serendipity[adminModule]=category&amp;serendipity[adminAction]=edit&amp;serendipity[cid]={$category.categoryid}">{$CONST.EDIT}</a>
-                <a class="link_delete" href="?serendipity[adminModule]=category&amp;serendipity[adminAction]=delete&amp;serendipity[cid]={$category.categoryid}">{$CONST.DELETE}</a>
+                <details class="category_data">
+                    <summary class="category_name{if $category.category_icon} category_hasicon{/if}">{$category.category_name|escape:"html"}</summary>
+
+                    <div class="category_info">    
+                    {if $category.category_description != ''}
+                        <p class="category_desc">{$category.category_description|escape:"html"}</p>
+                    {/if}
+                        <span class="category_author block_level standalone">{if $category.authorid == 0}{$CONST.ALL_AUTHORS}{else}{$category.realname|escape:"html"}{/if}</span>
+                    </div>
+                </details>
+                
+                <ul class="plainList edit_actions">
+                    <li><a class="link_edit" href="?serendipity[adminModule]=category&amp;serendipity[adminAction]=edit&amp;serendipity[cid]={$category.categoryid}">{$CONST.EDIT}</a></li>
+                    <li><a class="link_delete" href="?serendipity[adminModule]=category&amp;serendipity[adminAction]=delete&amp;serendipity[cid]={$category.categoryid}">{$CONST.DELETE}</a></li>
+                </ul>
             </li>
         {/foreach}
         </ul>
