@@ -19,7 +19,8 @@
 
     <ul id="serendipity_groups" class="plainList">
     {foreach $groups as $group}
-        <li><span class="group_name">{$group.name|escape:"html"}</span>
+        <li class="clearfix">
+            <span class="group_name">{$group.name|escape:"html"}</span>
             <ul class="plainList edit_actions">
                 <li><a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a></li>
                 {* BUG: Doesn't skip to the deletion process - What does that mean??? *}

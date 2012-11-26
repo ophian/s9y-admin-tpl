@@ -46,7 +46,8 @@
     <ul id="serendipity_users" class="plainList">
     {foreach $users as $user}
         {if $user.isEditable}
-        <li><span class="user_{if $user.userlevel >= {$CONST.USERLEVEL_ADMIN}}admin{else}{if $user.userlevel >= {$CONST.USERLEVEL_CHIEF}}chief{else}editor{/if}{/if}">{$user.realname|escape:"html"} ({$user.userlevel})</span>
+        <li class="clearfix">
+            <span class="user_name user_{if $user.userlevel >= {$CONST.USERLEVEL_ADMIN}}admin{else}{if $user.userlevel >= {$CONST.USERLEVEL_CHIEF}}chief{else}editor{/if}{/if}">{$user.realname|escape:"html"} ({$user.userlevel})</span>
             <ul class="plainList edit_actions">
                 <li><a class="link_view" href="{$user.authorUrl}" title="{$CONST.PREVIEW} {$user.realname}">{$CONST.PREVIEW}</a></li>
                 <li><a class="link_edit" href="?serendipity[adminModule]=users&amp;serendipity[adminAction]=edit&amp;serendipity[userid]={$user.authorid}#editform" title="{$CONST.EDIT} {$user.realname|escape:"html"}">{$CONST.EDIT}</a></li>
