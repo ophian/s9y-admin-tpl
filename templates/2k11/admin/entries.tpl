@@ -20,6 +20,7 @@
     </div>
 {/if}
     <div class="form_select">
+        {* BUG: doesn't work the way it used to (collapsed multiselect) *}
         <label for="categoryselector">{$CONST.CATEGORY}:</label>
         <select id="categoryselector" name="serendipity[categories][]" multiple="multiple">
             <option value="0">{$CONST.NO_CATEGORY}</option>
@@ -43,6 +44,9 @@
         <label for="serendipity[body]">{$CONST.ENTRY_BODY}</label>
     {if NOT $entry_vars.wysiwyg}
         <div id="tools_entry">
+            {* This whole button bar should be replaced by something external, which maybe even
+               "reacts" to installed markup plugins. I.e. if a blog uses Markdown, the button for
+               italic should not insert an em element but the appropriate Markdown formatting. *}
         <script>
         {if $entry_vars.wysiwyg_advanced}
             {if $iso2br}document.write('<input type="button" name="insX" value="NoBR" accesskey="x" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'<nl>\',\'</nl>\')">');{/if}
@@ -69,7 +73,7 @@
         <textarea id="serendipity[body]" name="serendipity[body]" rows="20">{$entry_vars.entry.body|@escape}</textarea>
     </div>
 
-    <div class="form_field">
+    <div class="clearfix">
         <div class="form_check">
             <input id="checkbox_allow_comments" name="serendipity[allow_comments]" type="checkbox" value="true"{if $entry_vars.allow_comments} checked="checked"{/if}><label for="checkbox_allow_comments">{$CONST.COMMENTS_ENABLE}</label>
         </div>
@@ -77,11 +81,11 @@
         <div class="form_check">
             <input id="checkbox_moderate_comments" name="serendipity[moderate_comments]" type="checkbox" value="true"{if $entry_vars.moderate_comments} checked="checked"{/if}><label for="checkbox_moderate_comments">{$CONST.COMMENTS_MODERATE}</label>
         </div>
+    </div>
 
-        <div class="form_buttons">
-            <input type="submit" accesskey="p" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
-            <input type="submit" accesskey="s" value="{$CONST.SAVE}"onclick="return checkSave();">
-        </div>
+    <div class="form_buttons">
+        <input type="submit" accesskey="p" value="{$CONST.PREVIEW}" onclick="document.forms['serendipityEntry'].elements['serendipity[preview]'].value='true';">
+        <input type="submit" accesskey="s" value="{$CONST.SAVE}"onclick="return checkSave();">
     </div>
 
     <div class="form_area">
