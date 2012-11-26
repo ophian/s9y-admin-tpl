@@ -12,8 +12,9 @@
     </div>
 {if $entry_vars.allowDateManipulation}
     <div class="form_field">
-        <label for="">{$CONST.DATE}:</label>
         <input name="serendipity[chk_timestamp]" type="hidden" value="{$entry_vars.timestamp}">
+        {* TODO: this should be input[type=datetime] *}
+        <label for="serendipityNewTimestamp">{$CONST.DATE}:</label>
         <input id="serendipityNewTimestamp" name="serendipity[new_timestamp]" type="text" value="{$entry_vars.timestamp|@formatTime:DATE_FORMAT_2:true:false:true}">
         <a id="reset_timestamp" href="#" onclick="document.getElementById('serendipityNewTimestamp').value = '{$entry_vars.reset_timestamp|@formatTime:DATE_FORMAT_2:true:false:true}'; return false;" title="{$CONST.RESET_DATE_DESC}">{$CONST.RESET_DATE}</a>
     </div>
