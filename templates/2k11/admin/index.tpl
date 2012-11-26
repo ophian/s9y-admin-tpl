@@ -8,7 +8,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{$lang}"> <!--<![endif]-->
 <head>
     <meta charset="{$CONST.LANG_CHARSET}">
-    <title>{$admin_vars.title} | {$CONST.SERENDIPITY_ADMIN_SUITE}</title>
+    <title>{if $admin_vars.title}{$admin_vars.title} | {/if}{$CONST.SERENDIPITY_ADMIN_SUITE}</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="{$admin_vars.css_file}">
     <link rel="stylesheet" href="{$admin_vars.admin_css_file}">
