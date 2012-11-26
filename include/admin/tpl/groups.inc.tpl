@@ -20,9 +20,12 @@
     <ul id="serendipity_groups" class="plainList">
     {foreach $groups as $group}
         <li><span class="group_name">{$group.name|escape:"html"}</span>
-            <a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a>
-            {* BUG: Doesn't skip to the deletion process - What does that mean??? *}
-            <a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
+            <ul class="plainList edit_actions">
+                <li><a class="link_edit" href="?serendipity[adminModule]=groups&amp;serendipity[adminAction]=edit&amp;serendipity[group]={$group.id}" title="{$CONST.EDIT} {$group.name|escape:"html"}">{$CONST.EDIT}</a></li>
+                {* BUG: Doesn't skip to the deletion process - What does that mean??? *}
+                <li><a class="link_delete" href="?{$deleteFormToken}&amp;serendipity[adminModule]=groups&amp;serendipity[adminAction]=delete&amp;serendipity[group]={$group.id}" title="{$CONST.DELETE} {$group.name|escape:"html"}">{$CONST.DELETE}</a></li>
+            </ul>
+        </li>
     {/foreach}
     </ul>
     {if !$new}

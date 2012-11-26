@@ -697,7 +697,8 @@ summary { cursor: pointer; }
 
 #user_menu h2 { margin: 1.5em 0 0; }
 
-#user_menu li {
+#user_menu li,
+.edit_actions li {
     display: inline-block;
     margin: 0 1em 0 0;
     *display: inline;
@@ -854,7 +855,8 @@ summary { cursor: pointer; }
         text-align: right;
     }
 
-    #user_menu li { margin: 0 0 0 1em; }
+    #user_menu li,
+    .edit_actions li { margin: 0 0 0 1em; }
 
     #content { width: 73%; }
     .lt-ie8 #content { width: 72.5%; }
