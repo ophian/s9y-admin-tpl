@@ -12,12 +12,6 @@
     padding: 5px;
 }
 
-.pluginmanager_container li {
-    margin: 0 0 5px;
-    padding: 5px;
-    position: relative;
-}
-
 .pluginmanager_item_even,
 .pluginmanager_item_uneven {
     background: #eee;
@@ -25,7 +19,8 @@
 }
 
 .pluginmanager_place,
-.pluginmanager_ownership { text-align: right; }
+.pluginmanager_ownership,
+.pluginmanager_move { text-align: right; }
 
 .pluginmanager_grablet {
     cursor: move;

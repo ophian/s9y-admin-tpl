@@ -36,7 +36,7 @@
         <div class="clearfix pluginmanager">
         {foreach $placement as $plugin_placement}
             <div class="pluginmanager_side pluginmanager_{($event_only) ? 'event' : 'sidebar'}">
-                <h5>{$plugin_placement['ptitle']}</h5>
+                <h4>{$plugin_placement['ptitle']}</h4>
 
                 <ol id="{$plugin_placement['pid']}_col" class="pluginmanager_container plainList">
                 {foreach $plugin_placement['plugin_data'] as $plugin_data}
@@ -50,13 +50,13 @@
                     {if $plugin_data['can_configure']}
                         <a class="pluginmanager_configure" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">{$CONST.CONFIGURATION}</a>
                     {/if}
-                        <h6>
+                        <h5>
                         {if $plugin_data['can_configure']}
                             <a title="{$plugin_data['name']}" href="?serendipity[adminModule]=plugins&amp;serendipity[plugin_to_conf]={$plugin_data['key']}">{$plugin_data['title']}</a>
                         {else}
                             {$plugin_data['title']}
                         {/if}
-                        </h6>
+                        </h5>
 
                         <ul class="pluginmanager_plugininfo plainList">
                             <li class="pluginmanager_description">{$plugin_data['desc']}</li>
