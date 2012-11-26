@@ -705,6 +705,10 @@ summary { cursor: pointer; }
     *zoom: 1;
 }
 
+.user_name,
+.group_name,
+.edit_actions { float: left; }
+
 /* Content area */
 .comment_data dt, .comment_data dd,
 .template_info dt,
@@ -858,8 +862,6 @@ summary { cursor: pointer; }
     #user_menu li,
     .edit_actions li { margin: 0 0 0 1em; }
 
-    .user_name,
-    .group_name { float: left; }
     .edit_actions { float: right; }
 
     #content { width: 73%; }
