@@ -26,7 +26,7 @@
         {/if}
         {if ! empty($documentation) || $changelog || $documentation_local}
             <ul class="plainList">
-            {if ! empty($documentation) }
+            {if !empty($documentation)}
                 <li><a href="{$documentation|escape:"html"}">{$CONST.PLUGIN_DOCUMENTATION}</a></li>
             {/if}
             {if $changelog}
@@ -103,7 +103,7 @@
                 {elseif $plug['upgradable'] == true}
                     <a class="upgradable" href="?serendipity[adminModule]=plugins&amp;serendipity[pluginPath]={$plug.pluginPath}&amp;serendipity[install_plugin]={$plug.plugin_class}{if isset($plug['customURI'])}{$plug.customURI}{/if}">{$CONST.UPGRADE}</a>
                 {elseif $plug.installable == true}
-                    <a class="installable" href="?serendipity[adminModule]=plugins&amp;serendipity[pluginPath]={$plug.pluginPath}&amp;serendipity[install_plugin]={$plug.plugin_class}{if isset($plug.customURI)}{$plug.customURL}{/if}">{$CONST.INSTALL}</a>
+                    <a class="installable" href="?serendipity[adminModule]=plugins&amp;serendipity[pluginPath]={$plug.pluginPath}&amp;serendipity[install_plugin]={$plug.plugin_class}{if isset($plug.customURI)}{$plug.customURI}{/if}">{$CONST.INSTALL}</a>
                 {else}
                     <span class="installed">{$CONST.ALREADY_INSTALLED}</span>
                 {/if}
