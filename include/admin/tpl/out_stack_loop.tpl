@@ -147,7 +147,7 @@
             <script>
                 function sort_{$config_item}_Sequence() { 
                     //var seq = DragDrop.serData('{$config_item}_group', null);
-                    var seq = DragDrop.serData(null, '+citem+');
+                    var seq = DragDrop.serData(null, '{$config_item}');
                     var start = seq.indexOf("(");
                     var end = seq.indexOf(")");
                     seq = seq.slice((start + 1), end);
